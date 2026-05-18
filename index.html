@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APE - Air & Pump Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">TRANG CHỦ</a></li>
+                    <li><a href="gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="san-pham.html">SẢN PHẨM</a></li>
+                    <li><a href="du-an.html">DỰ ÁN</a></li>
+                    <li><a href="thuong-hieu.html">THƯƠNG HIỆU</a></li>
+                    <li><a href="dich-vu.html">DỊCH VỤ</a></li>
+                    <li><a href="tin-tuc.html">TIN TỨC</a></li>
+                    <li><a href="lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <span class="hotline-block">
+                    <span class="hotline-icon">
+                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
+                    </span>
+                    <span class="hotline-label">HOTLINE</span>
+                    <strong class="hotline-number">0901 819 903</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80');">
+                <div class="banner-overlay"></div>
+                <div class="container banner-content">
+                    <div class="banner-title">
+                        <div class="banner-sub">GIẢI PHÁP KHÍ NÉN & BƠM CÔNG NGHIỆP</div>
+                        <h1>AIR & PUMP <br><span>SOLUTIONS</span></h1>
+                        <p>APE cung cấp giải pháp toàn diện - thiết bị chất lượng cao<br>- dịch vụ kỹ thuật chuyên nghiệp cho mọi ngành công nghiệp.</p>
+                        <div class="banner-btns">
+                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
+                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');">
+                <div class="banner-overlay"></div>
+                <div class="container banner-content">
+                    <div class="banner-title">
+                        <div class="banner-sub">CÔNG NGHỆ TIÊN TIẾN NHẤT</div>
+                        <h1>TỐI ƯU HÓA <br><span>SẢN XUẤT</span></h1>
+                        <p>Đảm bảo hiệu suất cao và tiết kiệm năng lượng tối đa<br>cho hệ thống của doanh nghiệp bạn.</p>
+                        <div class="banner-btns">
+                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
+                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');">
+                <div class="banner-overlay"></div>
+                <div class="container banner-content">
+                    <div class="banner-title">
+                        <div class="banner-sub">DỊCH VỤ HẬU MÃI TOÀN DIỆN</div>
+                        <h1>BẢO TRÌ & SỬA CHỮA <br><span>CHUYÊN NGHIỆP</span></h1>
+                        <p>Đội ngũ kỹ sư tay nghề cao trực chiến 24/7, sẵn sàng khắc phục<br>mọi sự cố hệ thống khí nén và máy bơm nhanh chóng.</p>
+                        <div class="banner-btns">
+                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
+                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-arrow arrow-left" onclick="changeSlide(-1)">&lsaquo;</div>
+            <div class="slider-arrow arrow-right" onclick="changeSlide(1)">&rsaquo;</div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="container brands-flex">
+            <a href="brands/friulair.html"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
+            <a href="brands/quincy.html"><img src="images/Logo/Logo Quincy.png" alt="Quincy"></a>
+            <a href="brands/busch.html"><img src="images/Logo/Logo Kluber.jpg" alt="Busch"></a>
+            <a href="brands/becker.html"><img src="images/Logo/logo-becker.png" alt="Becker"></a>
+            <a href="brands/elmo.html"><img src="images/Logo/Logo DVP.jpg" alt="Elmo Rietschle"></a>
+            <a href="brands/tapflo.html"><img src="images/Logo/Logo tapflo.png" alt="Tapflo"></a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats-flex">
+            <div class="stat-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" alt="Kinh nghiệm">
+                <div class="stat-text">
+                    <strong>18+</strong>
+                    <span>NĂM KINH NGHIỆM</span>
+                    <small>Từ năm 2006 đến nay</small>
+                </div>
+            </div>
+            <div class="stat-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/conference-call.png" alt="Khách hàng">
+                <div class="stat-text">
+                    <strong>1000+</strong>
+                    <span>KHÁCH HÀNG</span>
+                    <small>Tin tưởng & đồng hành</small>
+                </div>
+            </div>
+            <div class="stat-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/company.png" alt="Dự án">
+                <div class="stat-text">
+                    <strong>500+</strong>
+                    <span>DỰ ÁN ĐÃ TRIỂN KHAI</span>
+                    <small>Trên toàn quốc</small>
+                </div>
+            </div>
+            <div class="stat-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/headset.png" alt="Hỗ trợ">
+                <div class="stat-text">
+                    <strong>24/7</strong>
+                    <span>HỖ TRỢ KỸ THUẬT</span>
+                    <small>Nhanh chóng & chuyên nghiệp</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-products">
+        <div class="container">
+            <h2 class="section-title">SẢN PHẨM CHỦ LỰC</h2>
+            <div class="products-grid">
+                
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80" alt="Máy nén khí">
+                    </div>
+                    <div class="product-content">
+                        <h3>MÁY NÉN KHÍ</h3>
+                        <p>Cung cấp giải pháp khí nén toàn diện, hiệu suất cao và tiết kiệm điện năng cho nhà máy.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1537151377170-9c19a791bbea?auto=format&fit=crop&w=300&q=80" alt="Bơm chân không">
+                    </div>
+                    <div class="product-content">
+                        <h3>BƠM CHÂN KHÔNG</h3>
+                        <p>Thiết bị công nghệ Đức, đảm bảo lực hút chân không ổn định cho mọi dây chuyền sản xuất.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&q=80" alt="Bơm công nghiệp">
+                    </div>
+                    <div class="product-content">
+                        <h3>BƠM CÔNG NGHIỆP</h3>
+                        <p>Đa dạng các loại bơm màng, bơm bánh răng chịu hóa chất và hoạt động bền bỉ.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80" alt="Hệ thống khí nén">
+                    </div>
+                    <div class="product-content">
+                        <h3>HỆ THỐNG KHÍ NÉN</h3>
+                        <p>Tư vấn thiết kế, thi công đường ống và lắp đặt trọn gói hệ thống khí nén nhà xưởng.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=300&q=80" alt="Thiết bị xử lý khí">
+                    </div>
+                    <div class="product-content">
+                        <h3>THIẾT BỊ XỬ LÝ KHÍ</h3>
+                        <p>Máy sấy khí, bộ lọc tinh giúp loại bỏ 99.9% nước và tạp chất, bảo vệ máy móc cốt lõi.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="img-backdrop">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=300&q=80" alt="Tủ điện tự động hóa">
+                    </div>
+                    <div class="product-content">
+                        <h3>TỦ ĐIỆN & TỰ ĐỘNG HÓA</h3>
+                        <p>Thiết kế và lập trình hệ thống tủ điện điều khiển PLC trung tâm tự động, an toàn tuyệt đối.</p>
+                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container relative-header">
+            <h2 class="section-title">DỰ ÁN TIÊU BIỂU</h2>
+            <a href="du-an.html" class="btn-view-all">XEM TẤT CẢ DỰ ÁN &rarr;</a>
+            
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Nhà máy thực phẩm"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY THỰC PHẨM</h3>
+                        <p>Hệ thống khí nén Atlas Copco</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1503389152951-9c3a9c8e0f88?auto=format&fit=crop&w=600&q=80" alt="Nhà máy dệt may"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY DỆT MAY</h3>
+                        <p>Hệ thống khí nén trung tâm</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Nhà máy điện tử"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY ĐIỆN TỬ</h3>
+                        <p>Hệ thống chân không Busch</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Nhà máy nhựa"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY NHỰA</h3>
+                        <p>Hệ thống bơm & đường ống</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=600&q=80" alt="Nhà máy hóa chất"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY HÓA CHẤT</h3>
+                        <p>Hệ thống khí nén & xử lý khí</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80" alt="Nhà máy cơ khí"></div>
+                    <div class="project-info">
+                        <h3>NHÀ MÁY CƠ KHÍ</h3>
+                        <p>Hệ thống tự động hóa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">TẠI SAO CHỌN APE?</h2>
+            <div class="why-flex">
+                <div class="why-card">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </div>
+                    <h3>GIẢI PHÁP TOÀN DIỆN</h3>
+                    <p>Khảo sát, tư vấn giải pháp kỹ thuật tối ưu, cung cấp thiết bị đồng bộ và thi công lắp đặt trọn gói.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                    </div>
+                    <h3>SẢN PHẨM CHẤT LƯỢNG</h3>
+                    <p>Phân phối chính hãng các thương hiệu thiết bị khí nén và bơm công nghiệp hàng đầu thế giới.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>ĐỘI NGŨ CHUYÊN NGHIỆP</h3>
+                    <p>Đội ngũ kỹ sư dày dặn kinh nghiệm chuyên môn, am hiểu hệ thống, hỗ trợ kỹ thuật tận tâm.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                    </div>
+                    <h3>HẬU MÃI CHU ĐÁO</h3>
+                    <p>Cam kết bảo trì định kỳ bảo dưỡng định kỳ, phản hồi nhanh chóng và hỗ trợ xử lý sự cố 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-col footer-about">
+                <img src="images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
+                <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
+                <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp. Cam kết thiết bị chất lượng, tiết kiệm năng lượng và dịch vụ chuẩn quốc tế.</p>
+                <div class="social-links">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/youtube-play.png" alt="YouTube"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            
+            <div class="footer-col footer-links">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+                    <li><a href="san-pham.html">Sản phẩm chủ lực</a></li>
+                    <li><a href="dich-vu.html">Dịch vụ kỹ thuật</a></li>
+                    <li><a href="du-an.html">Dự án tiêu biểu</a></li>
+                    <li><a href="thuong-hieu.html">Thương hiệu đối tác</a></li>
+                    <li><a href="tin-tuc.html">Tin tức chuyên ngành</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
+                        <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
+                        <span><strong>0901 819 903</strong> (Hỗ trợ 24/7)</span>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
+                        <span>support@apeco.vn</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col footer-map-block">
+                <h4>BẢN ĐỒ VỊ TRÍ</h4>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.4334335534833!2d106.840742!3d10.929841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174def049909cdb%3A0x86ce055a40a6b579!2zS0NOIEJpw6puIEjDsmEgMg!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container copyright-flex">
+                <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
+                <span>Thiết kế và phát triển bởi Trần Hữu Cảnh</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        setInterval(function() {
+            changeSlide(1);
+        }, 5000);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+    </script>
+</body>
+</html>
