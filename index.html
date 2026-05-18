@@ -14,7 +14,16 @@
                     <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
                 </a>
             </div>
-            <nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-overlay" id="navOverlay"></div>
+
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html" class="active">TRANG CHỦ</a></li>
                     <li><a href="gioi-thieu.html">GIỚI THIỆU</a></li>
@@ -99,9 +108,9 @@
         <div class="container brands-flex">
             <a href="brands/friulair.html"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
             <a href="brands/quincy.html"><img src="images/Logo/Logo Quincy.png" alt="Quincy"></a>
-            <a href="brands/busch.html"><img src="images/Logo/Logo Kluber.jpg" alt="Busch"></a>
+            <a href="brands/busch.html"><img src="images/Logo/Logo Kluber.jpg" alt="Kluber"></a>
             <a href="brands/becker.html"><img src="images/Logo/logo-becker.png" alt="Becker"></a>
-            <a href="brands/elmo.html"><img src="images/Logo/Logo DVP.jpg" alt="Elmo Rietschle"></a>
+            <a href="brands/elmo.html"><img src="images/Logo/Logo DVP.jpg" alt="DVP"></a>
             <a href="brands/tapflo.html"><img src="images/Logo/Logo tapflo.png" alt="Tapflo"></a>
         </div>
     </section>
@@ -176,7 +185,7 @@
                     </div>
                     <div class="product-content">
                         <h3>BƠM MÀNG KHÍ NÉN TAPFLO</h3>
-                        <p>Hiệu xuất cao - Vận hành ổn định - Độ bền vượt trội.</p>
+                        <p>Hiệu xuất cao - Vận hành ổn định - Độ bền vượt trội cho mọi hệ thống truyền chất lỏng.</p>
                         <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
                     </div>
                 </div>
@@ -187,7 +196,7 @@
                     </div>
                     <div class="product-content">
                         <h3>MÁY SẤY KHÍ FRIULAIR</h3>
-                        <p>Máy sấy khí, bộ lọc tinh giúp loại bỏ 99.9% nước và tạp chất, bảo vệ máy móc cốt lõi.</p>
+                        <p>Máy sấy khí cao cấp tách lọc tạp chất và loại bỏ 99.9% nước, bảo vệ máy móc cốt lõi.</p>
                         <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
                     </div>
                 </div>
@@ -198,7 +207,7 @@
                     </div>
                     <div class="product-content">
                         <h3>DẦU MỠ NHỜN KLUBER</h3>
-                        <p>Dầu bôi trơn chất lượng cao, giúp giảm ma sát và tăng tuổi thọ thiết bị.</p>
+                        <p>Dầu mỡ bôi trơn chuyên dụng chất lượng cao, giảm ma sát và tối ưu hóa tuổi thọ thiết bị.</p>
                         <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
                     </div>
                 </div>
@@ -208,8 +217,8 @@
                         <img src="https://www.dvppumps.com/wp-content/uploads/2019/12/CC-80.png" alt="Tủ điện tự động hóa">
                     </div>
                     <div class="product-content">
-                        <h3>BƠM  CHÂN KHÔNG DVP</h3>
-                        <p>Thiết bị công nghệ Ý, đảm bảo lực hút chân không ổn định cho mọi dây chuyền sản xuất.</p>
+                        <h3>BƠM CHÂN KHÔNG DVP</h3>
+                        <p>Thiết bị bơm công nghệ Ý tân tiến, vận hành bền bỉ đảm bảo áp suất ổn định cho nhà xưởng.</p>
                         <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
                     </div>
                 </div>
@@ -228,42 +237,42 @@
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy thực phẩm.png" alt="Nhà máy thực phẩm"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY THỰC PHẨM</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống thiết bị khí nén & bơm màng</p>
                     </div>
                 </div>
                 <div class="project-item">
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy gỗ.png" alt="Nhà máy dệt may"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY GỖ</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống xử lý hút chân không trung tâm</p>
                     </div>
                 </div>
                 <div class="project-item">
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy sơn.png" alt="Nhà máy điện tử"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY SƠN</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống cung ứng bơm truyền hóa chất</p>
                     </div>
                 </div>
                 <div class="project-item">
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy thuốc lá.png" alt="Nhà máy nhựa"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY THUỐC LÁ</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống khí nén trục vít áp suất cao</p>
                     </div>
                 </div>
                 <div class="project-item">
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy sản xuất sợi.png" alt="Nhà máy hóa chất"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY SẢN XUẤT SỢI</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống máy sấy xử lý tách ẩm trung tâm</p>
                     </div>
                 </div>
                 <div class="project-item">
                     <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy xử lý nước thải.png" alt="Nhà máy cơ khí"></div>
                     <div class="project-info">
                         <h3>NHÀ MÁY XỬ LÝ NƯỚC THẢI</h3>
-                        <p>Hệ thống </p>
+                        <p>Hệ thống bơm định lượng tự động hóa</p>
                     </div>
                 </div>
             </div>
@@ -366,6 +375,7 @@
     </footer>
 
     <script>
+        // JS CHO BANNER SLIDER
         let slideIndex = 1;
         showSlides(slideIndex);
 
@@ -396,6 +406,26 @@
             slides[slideIndex-1].classList.add("active");  
             dots[slideIndex-1].classList.add("active");
         }
+
+        // JS CHO MENU HAMBURGER MOBILE
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            
+            if (mainNav.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
     </script>
 </body>
 </html>
