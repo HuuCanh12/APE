@@ -515,80 +515,47 @@
         .btn-white-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
 
         /* ===== FOOTER ===== */
-        .main-footer { background: #001530; padding: 72px 0 0; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .footer-logo-img { height: 48px; width: auto; object-fit: contain; margin-bottom: 16px; filter: none !important; background: none !important; }
-        .footer-company-name { font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
-        .footer-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.75; margin-bottom: 22px; }
-        .footer-socials { display: flex; gap: 10px; }
-        .f-social { width: 34px; height: 34px; border-radius: 6px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 13px; transition: var(--transition); }
-        .f-social:hover { background: var(--gold); color: var(--navy); }
-
-        .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.45); transition: var(--transition); display: flex; align-items: center; gap: 8px; }
-        .footer-col ul a::before { content: '›'; color: var(--gold); font-size: 16px; line-height: 1; }
-        .footer-col ul a:hover { color: var(--gold); padding-left: 4px; }
-
-        .f-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-        .f-contact-icon { width: 30px; height: 30px; border-radius: 6px; background: rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-        .f-contact-icon i { font-size: 12px; color: var(--gold); }
-        .f-contact-text { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
-        .f-contact-text strong { display: block; color: var(--white); font-size: 14px; }
-
-        .map-wrap iframe { border-radius: 6px; overflow: hidden; }
-
-        .copyright-bar { padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-        .copyright-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-        .copyright-flex span { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+        .main-footer { background: #ffffff; color: #475569; padding: 50px 0 0 0; font-size: 13px; border-top: 1px solid #e2e8f0; }
+        .main-footer .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+        .main-footer .footer-col { flex: 1; }
+        .main-footer .footer-about { flex: 1.4; }
+        .main-footer .footer-contact { flex: 1.2; }
+        .main-footer .footer-map-block { flex: 1.2; }
+        .main-footer .footer-logo-img { height: 45px; display: block; margin-bottom: 15px; }
+        .footer-company-name { color: #003366; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+        .main-footer .footer-desc { line-height: 1.6; margin-bottom: 20px; text-align: justify; color: #555; }
+        .main-footer h4 { color: #003366; margin: 0 0 20px 0; font-size: 14px; font-weight: 800; position: relative; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; }
+        .main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 35px; height: 2px; background: #0072bc; }
+        .main-footer .contact-list { list-style: none; padding: 0;}
+        .main-footer .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #555; }
+        .contact-icon { margin-top: 3px; flex-shrink: 0; }
+        .main-footer .contact-list span strong { color: #0072bc; font-size: 14px;}
+        .main-footer .footer-links ul { list-style: none; padding: 0;}
+        .main-footer .footer-links li { margin-bottom: 10px; }
+        .main-footer .footer-links a { color: #555; text-decoration: none; transition: all 0.2s ease; display: inline-flex; align-items: center; }
+        .main-footer .footer-links a::before { content: '›'; font-size: 16px; margin-right: 8px; color: #cbd5e1; transition: 0.2s; }
+        .main-footer .footer-links a:hover { color: #0072bc; transform: translateX(5px); }
+        .main-footer .footer-links a:hover::before { color: #0072bc; }
+        .social-links { display: flex; gap: 10px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: 0.3s; color: #003366; text-decoration: none;}
+        .social-links a:hover { background: #0072bc; color: #fff; transform: translateY(-3px); }
+        .social-links a:hover img { filter: brightness(0) invert(1); }
+        .main-footer .map-wrapper { width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .main-footer .copyright { background: #002244; color: #cbd5e1; padding: 15px 0; font-size: 12.5px; }
+        .main-footer .copyright-flex { display: flex; justify-content: space-between; align-items: center; }
 
         /* =========================================
-   THƯƠNG HIỆU PHÂN PHỐI DẠNG NGANG (TRANG CHỦ)
-========================================= */
-.brands { background: #fff; padding: 35px 0; border-bottom: 1px solid #eee; }
-.brands-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.brands-flex a { display: flex; justify-content: center; align-items: center; flex: 1; position: relative; padding: 5px 15px; }
-.brands-flex a:not(:last-child)::after {
-    content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 40px; width: 1px; background-color: #e5e7eb; 
-}
-.brands-flex img { height: 80px; max-width: 155px; object-fit: contain; transition: 0.3s; }
-.brands-flex img:hover { transform: scale(1.08); }
+           THƯƠNG HIỆU PHÂN PHỐI DẠNG NGANG (TRANG CHỦ)
+        ========================================= */
+        .brands { background: #fff; padding: 35px 0; border-bottom: 1px solid #eee; }
+        .brands-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .brands-flex a { display: flex; justify-content: center; align-items: center; flex: 1; position: relative; padding: 5px 15px; }
+        .brands-flex a:not(:last-child)::after {
+            content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 40px; width: 1px; background-color: #e5e7eb; 
+        }
+        .brands-flex img { height: 80px; max-width: 155px; object-fit: contain; transition: 0.3s; }
+        .brands-flex img:hover { transform: scale(1.08); }
 
-/* =========================================
-
-/* =========================================
-   CHÂN TRANG (FOOTER)
-========================================= */
-.main-footer { background: #ffffff; color: #475569; padding: 50px 0 0 0; font-size: 13px; border-top: 1px solid #e2e8f0; }
-.main-footer .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
-.main-footer .footer-col { flex: 1; }
-.main-footer .footer-about { flex: 1.4; }
-.main-footer .footer-contact { flex: 1.2; }
-.main-footer .footer-map-block { flex: 1.2; }
-.main-footer .footer-logo-img { height: 45px; display: block; margin-bottom: 15px; }
-.footer-company-name { color: #003366; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
-.main-footer .footer-desc { line-height: 1.6; margin-bottom: 20px; text-align: justify; color: #555; }
-.main-footer h4 { color: #003366; margin: 0 0 20px 0; font-size: 14px; font-weight: 800; position: relative; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; }
-.main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 35px; height: 2px; background: #0072bc; }
-.main-footer .contact-list { list-style: none; padding: 0;}
-.main-footer .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #555; }
-.contact-icon { margin-top: 3px; flex-shrink: 0; }
-.main-footer .contact-list span strong { color: #0072bc; font-size: 14px;}
-.main-footer .footer-links ul { list-style: none; padding: 0;}
-.main-footer .footer-links li { margin-bottom: 10px; }
-.main-footer .footer-links a { color: #555; text-decoration: none; transition: all 0.2s ease; display: inline-flex; align-items: center; }
-.main-footer .footer-links a::before { content: '›'; font-size: 16px; margin-right: 8px; color: #cbd5e1; transition: 0.2s; }
-.main-footer .footer-links a:hover { color: #0072bc; transform: translateX(5px); }
-.main-footer .footer-links a:hover::before { color: #0072bc; }
-.social-links { display: flex; gap: 10px; }
-.social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: 0.3s; color: #003366; text-decoration: none;}
-.social-links a:hover { background: #0072bc; color: #fff; transform: translateY(-3px); }
-.social-links a:hover img { filter: brightness(0) invert(1); }
-.main-footer .map-wrapper { width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
-.main-footer .copyright { background: #002244; color: #cbd5e1; padding: 15px 0; font-size: 12.5px; }
-.main-footer .copyright-flex { display: flex; justify-content: space-between; align-items: center; }
-
-/* =========================================
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
@@ -596,7 +563,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* =========================================
+           RESPONSIVE (XỬ LÝ ĐÁP ỨNG THIẾT BỊ DI ĐỘNG)
+        ========================================= */
         @media (max-width: 1024px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -631,25 +600,81 @@
             .about-badge { bottom: -12px; right: -8px; }
             .cta-inner { flex-direction: column; text-align: center; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            
+            /* FIX: CĂN CHỈNH LẠI BANNER CHO IPAD/MOBILE LỚN */
             .slider-container { min-height: 480px; }
-            .slide-title { font-size: 38px; }
+            .slide-content { padding: 40px 0; }
+            .slide-title { font-size: 42px !important; line-height: 1.15; margin-bottom: 15px; }
+            .slide-desc { font-size: 15px; max-width: 100%; margin-bottom: 25px; }
+            
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .stat-item { padding: 20px; }
+
+            /* Fix stats-bar grid line overlap on mobile */
+            .stats-bar .stats-grid::before { background: none; }
+        }
+
+        @media (max-width: 600px) {
+            /* FIX: CHỮ BANNER ÉP XUỐNG DÒNG VÀ BÓP NHỎ ĐỂ KHÔNG BỊ TRÀN */
+            .slider-container { min-height: 420px; }
+            .slide-content { padding: 20px 0; }
+            .slide-title { font-size: 32px !important; word-break: break-word; line-height: 1.2; margin-bottom: 12px; }
+            .slide-inner { max-width: 100%; padding: 0 10px; }
+            .slide-desc { font-size: 14px; max-width: 100%; margin-bottom: 20px; line-height: 1.5; }
+            .slide-tag { font-size: 11px; padding: 6px 14px; margin-bottom: 15px; }
+            .slide-btns { gap: 10px; }
+            .btn-primary, .btn-ghost { padding: 10px 18px; font-size: 12px; }
         }
 
         @media (max-width: 480px) {
             .products-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            
+            /* FIX FOOTER CĂN TRÁI TRÊN ĐIỆN THOẠI NHƯ HÌNH MẪU */
+            .main-footer { padding: 35px 0 0 0; font-size: 13px; }
+            .main-footer .footer-flex { 
+                flex-direction: column; gap: 28px; margin-bottom: 24px; 
+                align-items: flex-start; /* Căn trái toàn bộ phần tử */
+            }
+            .main-footer .footer-col { 
+                width: 100%; max-width: 100%; margin: 0; 
+                text-align: left; /* Căn trái phần chữ */
+            }
+            .main-footer .footer-logo-img { 
+                margin-left: 0; margin-right: auto; height: 42px; margin-bottom: 12px; 
+            }
+            .footer-company-name { font-size: 14px; }
+            .main-footer .footer-desc { font-size: 13px; margin-bottom: 15px; text-align: left; }
+            .main-footer h4 { font-size: 14px; margin-bottom: 15px; padding-bottom: 8px; }
+            .main-footer h4::after { left: 0; transform: none; } /* Thanh gạch màu xanh dồn sang trái */
+            .main-footer .footer-links ul { padding-left: 0; }
+            .main-footer .footer-links li { margin-bottom: 10px; }
+            .main-footer .footer-links a { font-size: 13px; }
+            .social-links { justify-content: flex-start; gap: 12px; } /* Mạng xã hội lề trái */
+            .main-footer .map-wrapper { height: 180px; }
+            
+            /* Dải bản quyền dưới cùng vẫn giữ căn giữa cho cân đối */
+            .main-footer .copyright { font-size: 11px; padding: 15px 0; }
+            .main-footer .copyright-flex { flex-direction: column; gap: 6px; text-align: center; }
+            
+            .hotline-block { font-size: 15px; padding: 8px 10px; }
+            .hotline-number { font-size: 18px !important; }
+            
+            /* Bóp nhỏ thêm Banner cho màn hình điện thoại siêu nhỏ */
+            .slider-container { min-height: 380px; }
+            .slide-title { font-size: 28px !important; }
+            .slide-btns { flex-direction: column; width: 100%; }
+            .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+            .slider-arrow { width: 36px; height: 36px; font-size: 14px; }
+            .arrow-left { left: 10px; }
+            .arrow-right { right: 10px; }
         }
     </style>
 </head>
 <body>
 
-   
-
-    <!-- HEADER -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
@@ -693,7 +718,6 @@
         </div>
     </header>
 
-    <!-- HERO BANNER SLIDER -->
     <section class="hero-banner">
         <div class="slider-container">
 
@@ -761,7 +785,6 @@
         </div>
     </section>
 
-    <!-- BRANDS STRIP -->
     <section class="brands">
         <div class="container brands-flex">
             <a href="brands/friulair.html"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
@@ -773,7 +796,6 @@
         </div>
     </section>
 
-    <!-- STATS -->
     <section class="stats-bar">
         <div class="container">
             <div class="stats-grid">
@@ -813,7 +835,6 @@
         </div>
     </section>
 
-    <!-- ABOUT TEASER -->
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
@@ -868,7 +889,6 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
     <section class="products-section">
         <div class="container">
             <div class="section-header">
@@ -985,7 +1005,6 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services-section">
         <div class="container">
             <div class="section-label">Hỗ trợ kỹ thuật chuyên sâu</div>
@@ -1016,7 +1035,6 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="projects-section">
         <div class="container">
             <div class="projects-header">
@@ -1080,7 +1098,6 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE -->
     <section class="why-section">
         <div class="container">
             <div class="section-header" style="margin-bottom: 48px;">
@@ -1113,7 +1130,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
         <div class="container cta-inner">
             <div class="cta-text">
@@ -1127,21 +1143,18 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="main-footer">
         <div class="container footer-flex">
             <div class="footer-col footer-about">
-                
                 <img src="images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
                 <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
                 <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp. Cam kết thiết bị chất lượng, tiết kiệm năng lượng và dịch vụ chuẩn quốc tế.</p>
                 <div class="social-links">
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/facebook-new.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/youtube-play.png" alt="YouTube"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/0072bc/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/0072bc/youtube-play.png" alt="YouTube"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/0072bc/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-            
             <div class="footer-col footer-links">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
@@ -1150,28 +1163,26 @@
                     <li><a href="dich-vu.html">Dịch vụ kỹ thuật</a></li>
                     <li><a href="du-an.html">Dự án tiêu biểu</a></li>
                     <li><a href="thuong-hieu.html">Thương hiệu đối tác</a></li>
-                        <li><a href="khach-hang.html">Khách hàng</a></li>
+                    <li><a href="khach-hang.html">Khách hàng</a></li>
                 </ul>
             </div>
-
             <div class="footer-col footer-contact">
                 <h4>THÔNG TIN LIÊN HỆ</h4>
                 <ul class="contact-list">
                     <li>
-                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/24/0072bc/marker.png" alt="Map"></div>
                         <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
                     </li>
                     <li>
-                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/24/0072bc/phone.png" alt="Phone"></div>
                         <span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span>
                     </li>
                     <li>
-                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/24/0072bc/new-post.png" alt="Email"></div>
                         <span>info@apeco.vn</span>
                     </li>
                 </ul>
             </div>
-            
             <div class="footer-col footer-map-block">
                 <h4>BẢN ĐỒ VỊ TRÍ</h4>
                 <div class="map-wrapper">
@@ -1179,7 +1190,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
             <div class="container copyright-flex">
                 <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
