@@ -2,20 +2,381 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Dự án | APE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự án tiêu biểu - APE Air & Pump Solutions</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- ...existing code... -->
-    <h1 style="text-align:center;margin:40px 0 20px 0;">Dự án tiêu biểu</h1>
-    <div class="container projects-grid">
-        <div class="project-item"><img src="images/du-an-thuc-pham.jpg"><p>Nhà máy thực phẩm</p></div>
-        <div class="project-item"><img src="images/du-an-det-may.jpg"><p>Nhà máy dệt may</p></div>
-        <div class="project-item"><img src="images/du-an-dien-tu.jpg"><p>Nhà máy điện tử</p></div>
-        <div class="project-item"><img src="images/du-an-nhua.jpg"><p>Nhà máy nhựa</p></div>
-        <div class="project-item"><img src="images/du-an-hoa-chat.jpg"><p>Nhà máy hóa chất</p></div>
-        <div class="project-item"><img src="images/du-an-co-khi.jpg"><p>Nhà máy cơ khí</p></div>
-    </div>
-    <!-- ...existing code... -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-overlay" id="navOverlay"></div>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="san-pham.html">SẢN PHẨM</a></li>
+                    <li><a href="du-an.html" class="active">DỰ ÁN</a></li>
+                    <li><a href="thuong-hieu.html">THƯƠNG HIỆU</a></li>
+                    <li><a href="dich-vu.html">DỊCH VỤ</a></li>
+                    <li><a href="khach-hang.html">KHÁCH HÀNG</a></li>
+                    <li><a href="lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <span class="hotline-block">
+                    <span class="hotline-icon">
+                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
+                    </span>
+                    <span class="hotline-label">HOTLINE</span>
+                    <strong class="hotline-number">0938 756 577</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero contact-hero">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <span class="hero-subtitle">HỒ SƠ NĂNG LỰC</span>
+                <h1 class="hero-title">DỰ ÁN <br><span>TIÊU BIỂU</span></h1>
+                <p class="hero-desc">Hơn 500+ hệ thống khí nén và máy bơm công nghiệp quy mô lớn đã được đội ngũ chuyên gia APE triển khai thành công cho các tập đoàn trên toàn quốc.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <div class="container">
+            
+            <div class="section-header text-center" style="margin-bottom: 40px;">
+                <h2 class="section-title">DANH SÁCH <span>DỰ ÁN TRIỂN KHAI</span></h2>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tất cả dự án</button>
+                <button class="filter-btn" data-filter="thuc-pham">Thực phẩm & Đồ uống</button>
+                <button class="filter-btn" data-filter="hoa-chat">Hóa chất & Nước thải</button>
+                <button class="filter-btn" data-filter="co-khi-dien-tu">Cơ khí & Điện tử</button>
+                <button class="filter-btn" data-filter="det-may-go">Dệt may, Gỗ & Khác</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                
+                <div class="portfolio-item thuc-pham">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy thực phẩm.png" alt="Nhà máy thực phẩm"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Khí nén & Bơm màng</span>
+                        <h3 class="portfolio-title">Nhà Máy Thực Phẩm</h3>
+                        <p class="portfolio-desc">Cung cấp và lắp đặt hệ thống thiết bị khí nén & bơm màng đồng bộ theo tiêu chuẩn an toàn.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item det-may-go">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy gỗ.png" alt="Nhà máy gỗ"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Hút chân không trung tâm</span>
+                        <h3 class="portfolio-title">Nhà Máy Gỗ</h3>
+                        <p class="portfolio-desc">Thiết kế và thi công hệ thống xử lý hút chân không trung tâm công suất lớn cho máy CNC.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hoa-chat">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy sơn.png" alt="Nhà máy sơn"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Bơm hóa chất Tapflo</span>
+                        <h3 class="portfolio-title">Nhà Máy Sơn</h3>
+                        <p class="portfolio-desc">Lắp đặt hệ thống cung ứng bơm truyền hóa chất màng khí nén chống ăn mòn hiệu quả cao.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item det-may-go">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy thuốc lá.png" alt="Nhà máy thuốc lá"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Khí nén áp suất cao</span>
+                        <h3 class="portfolio-title">Nhà Máy Thuốc Lá</h3>
+                        <p class="portfolio-desc">Triển khai cụm máy nén khí trục vít Quincy áp suất cao, đáp ứng hoạt động liên tục 24/7.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item det-may-go">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy sản xuất sợi.png" alt="Nhà máy sản xuất sợi"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Máy sấy tách ẩm Friulair</span>
+                        <h3 class="portfolio-title">Nhà Máy Sản Xuất Sợi</h3>
+                        <p class="portfolio-desc">Hệ thống máy sấy xử lý tách ẩm trung tâm, loại bỏ nước tuyệt đối bảo vệ chất lượng sợi dệt.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hoa-chat">
+                    <div class="portfolio-img"><img src="images/Dự án tiêu biểu/Nhà máy xử lý nước thải.png" alt="Nhà máy xử lý nước thải"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Bơm định lượng</span>
+                        <h3 class="portfolio-title">Nhà Máy Xử Lý Nước Thải</h3>
+                        <p class="portfolio-desc">Hệ thống bơm định lượng tự động hóa, kiểm soát chính xác lưu lượng hóa chất xử lý nước.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item thuc-pham">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà Máy Bia"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Bơm vi sinh chuẩn FDA</span>
+                        <h3 class="portfolio-title">Nhà Máy Bia Heineken</h3>
+                        <p class="portfolio-desc">Trang bị hệ thống bơm màng tiêu chuẩn vi sinh thực phẩm quốc tế cho dây chuyền chiết rót.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item co-khi-dien-tu">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy Cơ khí"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Trạm Khí Nén Quincy 100HP</span>
+                        <h3 class="portfolio-title">Nhà Máy Thép Hòa Phát</h3>
+                        <p class="portfolio-desc">Cung cấp và bảo trì cụm 3 máy nén khí Quincy công suất 100HP chạy luân phiên liên tục.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item co-khi-dien-tu">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy Điện tử"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Khí Nén Sạch Oil-Free</span>
+                        <h3 class="portfolio-title">Nhà Máy Samsung Bắc Ninh</h3>
+                        <p class="portfolio-desc">Giải pháp máy nén khí không dầu Oil-Free đảm bảo độ sạch khí tuyệt đối 100% cho linh kiện.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item thuc-pham">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy Sữa"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Xử lý khí tinh tinh khiết</span>
+                        <h3 class="portfolio-title">Nhà Máy Sữa Vinamilk</h3>
+                        <p class="portfolio-desc">Lắp đặt hệ thống máy sấy và bộ siêu lọc khí nén vô trùng dùng trong công đoạn đóng gói sữa.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hoa-chat">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy Phân bón"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Máy Thổi Khí Becker</span>
+                        <h3 class="portfolio-title">Nhà Máy Phân Bón Đạm Cà Mau</h3>
+                        <p class="portfolio-desc">Tư vấn thiết kế và thi công hệ thống máy thổi sục khí công suất lớn hoạt động 24/7.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item det-may-go">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy Dệt nhuộm"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Hút Chân Không DVP</span>
+                        <h3 class="portfolio-title">Nhà Máy Nhuộm Vải Thành Công</h3>
+                        <p class="portfolio-desc">Thay thế và nâng cấp toàn bộ hệ thống bơm hút chân không trong dây chuyền nhuộm màu.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item co-khi-dien-tu">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Lắp ráp ô tô"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Hệ Thống Đường Ống Khí</span>
+                        <h3 class="portfolio-title">Nhà Máy Lắp Ráp Ô Tô THACO</h3>
+                        <p class="portfolio-desc">Thiết kế mạng lưới đường ống dẫn khí nén nhôm cao cấp cung cấp cho các trạm robot lắp ráp.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hoa-chat">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Sản xuất dược phẩm"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Bơm hóa chất Domesco</span>
+                        <h3 class="portfolio-title">Nhà Máy Dược Phẩm Domesco</h3>
+                        <p class="portfolio-desc">Bơm màng chuẩn phòng sạch, đáp ứng tiêu chuẩn khắt khe nhất của ngành y tế - dược phẩm.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item thuc-pham">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Đóng gói cà phê"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Máy Nén Trục Vít Biến Tần</span>
+                        <h3 class="portfolio-title">Nhà Máy Cà Phê Trung Nguyên</h3>
+                        <p class="portfolio-desc">Tiết kiệm 35% điện năng tiêu thụ nhờ cụm máy nén khí biến tần công nghệ cao từ Quincy.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item co-khi-dien-tu">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Sản xuất cáp điện"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Giải Nhiệt Bằng Nước</span>
+                        <h3 class="portfolio-title">Cáp Điện Thịnh Phát</h3>
+                        <p class="portfolio-desc">Cung cấp máy nén khí giải nhiệt bằng nước, phù hợp cho môi trường xưởng nhiệt độ cực cao.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item det-may-go">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Bao bì giấy"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Máy Thổi Khí Becker</span>
+                        <h3 class="portfolio-title">Nhà Máy Bao Bì Liksin</h3>
+                        <p class="portfolio-desc">Hệ thống máy thổi khí, hút chân không phục vụ máy in ấn bao bì tốc độ cao.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item hoa-chat">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Xử lý hóa chất"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Sửa Chữa Trọn Gói</span>
+                        <h3 class="portfolio-title">Hóa Chất Cơ Bản Miền Nam</h3>
+                        <p class="portfolio-desc">Ký hợp đồng bảo trì, đại tu toàn bộ cụm bơm màng, máy nén khí hàng năm cho nhà máy.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item co-khi-dien-tu">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Nhà máy xi măng"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Hút bụi công nghiệp</span>
+                        <h3 class="portfolio-title">Nhà Máy Xi Măng INSEE</h3>
+                        <p class="portfolio-desc">Giải pháp bơm chân không hút bụi công suất siêu lớn, đảm bảo môi trường sản xuất an toàn.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item thuc-pham">
+                    <div class="portfolio-img"><img src="images/Banner/1.jpg" alt="Sản xuất bánh kẹo"></div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-cat">Khí nén thực phẩm</span>
+                        <h3 class="portfolio-title">Nhà Máy Bánh Kẹo Mondelez</h3>
+                        <p class="portfolio-desc">Cung cấp bộ lọc Solberg và dầu máy thực phẩm Kluber chuyên dụng không chứa độc tố.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination" style="margin-top: 50px;">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-col footer-about">
+                <img src="images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
+                <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
+                <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp. Cam kết thiết bị chất lượng, tiết kiệm năng lượng và dịch vụ chuẩn quốc tế.</p>
+                <div class="social-links">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/youtube-play.png" alt="YouTube"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            
+            <div class="footer-col footer-links">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+                    <li><a href="san-pham.html">Sản phẩm chủ lực</a></li>
+                    <li><a href="dich-vu.html">Dịch vụ kỹ thuật</a></li>
+                    <li><a href="du-an.html">Dự án tiêu biểu</a></li>
+                    <li><a href="thuong-hieu.html">Thương hiệu đối tác</a></li>
+                    <li><a href="khach-hang.html">Khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
+                        <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
+                        <span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
+                        <span>info@apeco.vn</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col footer-map-block">
+                <h4>BẢN ĐỒ VỊ TRÍ</h4>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container copyright-flex">
+                <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
+                <span>Thiết kế và phát triển bởi APE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Xử lý bộ lọc dự án (Filter)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Đổi trạng thái active
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    // Cần reset lại transition để JS chạy mượt
+                    item.style.transition = 'all 0.4s ease';
+
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400); // 400ms bằng với thời gian transition
+                    }
+                });
+            });
+        });
+
+        // Xử lý Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>
