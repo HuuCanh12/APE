@@ -3,10 +3,653 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APE - Air & Pump Solutions</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>APE - Air & Pump Solutions | Giải Pháp Khí Nén & Bơm Công Nghiệp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <style>
+        /* ===== DESIGN TOKENS ===== */
+        :root {
+            --navy: #002147;
+            --navy-mid: #003366;
+            --navy-light: #1a4480;
+            --gold: #C9A84C;
+            --gold-light: #E8C97A;
+            --gold-pale: #FDF3DC;
+            --white: #FFFFFF;
+            --off-white: #F8F9FC;
+            --gray-100: #F0F3F8;
+            --gray-200: #E2E8F0;
+            --gray-500: #8898AA;
+            --gray-700: #4A5568;
+            --text-dark: #1A2B4A;
+            --shadow-sm: 0 2px 12px rgba(0,33,71,0.08);
+            --shadow-md: 0 8px 32px rgba(0,33,71,0.14);
+            --shadow-lg: 0 20px 60px rgba(0,33,71,0.18);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+        ul { list-style: none; }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== UTILITY ===== */
+        .section-label {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold);
+        }
+        .section-label::before {
+            content: ''; width: 28px; height: 2px; background: var(--gold); flex-shrink: 0;
+        }
+        .section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(28px, 4vw, 42px); font-weight: 800;
+            color: var(--navy); line-height: 1.1; text-transform: uppercase;
+        }
+        .section-title span { color: var(--gold); }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            background: var(--navy);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .top-bar-flex {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .top-bar-left {
+            display: flex; align-items: center; gap: 24px;
+        }
+        .top-bar-item {
+            display: flex; align-items: center; gap: 7px;
+            font-size: 12.5px; color: rgba(255,255,255,0.75); font-weight: 400;
+        }
+        .top-bar-item i { color: var(--gold); font-size: 11px; }
+        .top-bar-right {
+            display: flex; align-items: center; gap: 12px;
+        }
+        .social-icon {
+            width: 26px; height: 26px; border-radius: 50%;
+            background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.7); font-size: 11px; transition: var(--transition);
+        }
+        .social-icon:hover { background: var(--gold); color: var(--navy); transform: translateY(-1px); }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .header-flex {
+            display: flex; align-items: center; justify-content: space-between;
+            min-height: 80px; gap: 20px;
+        }
+        .logo { flex-shrink: 0; }
+        .logo-img { height: 52px; width: auto; object-fit: contain; }
+
+        nav ul { display: flex; align-items: center; gap: 4px; }
+        nav a {
+            font-size: 13px; font-weight: 700; color: var(--gray-700);
+            padding: 8px 12px; border-radius: 4px;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition); position: relative;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 4px; left: 12px; right: 12px;
+            height: 2px; background: var(--gold); transform: scaleX(0);
+            transition: transform 0.25s ease; border-radius: 2px;
+        }
+        nav a:hover, nav a.active { color: var(--navy); }
+        nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+
+        .hotline-block {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--navy); border-radius: 50px;
+            padding: 10px 22px 10px 16px;
+            box-shadow: 0 4px 16px rgba(0,33,71,0.25);
+            transition: var(--transition); cursor: pointer; white-space: nowrap;
+        }
+        .hotline-block:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,33,71,0.3); }
+        .hotline-icon-wrap {
+            width: 32px; height: 32px; border-radius: 50%; background: var(--gold);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .hotline-icon-wrap i { font-size: 14px; color: var(--navy); }
+        .hotline-texts { display: flex; flex-direction: column; }
+        .hotline-label { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+        .hotline-number { font-size: 16px; font-weight: 800; color: var(--white); letter-spacing: 0.3px; }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none; background: none; border: none; cursor: pointer;
+            flex-direction: column; gap: 5px; padding: 4px;
+        }
+        .bar { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: var(--transition); display: block; }
+        .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .nav-overlay { display: none; }
+
+        /* ===== HERO SLIDER ===== */
+        .hero-banner { position: relative; overflow: hidden; background: var(--navy); }
+        .slider-container { position: relative; min-height: 620px; }
+        .slide {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            opacity: 0; transition: opacity 0.9s ease; z-index: 0;
+            display: flex; align-items: center;
+        }
+        .slide.active { opacity: 1; z-index: 1; }
+        .slide-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(105deg, rgba(0,21,47,0.92) 0%, rgba(0,33,71,0.7) 50%, rgba(0,114,188,0.15) 100%);
+        }
+        .slide-content {
+            position: relative; z-index: 2; width: 100%;
+            padding: 80px 0;
+        }
+        .slide-inner { max-width: 680px; }
+        .slide-tag {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.4);
+            border-radius: 50px; padding: 6px 16px;
+            font-size: 12px; font-weight: 700; color: var(--gold-light);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;
+            animation: fadeInUp 0.7s ease both;
+        }
+        .slide-tag i { font-size: 10px; }
+        .slide-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(42px, 6vw, 76px); font-weight: 900;
+            color: var(--white); line-height: 1.0; text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.7s 0.1s ease both;
+        }
+        .slide-title span { color: var(--gold); display: block; }
+        .slide-desc {
+            font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.7;
+            margin-bottom: 36px; max-width: 520px;
+            animation: fadeInUp 0.7s 0.2s ease both;
+        }
+        .slide-btns {
+            display: flex; gap: 14px; flex-wrap: wrap;
+            animation: fadeInUp 0.7s 0.3s ease both;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color: var(--navy);
+            padding: 14px 30px; border-radius: 4px;
+            font-weight: 800; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition); border: 2px solid var(--gold);
+        }
+        .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: var(--white);
+            padding: 14px 30px; border-radius: 4px;
+            font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition); border: 2px solid rgba(255,255,255,0.5);
+        }
+        .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: var(--white); transform: translateY(-2px); }
+
+        /* Slide decorative element */
+        .slide-decor {
+            position: absolute; right: 0; top: 0; bottom: 0;
+            width: 40%; display: flex; align-items: center; justify-content: center;
+            z-index: 2; pointer-events: none;
+        }
+        .slide-decor-ring {
+            width: 440px; height: 440px; border-radius: 50%;
+            border: 1px solid rgba(201,168,76,0.2);
+            position: absolute;
+            animation: spinSlow 30s linear infinite;
+        }
+        .slide-decor-ring::before {
+            content: ''; position: absolute; inset: 30px; border-radius: 50%;
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+        .slide-decor-ring::after {
+            content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; border-radius: 50%; background: var(--gold); opacity: 0.8;
+        }
+        @keyframes spinSlow { to { transform: rotate(360deg); } }
+
+        /* Slider controls */
+        .slider-controls {
+            position: absolute; bottom: 32px; left: 0; right: 0;
+            z-index: 5; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4);
+            cursor: pointer; transition: var(--transition); border: none; padding: 0;
+        }
+        .dot.active { width: 28px; border-radius: 4px; background: var(--gold); }
+        .slider-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--white); font-size: 18px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); z-index: 5;
+        }
+        .slider-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+        .arrow-left { left: 24px; }
+        .arrow-right { right: 24px; }
+
+        /* ===== BRANDS STRIP ===== */
+        .brands-strip {
+            background: var(--white); padding: 28px 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+        }
+        .brands-strip::before {
+            content: ' ';
+            position: absolute; left: 50%; top: -10px; transform: translateX(-50%);
+            background: var(--white); padding: 0 16px;
+            font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gray-500);
+            white-space: nowrap;
+        }
+        .brands-flex {
+            display: flex; align-items: center; justify-content: space-around; gap: 30px; flex-wrap: wrap;
+        }
+        .brand-logo-item {
+            display: flex; align-items: center; justify-content: center;
+            padding: 8px 20px; opacity: 0.6; transition: var(--transition); cursor: pointer;
+        }
+        .brand-logo-item:hover { opacity: 1; transform: translateY(-2px); }
+        .brand-logo-item img { height: 44px; width: auto; object-fit: contain; max-width: 130px; }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar { background: var(--navy); padding: 48px 0; }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 0; position: relative;
+        }
+        .stats-grid::before {
+            content: ''; position: absolute; inset: 0;
+            background: repeating-linear-gradient(90deg, transparent, transparent calc(25% - 1px), rgba(255,255,255,0.08) calc(25% - 1px), rgba(255,255,255,0.08) 25%);
+            pointer-events: none;
+        }
+        .stat-item {
+            padding: 20px 40px; display: flex; align-items: center; gap: 20px;
+        }
+        .stat-icon {
+            width: 56px; height: 56px; border-radius: 12px;
+            background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .stat-icon i { font-size: 22px; color: var(--gold); }
+        .stat-text strong {
+            display: block; font-family: 'Barlow Condensed', sans-serif;
+            font-size: 42px; font-weight: 900; color: var(--gold); line-height: 1;
+        }
+        .stat-text span { display: block; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+        .stat-text small { display: block; font-size: 11.5px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+
+        /* ===== ABOUT TEASER ===== */
+        .about-section { padding: 100px 0; background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-image-wrap {
+            position: relative;
+        }
+        .about-image-wrap .main-img {
+            width: 100%;  object-fit: cover;
+            border-radius: 8px; box-shadow: var(--shadow-lg);
+        }
+        .about-badge {
+            position: absolute; bottom: -24px; right: -24px;
+            background: var(--gold); border-radius: 8px; padding: 20px 24px;
+            text-align: center; box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+            z-index: 2;
+        }
+        .about-badge strong {
+            display: block; font-family: 'Barlow Condensed', sans-serif;
+            font-size: 48px; font-weight: 900; color: var(--navy); line-height: 1;
+        }
+        .about-badge span { display: block; font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .about-accent-line {
+            position: absolute; top: -16px; left: -16px;
+            width: 80px; height: 80px; border: 3px solid var(--gold-light);
+            border-radius: 4px; opacity: 0.4;
+        }
+
+        .about-text .section-label { margin-bottom: 14px; }
+        .about-text .section-title { margin-bottom: 20px; }
+        .about-text p { color: var(--gray-700); margin-bottom: 16px; font-size: 15px; line-height: 1.75; }
+        .about-features {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0;
+        }
+        .about-feature {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 16px; background: var(--gray-100); border-radius: 8px;
+            border-left: 3px solid var(--gold); transition: var(--transition);
+        }
+        .about-feature:hover { background: var(--gold-pale); transform: translateY(-2px); }
+        .about-feature i { font-size: 18px; color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+        .about-feature h4 { font-size: 13px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.3px; }
+        .about-feature p { font-size: 12.5px; color: var(--gray-500); margin: 0; }
+        .btn-navy {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--navy); color: var(--white);
+            padding: 14px 32px; border-radius: 4px;
+            font-weight: 800; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition); border: 2px solid var(--navy);
+        }
+        .btn-navy:hover { background: var(--navy-light); border-color: var(--navy-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        /* ===== PRODUCTS ===== */
+        .products-section { padding: 100px 0; background: var(--off-white); }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-header .section-label { justify-content: center; margin-bottom: 12px; }
+        .section-header .section-title { margin-bottom: 14px; }
+        .section-header p { color: var(--gray-500); max-width: 540px; margin: 0 auto; font-size: 15px; }
+
+        .products-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .product-card {
+            background: var(--white); border-radius: 8px;
+            overflow: hidden; box-shadow: var(--shadow-sm);
+            transition: var(--transition); position: relative;
+        }
+        .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .product-card:hover .product-overlay { opacity: 1; }
+        .product-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+        .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+        .product-overlay {
+            position: absolute; inset: 0; background: rgba(0,21,47,0.7);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: var(--transition);
+        }
+        .overlay-btn {
+            background: var(--gold); color: var(--navy); padding: 11px 24px;
+            border-radius: 4px; font-weight: 800; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        .overlay-btn:hover { background: var(--gold-light); }
+        .product-tag {
+            position: absolute; top: 14px; left: 14px;
+            background: var(--gold); color: var(--navy);
+            font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+            padding: 4px 10px; border-radius: 3px;
+        }
+        .product-body { padding: 22px 24px 24px; }
+        .product-brand { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+        .product-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--navy); text-transform: uppercase; margin-bottom: 10px; line-height: 1.2; }
+        .product-body p { font-size: 13.5px; color: var(--gray-500); line-height: 1.65; }
+        .product-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 16px; font-size: 13px; font-weight: 700;
+            color: var(--navy-light); transition: var(--transition);
+        }
+        .product-link:hover { color: var(--gold); gap: 10px; }
+
+        .products-cta { text-align: center; margin-top: 44px; }
+
+        /* ===== SERVICES ===== */
+        .services-section { padding: 100px 0; background: var(--navy); position: relative; overflow: hidden; }
+        .services-section::before {
+            content: ''; position: absolute; right: -100px; top: -100px;
+            width: 400px; height: 400px; border-radius: 50%;
+            border: 1px solid rgba(201,168,76,0.1);
+        }
+        .services-section::after {
+            content: ''; position: absolute; right: -50px; top: -50px;
+            width: 250px; height: 250px; border-radius: 50%;
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+        .services-section .section-label { color: var(--gold-light); }
+        .services-section .section-label::before { background: var(--gold-light); }
+        .services-section .section-title { color: var(--white); margin-bottom: 50px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .service-card {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 32px 24px;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+            background: var(--gold); transform: scaleX(0); transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+        .service-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 56px; height: 56px; border-radius: 12px;
+            background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+        }
+        .service-icon i { font-size: 22px; color: var(--gold); }
+        .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.3px; }
+        .service-card p { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+        /* ===== PROJECTS ===== */
+        .projects-section { padding: 100px 0; background: var(--white); }
+        .projects-section .section-header { text-align: left; }
+        .projects-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px; flex-wrap: wrap; gap: 20px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+        .project-card { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+        .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .project-card:hover img { transform: scale(1.08); }
+        .project-card-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,21,47,0.9) 0%, rgba(0,21,47,0.2) 50%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 24px; transition: var(--transition);
+        }
+        .project-card:hover .project-card-overlay { background: linear-gradient(to top, rgba(0,21,47,0.95) 0%, rgba(0,21,47,0.5) 60%, rgba(0,21,47,0.1) 100%); }
+        .project-tag-small {
+            font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 6px;
+        }
+        .project-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); text-transform: uppercase; line-height: 1.2; }
+        .project-card p { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 5px; }
+
+        /* ===== WHY CHOOSE ===== */
+        .why-section { padding: 100px 0; background: var(--gray-100); }
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .why-card {
+            background: var(--white); border-radius: 8px; padding: 36px 28px;
+            box-shadow: var(--shadow-sm); transition: var(--transition);
+            position: relative; overflow: hidden; text-align: center;
+        }
+        .why-card::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--navy), var(--gold));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+        }
+        .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .why-card:hover::after { transform: scaleX(1); }
+        .why-icon {
+            width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 22px;
+            background: var(--gray-100); display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+        }
+        .why-card:hover .why-icon { background: var(--navy); }
+        .why-icon i { font-size: 28px; color: var(--navy); transition: var(--transition); }
+        .why-card:hover .why-icon i { color: var(--gold); }
+        .why-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 800; color: var(--navy); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.3px; }
+        .why-card p { font-size: 13.5px; color: var(--gray-500); line-height: 1.7; }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section { background: var(--off-white); padding: 72px 0; }
+        .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+        .cta-text .cta-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.7; margin-bottom: 8px; }
+        .cta-text h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 900; color: var(--navy); text-transform: uppercase; line-height: 1.1; }
+        .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-navy-solid {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--navy); color: var(--white);
+            padding: 15px 32px; border-radius: 4px;
+            font-weight: 800; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition);
+        }
+        .btn-navy-solid:hover { background: var(--navy-light); transform: translateY(-2px); }
+        .btn-white-outline {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: transparent; color: var(--navy);
+            padding: 15px 32px; border-radius: 4px; border: 2px solid var(--navy);
+            font-weight: 800; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
+            transition: var(--transition);
+        }
+        .btn-white-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
+
+        /* ===== FOOTER ===== */
+        .main-footer { background: #001530; padding: 72px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-logo-img { height: 48px; width: auto; object-fit: contain; margin-bottom: 16px; filter: brightness(0) invert(1); }
+        .footer-company-name { font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+        .footer-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.75; margin-bottom: 22px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .f-social { width: 34px; height: 34px; border-radius: 6px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 13px; transition: var(--transition); }
+        .f-social:hover { background: var(--gold); color: var(--navy); }
+
+        .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.45); transition: var(--transition); display: flex; align-items: center; gap: 8px; }
+        .footer-col ul a::before { content: '›'; color: var(--gold); font-size: 16px; line-height: 1; }
+        .footer-col ul a:hover { color: var(--gold); padding-left: 4px; }
+
+        .f-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+        .f-contact-icon { width: 30px; height: 30px; border-radius: 6px; background: rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+        .f-contact-icon i { font-size: 12px; color: var(--gold); }
+        .f-contact-text { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+        .f-contact-text strong { display: block; color: var(--white); font-size: 14px; }
+
+        .map-wrap iframe { border-radius: 6px; overflow: hidden; }
+
+        .copyright-bar { padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .copyright-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .copyright-flex span { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+
+        /* =========================================
+   THƯƠNG HIỆU PHÂN PHỐI DẠNG NGANG (TRANG CHỦ)
+========================================= */
+.brands { background: #fff; padding: 35px 0; border-bottom: 1px solid #eee; }
+.brands-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.brands-flex a { display: flex; justify-content: center; align-items: center; flex: 1; position: relative; padding: 5px 15px; }
+.brands-flex a:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 40px; width: 1px; background-color: #e5e7eb; 
+}
+.brands-flex img { height: 80px; max-width: 155px; object-fit: contain; transition: 0.3s; }
+.brands-flex img:hover { transform: scale(1.08); }
+
+/* =========================================
+
+/* =========================================
+   CHÂN TRANG (FOOTER)
+========================================= */
+.main-footer { background: #ffffff; color: #475569; padding: 50px 0 0 0; font-size: 13px; border-top: 1px solid #e2e8f0; }
+.main-footer .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+.main-footer .footer-col { flex: 1; }
+.main-footer .footer-about { flex: 1.4; }
+.main-footer .footer-contact { flex: 1.2; }
+.main-footer .footer-map-block { flex: 1.2; }
+.main-footer .footer-logo-img { height: 45px; display: block; margin-bottom: 15px; }
+.footer-company-name { color: #003366; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+.main-footer .footer-desc { line-height: 1.6; margin-bottom: 20px; text-align: justify; color: #555; }
+.main-footer h4 { color: #003366; margin: 0 0 20px 0; font-size: 14px; font-weight: 800; position: relative; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; }
+.main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 35px; height: 2px; background: #0072bc; }
+.main-footer .contact-list { list-style: none; padding: 0;}
+.main-footer .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #555; }
+.contact-icon { margin-top: 3px; flex-shrink: 0; }
+.main-footer .contact-list span strong { color: #0072bc; font-size: 14px;}
+.main-footer .footer-links ul { list-style: none; padding: 0;}
+.main-footer .footer-links li { margin-bottom: 10px; }
+.main-footer .footer-links a { color: #555; text-decoration: none; transition: all 0.2s ease; display: inline-flex; align-items: center; }
+.main-footer .footer-links a::before { content: '›'; font-size: 16px; margin-right: 8px; color: #cbd5e1; transition: 0.2s; }
+.main-footer .footer-links a:hover { color: #0072bc; transform: translateX(5px); }
+.main-footer .footer-links a:hover::before { color: #0072bc; }
+.social-links { display: flex; gap: 10px; }
+.social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: 0.3s; color: #003366; text-decoration: none;}
+.social-links a:hover { background: #0072bc; color: #fff; transform: translateY(-3px); }
+.social-links a:hover img { filter: brightness(0) invert(1); }
+.main-footer .map-wrapper { width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
+.main-footer .copyright { background: #002244; color: #cbd5e1; padding: 15px 0; font-size: 12.5px; }
+.main-footer .copyright-flex { display: flex; justify-content: space-between; align-items: center; }
+
+/* =========================================
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .about-grid { gap: 48px; }
+            .slide-decor { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .menu-toggle { display: flex; }
+            nav {
+                position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+                background: var(--white); flex-direction: column;
+                padding: 24px 20px; z-index: 999;
+                transform: translateX(-100%); transition: transform 0.35s ease;
+                overflow-y: auto; display: flex;
+            }
+            nav.open { transform: translateX(0); }
+            nav ul { flex-direction: column; gap: 0; }
+            nav a { display: block; padding: 14px 16px; font-size: 15px; border-bottom: 1px solid var(--gray-200); border-radius: 0; }
+            nav a::after { display: none; }
+            .nav-overlay { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+            .nav-overlay.show { opacity: 1; pointer-events: all; }
+            .hotline-number { display: none; }
+            .hotline-label { display: none; }
+            .hotline-block { padding: 10px 12px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-badge { bottom: -12px; right: -8px; }
+            .cta-inner { flex-direction: column; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .slider-container { min-height: 480px; }
+            .slide-title { font-size: 38px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stat-item { padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
+
+   
+
+    <!-- HEADER -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
@@ -14,7 +657,7 @@
                     <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
                 </a>
             </div>
-            
+
             <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -31,79 +674,94 @@
                     <li><a href="du-an.html">DỰ ÁN</a></li>
                     <li><a href="thuong-hieu.html">THƯƠNG HIỆU</a></li>
                     <li><a href="dich-vu.html">DỊCH VỤ</a></li>
-                        <li><a href="khach-hang.html">KHÁCH HÀNG</a></li>
+                    <li><a href="khach-hang.html">KHÁCH HÀNG</a></li>
                     <li><a href="lien-he.html">LIÊN HỆ</a></li>
                 </ul>
             </nav>
+
             <div class="header-right">
-                <span class="hotline-block">
-                    <span class="hotline-icon">
-                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
-                    </span>
-                    <span class="hotline-label">HOTLINE</span>
-                    <strong class="hotline-number">0938 756 577</strong>
-                </span>
+                <a href="tel:0938756577" class="hotline-block">
+                    <div class="hotline-icon-wrap">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="hotline-texts">
+                        <span class="hotline-label">Hotline</span>
+                        <strong class="hotline-number">0938 756 577</strong>
+                    </div>
+                </a>
             </div>
         </div>
     </header>
 
-    <section class="banner">
+    <!-- HERO BANNER SLIDER -->
+    <section class="hero-banner">
         <div class="slider-container">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80');">
-                <div class="banner-overlay"></div>
-                <div class="container banner-content">
-                    <div class="banner-title">
-                        <div class="banner-sub">GIẢI PHÁP KHÍ NÉN & BƠM CÔNG NGHIỆP</div>
-                        <h1>AIR & PUMP <br><span>SOLUTIONS</span></h1>
-                        <p>APE cung cấp giải pháp toàn diện - thiết bị chất lượng cao<br>- dịch vụ kỹ thuật chuyên nghiệp cho mọi ngành công nghiệp.</p>
-                        <div class="banner-btns">
-                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
-                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+
+            <div class="slide active" style="background-image: url('images/Banner/1.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-decor">
+                    <div class="slide-decor-ring"></div>
+                </div>
+                <div class="container slide-content">
+                    <div class="slide-inner">
+                        <div class="slide-tag"><i class="fa-solid fa-circle-check"></i> Giải pháp toàn diện từ năm 2008</div>
+                        <h1 class="slide-title">AIR & PUMP<span>SOLUTIONS</span></h1>
+                        <p class="slide-desc">APE cung cấp giải pháp toàn diện – thiết bị chất lượng cao – dịch vụ kỹ thuật chuyên nghiệp cho mọi ngành công nghiệp tại Việt Nam.</p>
+                        <div class="slide-btns">
+                            <a href="san-pham.html" class="btn-primary"><i class="fa-solid fa-layer-group"></i> Xem sản phẩm</a>
+                            <a href="lien-he.html" class="btn-ghost"><i class="fa-regular fa-comment-dots"></i> Liên hệ tư vấn</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');">
-                <div class="banner-overlay"></div>
-                <div class="container banner-content">
-                    <div class="banner-title">
-                        <div class="banner-sub">CÔNG NGHỆ TIÊN TIẾN NHẤT</div>
-                        <h1>TỐI ƯU HÓA <br><span>SẢN XUẤT</span></h1>
-                        <p>Đảm bảo hiệu suất cao và tiết kiệm năng lượng tối đa<br>cho hệ thống của doanh nghiệp bạn.</p>
-                        <div class="banner-btns">
-                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
-                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+                <div class="slide-overlay"></div>
+                <div class="slide-decor">
+                    <div class="slide-decor-ring"></div>
+                </div>
+                <div class="container slide-content">
+                    <div class="slide-inner">
+                        <div class="slide-tag"><i class="fa-solid fa-bolt"></i> Công nghệ tiên tiến hàng đầu</div>
+                        <h1 class="slide-title">TỐI ƯU HÓA<span>SẢN XUẤT</span></h1>
+                        <p class="slide-desc">Đảm bảo hiệu suất cao và tiết kiệm năng lượng tối đa cho hệ thống khí nén, máy bơm của doanh nghiệp bạn.</p>
+                        <div class="slide-btns">
+                            <a href="san-pham.html" class="btn-primary"><i class="fa-solid fa-layer-group"></i> Xem sản phẩm</a>
+                            <a href="lien-he.html" class="btn-ghost"><i class="fa-regular fa-comment-dots"></i> Liên hệ tư vấn</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');">
-                <div class="banner-overlay"></div>
-                <div class="container banner-content">
-                    <div class="banner-title">
-                        <div class="banner-sub">DỊCH VỤ HẬU MÃI TOÀN DIỆN</div>
-                        <h1>BẢO TRÌ & SỬA CHỮA <br><span>CHUYÊN NGHIỆP</span></h1>
-                        <p>Đội ngũ kỹ sư tay nghề cao trực chiến 24/7, sẵn sàng khắc phục<br>mọi sự cố hệ thống khí nén và máy bơm nhanh chóng.</p>
-                        <div class="banner-btns">
-                            <a href="#" class="btn">XEM SẢN PHẨM &rarr;</a>
-                            <a href="#" class="btn-outline">LIÊN HỆ TƯ VẤN</a>
+                <div class="slide-overlay"></div>
+                <div class="slide-decor">
+                    <div class="slide-decor-ring"></div>
+                </div>
+                <div class="container slide-content">
+                    <div class="slide-inner">
+                        <div class="slide-tag"><i class="fa-solid fa-headset"></i> Hỗ trợ kỹ thuật 24/7</div>
+                        <h1 class="slide-title">BẢO TRÌ & SỬA CHỮA<span>CHUYÊN NGHIỆP</span></h1>
+                        <p class="slide-desc">Đội ngũ kỹ sư tay nghề cao trực chiến 24/7, sẵn sàng khắc phục mọi sự cố hệ thống khí nén và máy bơm nhanh chóng.</p>
+                        <div class="slide-btns">
+                            <a href="dich-vu.html" class="btn-primary"><i class="fa-solid fa-wrench"></i> Xem dịch vụ</a>
+                            <a href="lien-he.html" class="btn-ghost"><i class="fa-regular fa-comment-dots"></i> Liên hệ tư vấn</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slider-arrow arrow-left" onclick="changeSlide(-1)">&lsaquo;</div>
-            <div class="slider-arrow arrow-right" onclick="changeSlide(1)">&rsaquo;</div>
-            <div class="slider-dots">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
+            <button class="slider-arrow arrow-left" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-arrow arrow-right" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-controls">
+                <button class="dot active" onclick="goToSlide(0)"></button>
+                <button class="dot" onclick="goToSlide(1)"></button>
+                <button class="dot" onclick="goToSlide(2)"></button>
             </div>
         </div>
     </section>
 
+    <!-- BRANDS STRIP -->
     <section class="brands">
         <div class="container brands-flex">
             <a href="brands/friulair.html"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
@@ -115,163 +773,306 @@
         </div>
     </section>
 
-    <section class="stats">
-        <div class="container stats-flex">
-            <div class="stat-item">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" alt="Kinh nghiệm">
-                <div class="stat-text">
-                    <strong>18+</strong>
-                    <span>NĂM KINH NGHIỆM</span>
-                    <small>Từ năm 2008 đến nay</small>
-                </div>
-            </div>
-            <div class="stat-item">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/conference-call.png" alt="Khách hàng">
-                <div class="stat-text">
-                    <strong>1000+</strong>
-                    <span>KHÁCH HÀNG</span>
-                    <small>Tin tưởng & đồng hành</small>
-                </div>
-            </div>
-            <div class="stat-item">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/company.png" alt="Dự án">
-                <div class="stat-text">
-                    <strong>500+</strong>
-                    <span>DỰ ÁN ĐÃ TRIỂN KHAI</span>
-                    <small>Trên toàn quốc</small>
-                </div>
-            </div>
-            <div class="stat-item">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/headset.png" alt="Hỗ trợ">
-                <div class="stat-text">
-                    <strong>24/7</strong>
-                    <span>HỖ TRỢ KỸ THUẬT</span>
-                    <small>Nhanh chóng & chuyên nghiệp</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="main-products">
+    <!-- STATS -->
+    <section class="stats-bar">
         <div class="container">
-            <h2 class="section-title">SẢN PHẨM CHỦ LỰC</h2>
-            <div class="products-grid">
-                
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://www.hiephoimaynenkhivietnam.com/UserUpload/Product/may-nen-khi-quincy-qgf-series.jpg?Watermark=&height=470" alt="Máy nén khí">
-                    </div>
-                    <div class="product-content">
-                        <h3>MÁY NÉN KHÍ QUINCY</h3>
-                        <p>Cung cấp giải pháp khí nén toàn diện, hiệu suất cao và tiết kiệm điện năng cho nhà máy.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+                    <div class="stat-text">
+                        <strong>18+</strong>
+                        <span>Năm kinh nghiệm</span>
+                        <small>Từ năm 2008 đến nay</small>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://dbk.vn/uploads/ckfinder/images/Bom-chan-khong/bom-hut-chan-khong-becker-vtlf-2-250-dbk.jpg" alt="Bơm chân không">
-                    </div>
-                    <div class="product-content">
-                        <h3>BƠM CHÂN KHÔNG BECKER</h3>
-                        <p>Thiết bị công nghệ Đức, đảm bảo lực hút chân không ổn định cho mọi dây chuyền sản xuất.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-text">
+                        <strong>1000+</strong>
+                        <span>Khách hàng</span>
+                        <small>Tin tưởng & đồng hành</small>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://www.kersia.uk/content/images/product/mobile/sks05223_tapflo_pump_3.jpg" alt="Bơm công nghiệp">
-                    </div>
-                    <div class="product-content">
-                        <h3>BƠM MÀNG KHÍ NÉN TAPFLO</h3>
-                        <p>Hiệu xuất cao - Vận hành ổn định - Độ bền vượt trội cho mọi hệ thống truyền chất lỏng.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="stat-text">
+                        <strong>500+</strong>
+                        <span>Dự án triển khai</span>
+                        <small>Trên toàn quốc</small>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://pneucare-compressor.com/wp-content/uploads/2023/01/Air-Dryers-300x237.png" alt="Hệ thống khí nén">
-                    </div>
-                    <div class="product-content">
-                        <h3>MÁY SẤY KHÍ FRIULAIR</h3>
-                        <p>Máy sấy khí cao cấp tách lọc tạp chất và loại bỏ 99.9% nước, bảo vệ máy móc cốt lõi.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="stat-text">
+                        <strong>24/7</strong>
+                        <span>Hỗ trợ kỹ thuật</span>
+                        <small>Nhanh chóng & chuyên nghiệp</small>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://www.savebuy.co.th/wp-content/uploads/Kluberspeed-BF-72-23.jpg" alt="Thiết bị xử lý khí">
-                    </div>
-                    <div class="product-content">
-                        <h3>DẦU MỠ NHỜN KLUBER</h3>
-                        <p>Dầu mỡ bôi trơn chuyên dụng chất lượng cao, giảm ma sát và tối ưu hóa tuổi thọ thiết bị.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
-                    </div>
-                </div>
-
-                <div class="product-item">
-                    <div class="img-backdrop">
-                        <img src="https://www.dvppumps.com/wp-content/uploads/2019/12/CC-80.png" alt="Tủ điện tự động hóa">
-                    </div>
-                    <div class="product-content">
-                        <h3>BƠM CHÂN KHÔNG DVP</h3>
-                        <p>Thiết bị bơm công nghệ Ý tân tiến, vận hành bền bỉ đảm bảo áp suất ổn định cho nhà xưởng.</p>
-                        <a href="#" class="action-link">Xem chi tiết <span>&rarr;</span></a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section class="projects">
-        <div class="container relative-header">
-            <h2 class="section-title">DỰ ÁN TIÊU BIỂU</h2>
-            <a href="du-an.html" class="btn-view-all">XEM TẤT CẢ DỰ ÁN &rarr;</a>
-            
-            <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy thực phẩm.png" alt="Nhà máy thực phẩm"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY THỰC PHẨM</h3>
-                        <p>Hệ thống thiết bị khí nén & bơm màng</p>
+    <!-- ABOUT TEASER -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrap">
+                    <div class="about-accent-line"></div>
+                    <img src="images/Logo/Gioithieu.jpg" alt="Về APE" class="main-img">
+                    
+                </div>
+
+                <div class="about-text">
+                    <div class="section-label">Câu chuyện của chúng tôi</div>
+                    <h2 class="section-title">ĐỐI TÁC TIN CẬY TRONG NGÀNH <span>KHÍ NÉN & MÁY BƠM</span></h2>
+                    <p>Được thành lập từ năm 2008, APE tự hào là đơn vị tiên phong trong việc cung cấp các thiết bị và giải pháp kỹ thuật công nghiệp nhập khẩu trực tiếp từ Đức, Mỹ, Ý và Thụy Điển.</p>
+                    <p>Với đội ngũ kỹ sư dày dặn kinh nghiệm, APE không chỉ cung cấp máy móc – chúng tôi mang đến giải pháp trọn gói giúp khách hàng <strong>tối ưu năng suất, tiết kiệm chi phí năng lượng và đảm bảo vận hành bền bỉ</strong> toàn hệ thống.</p>
+
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <h4>Nhập Khẩu Chính Hãng</h4>
+                                <p>Phân phối trực tiếp, 100% CO/CQ đầy đủ</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <h4>Tối Ưu Năng Lượng</h4>
+                                <p>Giải pháp tiết kiệm điện năng vận hành</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fa-solid fa-headset"></i>
+                            <div>
+                                <h4>Hỗ Trợ 24/7</h4>
+                                <p>Kỹ sư trực chiến xử lý sự cố tức thì</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fa-solid fa-certificate"></i>
+                            <div>
+                                <h4>Tiêu Chuẩn Quốc Tế</h4>
+                                <p>Thiết bị & dịch vụ chuẩn châu Âu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="gioi-thieu.html" class="btn-navy">
+                        <i class="fa-solid fa-arrow-right"></i> Tìm hiểu về APE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Danh mục thiết bị</div>
+                <h2 class="section-title">SẢN PHẨM <span>CHỦ LỰC</span></h2>
+                <p>Thiết bị nhập khẩu chính hãng từ các thương hiệu hàng đầu thế giới, đảm bảo chất lượng và hiệu suất vận hành tối ưu.</p>
+            </div>
+
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/nenkhiquin.jpg" alt="Máy nén khí Quincy">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">Quincy – Mỹ</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Máy nén khí</div>
+                        <h3>Máy Nén Khí Quincy</h3>
+                        <p>Giải pháp khí nén toàn diện, hiệu suất cao và tiết kiệm điện năng cho nhà máy.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy gỗ.png" alt="Nhà máy dệt may"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY GỖ</h3>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/chankhongbecker.jpg" alt="Bơm chân không Becker">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">Becker – Đức</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Bơm chân không</div>
+                        <h3>Bơm Chân Không Becker</h3>
+                        <p>Công nghệ Đức, lực hút chân không ổn định cho mọi dây chuyền sản xuất.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/May bom tapflo.jpg" alt="Bơm màng Tapflo">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">Tapflo – Thụy Điển</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Bơm màng khí nén</div>
+                        <h3>Bơm Màng Tapflo</h3>
+                        <p>Hiệu suất cao – Vận hành ổn định – Độ bền vượt trội cho mọi hệ thống truyền chất lỏng.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/frui.jpg" alt="Máy sấy khí Friulair">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">Friulair – Ý</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Máy sấy khí</div>
+                        <h3>Máy Sấy Khí Friulair</h3>
+                        <p>Tách lọc tạp chất và loại bỏ 99.9% nước, bảo vệ máy móc cốt lõi của doanh nghiệp.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/dauklub.jpg" alt="Dầu mỡ Kluber">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">Kluber – Đức</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Dầu mỡ bôi trơn</div>
+                        <h3>Dầu Mỡ Nhờn Kluber</h3>
+                        <p>Dầu mỡ bôi trơn chuyên dụng cao cấp, giảm ma sát và tối ưu tuổi thọ thiết bị.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="images/Sản phẩm chủ lực/bomchankhongdvp.jpg" alt="Bơm chân không DVP">
+                        <div class="product-overlay">
+                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                        </div>
+                        <div class="product-tag">DVP – Ý</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-brand">Bơm chân không</div>
+                        <h3>Bơm Chân Không DVP</h3>
+                        <p>Thiết bị bơm công nghệ Ý tân tiến, áp suất ổn định và bền bỉ cho mọi nhà xưởng.</p>
+                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="products-cta">
+                <a href="san-pham.html" class="btn-navy">
+                    <i class="fa-solid fa-grid-2"></i> Xem toàn bộ sản phẩm
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-label">Hỗ trợ kỹ thuật chuyên sâu</div>
+            <h2 class="section-title" style="margin-top: 12px; margin-bottom: 44px;">DỊCH VỤ <span>CỐT LÕI CỦA APE</span></h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                    <h3>Chẩn Đoán & Tư Vấn</h3>
+                    <p>Khảo sát chuyên sâu, kiểm tra và phát hiện nhanh chóng các nguyên nhân gây hỏng hóc của hệ thống máy nén, máy bơm.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                    <h3>Sửa Chữa & Bảo Trì</h3>
+                    <p>Bảo dưỡng định kỳ, xử lý lỗi nhiệt độ cao, vệ sinh két giải nhiệt và cung cấp linh kiện, phụ tùng chính hãng.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Thiết Kế & Lắp Đặt</h3>
+                    <p>Tư vấn tiêu chuẩn, thiết kế hệ thống đường ống và thi công lắp đặt máy nén khí, bơm công nghiệp an toàn, tối ưu.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Đào Tạo & Vận Hành</h3>
+                    <p>Chuyển giao công nghệ, hướng dẫn quy tắc sử dụng an toàn và vận hành các loại bơm màng Tapflo, bơm chân không Becker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-header">
+                <div>
+                    <div class="section-label">Hồ sơ năng lực</div>
+                    <h2 class="section-title" style="margin-top: 10px;">DỰ ÁN <span>TIÊU BIỂU</span></h2>
+                </div>
+                <a href="du-an.html" class="btn-navy"><i class="fa-solid fa-arrow-right"></i> Xem tất cả dự án</a>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy thực phẩm.png" alt="Nhà máy thực phẩm">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Khí nén & Bơm màng</div>
+                        <h3>Nhà Máy Thực Phẩm</h3>
+                        <p>Hệ thống thiết bị khí nén & bơm màng đồng bộ</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy gỗ.png" alt="Nhà máy gỗ">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Hút chân không trung tâm</div>
+                        <h3>Nhà Máy Gỗ</h3>
                         <p>Hệ thống xử lý hút chân không trung tâm</p>
                     </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy sơn.png" alt="Nhà máy điện tử"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY SƠN</h3>
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy sơn.png" alt="Nhà máy sơn">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Bơm hóa chất</div>
+                        <h3>Nhà Máy Sơn</h3>
                         <p>Hệ thống cung ứng bơm truyền hóa chất</p>
                     </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy thuốc lá.png" alt="Nhà máy nhựa"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY THUỐC LÁ</h3>
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy thuốc lá.png" alt="Nhà máy thuốc lá">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Khí nén áp suất cao</div>
+                        <h3>Nhà Máy Thuốc Lá</h3>
                         <p>Hệ thống khí nén trục vít áp suất cao</p>
                     </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy sản xuất sợi.png" alt="Nhà máy hóa chất"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY SẢN XUẤT SỢI</h3>
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy sản xuất sợi.png" alt="Nhà máy sản xuất sợi">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Máy sấy tách ẩm</div>
+                        <h3>Nhà Máy Sản Xuất Sợi</h3>
                         <p>Hệ thống máy sấy xử lý tách ẩm trung tâm</p>
                     </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-img"><img src="images/Dự án tiêu biểu/Nhà máy xử lý nước thải.png" alt="Nhà máy cơ khí"></div>
-                    <div class="project-info">
-                        <h3>NHÀ MÁY XỬ LÝ NƯỚC THẢI</h3>
+                <div class="project-card">
+                    <img src="images/Dự án tiêu biểu/Nhà máy xử lý nước thải.png" alt="Nhà máy xử lý nước thải">
+                    <div class="project-card-overlay">
+                        <div class="project-tag-small">Bơm định lượng</div>
+                        <h3>Nhà Máy Xử Lý Nước Thải</h3>
                         <p>Hệ thống bơm định lượng tự động hóa</p>
                     </div>
                 </div>
@@ -279,45 +1080,58 @@
         </div>
     </section>
 
-    <section class="why-choose">
+    <!-- WHY CHOOSE -->
+    <section class="why-section">
         <div class="container">
-            <h2 class="section-title">TẠI SAO CHỌN APE?</h2>
-            <div class="why-flex">
+            <div class="section-header" style="margin-bottom: 48px;">
+                <div class="section-label">Cam kết của APE</div>
+                <h2 class="section-title" style="margin-top: 12px;">TẠI SAO CHỌN <span>APE?</span></h2>
+            </div>
+
+            <div class="why-grid">
                 <div class="why-card">
-                    <div class="why-icon-box">
-                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                    </div>
-                    <h3>GIẢI PHÁP TOÀN DIỆN</h3>
-                    <p>Khảo sát, tư vấn giải pháp kỹ thuật tối ưu, cung cấp thiết bị đồng bộ và thi công lắp đặt trọn gói.</p>
+                    <div class="why-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h3>Giải Pháp Toàn Diện</h3>
+                    <p>Khảo sát, tư vấn kỹ thuật tối ưu, cung cấp thiết bị đồng bộ và thi công lắp đặt trọn gói từ A đến Z.</p>
                 </div>
                 <div class="why-card">
-                    <div class="why-icon-box">
-                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-                    </div>
-                    <h3>SẢN PHẨM CHẤT LƯỢNG</h3>
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Sản Phẩm Chất Lượng</h3>
                     <p>Phân phối chính hãng các thương hiệu thiết bị khí nén và bơm công nghiệp hàng đầu thế giới.</p>
                 </div>
                 <div class="why-card">
-                    <div class="why-icon-box">
-                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3>ĐỘI NGŨ CHUYÊN NGHIỆP</h3>
-                    <p>Đội ngũ kỹ sư dày dặn kinh nghiệm chuyên môn, am hiểu hệ thống, hỗ trợ kỹ thuật tận tâm.</p>
+                    <div class="why-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>Đội Ngũ Chuyên Nghiệp</h3>
+                    <p>Kỹ sư dày dặn kinh nghiệm chuyên môn, am hiểu hệ thống, hỗ trợ kỹ thuật tận tâm và nhanh chóng.</p>
                 </div>
                 <div class="why-card">
-                    <div class="why-icon-box">
-                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-                    </div>
-                    <h3>HẬU MÃI CHU ĐÁO</h3>
-                    <p>Cam kết bảo trì định kỳ bảo dưỡng định kỳ, phản hồi nhanh chóng và hỗ trợ xử lý sự cố 24/7.</p>
+                    <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Hậu Mãi Chu Đáo</h3>
+                    <p>Cam kết bảo trì định kỳ, phản hồi nhanh chóng và hỗ trợ xử lý sự cố 24/7 cho toàn bộ hệ thống.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <div class="cta-text">
+                <div class="cta-label">Sẵn sàng hỗ trợ doanh nghiệp của bạn</div>
+                <h2>KẾT NỐI VỚI ĐỘI NGŨ KỸ SƯ APE NGAY HÔM NAY</h2>
+            </div>
+            <div class="cta-actions">
+                <a href="tel:0938756577" class="btn-navy-solid"><i class="fa-solid fa-phone"></i> 0938 756 577</a>
+                <a href="lien-he.html" class="btn-white-outline"><i class="fa-regular fa-envelope"></i> Gửi yêu cầu tư vấn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="main-footer">
         <div class="container footer-flex">
             <div class="footer-col footer-about">
+                
                 <img src="images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
                 <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
                 <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp. Cam kết thiết bị chất lượng, tiết kiệm năng lượng và dịch vụ chuẩn quốc tế.</p>
@@ -375,39 +1189,33 @@
     </footer>
 
     <script>
-        // JS CHO BANNER SLIDER
-        let slideIndex = 1;
-        showSlides(slideIndex);
+        // ===== SLIDER =====
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let autoTimer;
 
-        setInterval(function() {
-            changeSlide(1);
-        }, 5000);
-
-        function changeSlide(n) {
-            showSlides(slideIndex += n);
+        function goToSlide(n) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            currentIndex = (n + slides.length) % slides.length;
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
         }
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
+        function changeSlide(dir) {
+            goToSlide(currentIndex + dir);
+            resetTimer();
         }
 
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-            slides[slideIndex-1].classList.add("active");  
-            dots[slideIndex-1].classList.add("active");
+        function resetTimer() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => goToSlide(currentIndex + 1), 5500);
         }
 
-        // JS CHO MENU HAMBURGER MOBILE
+        autoTimer = setInterval(() => goToSlide(currentIndex + 1), 5500);
+
+        // ===== MOBILE MENU =====
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
@@ -416,16 +1224,60 @@
             menuToggle.classList.toggle('open');
             mainNav.classList.toggle('open');
             navOverlay.classList.toggle('show');
-            
-            if (mainNav.classList.contains('open')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
         }
 
         menuToggle.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
+
+        // ===== SCROLL REVEAL =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(el => {
+                if (el.isIntersecting) {
+                    el.target.style.opacity = '1';
+                    el.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.product-card, .service-card, .why-card, .project-card, .about-feature, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // ===== COUNT UP ANIMATION =====
+        function animateCount(el, target, suffix = '') {
+            let current = 0;
+            const step = target / 60;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+            }, 25);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targets = [
+                        { el: entry.target.querySelectorAll('.stat-text strong')[0], val: 18, suffix: '+' },
+                    ];
+                    // Simple number pop-in via CSS class
+                    entry.target.querySelectorAll('.stat-text strong').forEach(el => {
+                        el.style.animation = 'fadeInUp 0.5s ease both';
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelector('.stats-bar') && statsObserver.observe(document.querySelector('.stats-bar'));
     </script>
 </body>
 </html>
