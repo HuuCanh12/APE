@@ -80,7 +80,7 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .dot.active, .dot:hover { opacity: 1; background: #ffd600; }
 
 /* =========================================
-   THƯƠNG HIỆU PHÂN PHỐI (BRANDS)
+   THƯƠNG HIỆU PHÂN PHỐI DẠNG NGANG (TRANG CHỦ)
 ========================================= */
 .brands { background: #fff; padding: 35px 0; border-bottom: 1px solid #eee; }
 .brands-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
@@ -208,7 +208,7 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .main-footer .copyright-flex { display: flex; justify-content: space-between; align-items: center; }
 
 /* =========================================
-   TRANG CON (GIỚI THIỆU & LIÊN HỆ BANNER)
+   TRANG CON (BANNER CHUNG TẤT CẢ TRANG)
 ========================================= */
 .page-hero { position: relative; height: 500px; display: flex; align-items: center; overflow: hidden; }
 .page-hero.contact-hero { height: 450px; }
@@ -226,6 +226,89 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .breadcrumb-modern a:hover { color: #ffd600; }
 .breadcrumb-modern .current { color: #ffd600; font-weight: 600; }
 
+/* =========================================
+   TRANG THƯƠNG HIỆU (BRANDS PAGE)
+========================================= */
+.brands-page-section { padding: 80px 0; background: #fdfdfd; }
+.brand-page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+.brand-card-premium {
+    text-decoration: none; display: block; background: #fff; border: 1px solid #e2e8f0;
+    border-radius: 16px; overflow: hidden; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+.brand-card-premium:hover {
+    transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,114,188,0.1); border-color: #ffd600;
+}
+.brand-card-logo {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    background: #f8fafc; padding: 30px; transition: 0.4s;
+}
+.brand-card-logo img {
+    max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s;
+}
+.brand-card-premium:hover .brand-card-logo img { transform: scale(1.1); }
+.brand-card-info {
+    padding: 30px 25px; text-align: center; border-top: 1px solid #e2e8f0;
+}
+.brand-card-info h3 {
+    color: #003366; font-size: 18px; font-weight: 800; margin-bottom: 12px; transition: 0.3s;
+}
+.brand-card-premium:hover .brand-card-info h3 { color: #0072bc; }
+.brand-card-info p {
+    color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; min-height: 45px;
+}
+.brand-btn {
+    display: inline-flex; align-items: center; color: #0072bc; font-weight: 700; font-size: 14px; transition: 0.3s;
+}
+.brand-btn i { margin-left: 8px; font-size: 16px; transition: transform 0.3s ease; }
+.brand-card-premium:hover .brand-btn { color: #003366; }
+.brand-card-premium:hover .brand-btn i { transform: translateX(6px); }
+
+/* =========================================
+   TRANG DỊCH VỤ (SERVICES PAGE)
+========================================= */
+.core-services-section { padding: 80px 0; background: #fff; }
+.core-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.service-card-modern {
+    background: #fdfdfd; border: 1px solid #e2e8f0; border-radius: 16px;
+    padding: 40px 25px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;
+}
+.service-card-modern::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #0072bc;
+    transform: scaleX(0); transition: 0.4s ease; transform-origin: left;
+}
+.service-card-modern:hover::before { transform: scaleX(1); }
+.service-card-modern:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-color: #fff; }
+.service-icon-wrap {
+    width: 70px; height: 70px; margin: 0 auto 20px; background: #f0f7ff; color: #0072bc;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; transition: 0.3s;
+}
+.service-card-modern:hover .service-icon-wrap { background: #0072bc; color: #fff; }
+.service-card-modern h3 { font-size: 18px; color: #003366; font-weight: 800; margin-bottom: 15px; }
+.service-card-modern p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+.tech-guides-section { padding: 60px 0 80px 0; background: #f8fafc; }
+.tech-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.guide-card {
+    background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s ease;
+    border: 1px solid #e2e8f0; display: flex; flex-direction: column;
+}
+.guide-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,114,188,0.1); border-color: #cbd5e1; }
+.guide-img { width: 100%; height: 220px; overflow: hidden; }
+.guide-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.guide-card:hover .guide-img img { transform: scale(1.08); }
+.guide-content { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+.guide-content h3 { font-size: 17px; color: #003366; font-weight: 800; margin-bottom: 12px; line-height: 1.4; }
+.guide-content p { font-size: 14px; color: #64748b; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+.read-more { font-size: 14px; font-weight: 700; color: #0072bc; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s; }
+.read-more:hover { color: #003366; gap: 5px; }
+
+/* =========================================
+   TRANG GIỚI THIỆU NỘI DUNG 
+========================================= */
 .about-page-section { padding: 80px 0; background: #fff; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .about-text-content p { font-size: 15.5px; color: #475569; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
@@ -237,12 +320,6 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .experience-badge { position: absolute; bottom: -20px; right: -20px; background: #ffd600; color: #003366; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 10px 25px rgba(255, 214, 0, 0.4); }
 .experience-badge strong { display: block; font-size: 36px; line-height: 1; margin-bottom: 5px; }
 .experience-badge span { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; }
-.partners-section { padding: 80px 0; background: #f8fafc; }
-.partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.partner-item { background: #fff; padding: 30px 20px; border-radius: 12px; border-top: 4px solid #0072bc; box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: 0.3s; height: 100%; }
-.partner-item:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0, 114, 188, 0.1); border-color: #ffd600; }
-.partner-item h3 { font-size: 17px; font-weight: 800; color: #003366; margin-bottom: 12px; }
-.partner-item p { font-size: 14px; color: #64748b; line-height: 1.5; margin: 0; }
 
 /* =========================================
    TRANG LIÊN HỆ 
@@ -275,8 +352,7 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     display: inline-flex; align-items: center; gap: 6px; transition: 0.3s;
 }
 .fcc-socials a i {
-    width: 30px; height: 30px; background: #f1f5f9; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center;
 }
 .fcc-socials a:hover { color: #0072bc; }
 .fcc-socials a:hover i { background: #0072bc; color: #fff; }
@@ -284,106 +360,31 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .map-frame { width: 100%; height: 500px; border-top: 5px solid #e2e8f0; }
 .map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
 
-
 /* =========================================
    TRANG KHÁCH HÀNG (PREMIUM LOGO GRID PHÂN TRANG)
 ========================================= */
 .clients-gallery { padding: 60px 0 80px 0; background: #fdfdfd; }
-.client-logo-grid-modern {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    animation: fadeIn 0.5s ease; /* Hiệu ứng mờ dần khi chuyển trang */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+.client-logo-grid-modern { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .client-card-premium {
-    background: #fff;
-    border-radius: 16px;
-    padding: 25px 20px;
-    text-align: center;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: #fff; border-radius: 16px; padding: 25px 20px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; align-items: center;
 }
-.client-card-premium:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 114, 188, 0.1);
-    border-color: #0072bc;
-}
+.client-card-premium:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 114, 188, 0.1); border-color: #0072bc; }
 .client-logo-wrap {
-    width: 100%;
-    height: 140px;
-    background: #f8fafc;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: 0.3s;
+    width: 100%; height: 140px; background: #f8fafc; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 20px; margin-bottom: 20px; transition: 0.3s;
 }
-.client-logo-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: 0.4s;
-    /* ĐÃ XÓA bộ lọc xám mờ để logo luôn hiển thị màu đầy đủ */
-}
-.client-card-premium:hover .client-logo-wrap img {
-    transform: scale(1.1); /* Vẫn giữ lại hiệu ứng phóng to cực mượt */
-}
+.client-logo-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.4s; }
+.client-card-premium:hover .client-logo-wrap img { transform: scale(1.1); }
 .client-card-premium:hover .client-logo-wrap { background: #fff; }
-.client-name {
-    font-size: 15px;
-    font-weight: 800;
-    color: #003366;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+.client-name { font-size: 15px; font-weight: 800; color: #003366; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
 .client-card-premium:hover .client-name { color: #0072bc; }
-
-/* CSS cho thanh Phân trang (Pagination) */
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 50px;
-}
+.pagination { display: flex; justify-content: center; gap: 12px; margin-top: 50px; }
 .page-btn {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border: 1px solid #cbd5e1;
-    color: #003366;
-    font-weight: 800;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #cbd5e1; color: #003366; font-weight: 800; font-size: 16px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
 }
-.page-btn:hover {
-    background: #f1f5f9;
-    border-color: #0072bc;
-    color: #0072bc;
-}
-.page-btn.active {
-    background: #ffd600; /* Màu vàng APE */
-    color: #003366;
-    border-color: #ffd600;
-    box-shadow: 0 4px 10px rgba(255, 214, 0, 0.4);
-}
+.page-btn:hover { background: #f1f5f9; border-color: #0072bc; color: #0072bc; }
+.page-btn.active { background: #ffd600; color: #003366; border-color: #ffd600; box-shadow: 0 4px 10px rgba(255, 214, 0, 0.4); }
 
 
 /* =========================================================================
@@ -400,8 +401,10 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .fcc-left { padding-right: 20px; }
     .fcc-right { padding-left: 20px; gap: 20px; }
 
-    /* Lưới khách hàng Tablet */
     .client-logo-grid-modern { grid-template-columns: repeat(3, 1fr); }
+    .core-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .tech-guides-grid { grid-template-columns: repeat(2, 1fr); }
+    .brand-page-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 920px) {
@@ -448,14 +451,12 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .hero-title { font-size: 32px; }
     .hero-desc { font-size: 14px; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .partner-grid { grid-template-columns: repeat(2, 1fr); }
     
     .floating-contact-card { flex-direction: column; margin-top: -20px; padding: 30px 20px; }
     .fcc-left { border-right: none; border-bottom: 1px solid #f1f5f9; padding-right: 0; padding-bottom: 25px; margin-bottom: 25px; }
     .fcc-right { padding-left: 0; gap: 20px; grid-template-columns: 1fr; text-align: center; }
     .fcc-socials { justify-content: center; }
 
-    /* Lưới khách hàng Mobile to */
     .client-logo-grid-modern { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
@@ -485,12 +486,14 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .hero-title { font-size: 26px; }
     .experience-badge { right: 0; bottom: 0; border-radius: 12px 0 0 0; padding: 15px 20px; }
     .experience-badge strong { font-size: 28px; }
-    .partner-grid { grid-template-columns: 1fr; }
     .map-frame { height: 350px; }
 
-    /* Lưới khách hàng Mobile nhỏ gọn */
     .client-logo-grid-modern { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .client-card-premium { padding: 15px; }
     .client-logo-wrap { height: 100px; padding: 15px; margin-bottom: 15px; }
     .client-name { font-size: 13px; }
+    
+    .core-services-grid { grid-template-columns: 1fr; }
+    .tech-guides-grid { grid-template-columns: 1fr; }
+    .brand-page-grid { grid-template-columns: 1fr; }
 }
