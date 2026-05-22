@@ -1,0 +1,322 @@
+/* =========================================
+   TỔNG THỂ & THIẾT LẬP CHUNG (GLOBAL)
+========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: #fdfdfd; 
+    color: #222;
+    overflow-x: hidden;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.menu-toggle { display: none; }
+
+/* =========================================
+   HEADER & THANH ĐIỀU HƯỚNG
+========================================= */
+.main-header { 
+    background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+    position: sticky; top: 0; z-index: 100; 
+}
+.header-flex { display: flex; align-items: center; justify-content: space-between; min-height: 100px; }
+.logo { flex: 0 0 auto; display: flex; align-items: center; }
+.logo-img { height: 55px; width: auto; object-fit: contain; display: block; }
+nav { display: flex; justify-content: center; align-items: center; margin: 0 15px; } 
+nav ul { list-style: none; display: flex; gap: 24px; }
+nav a { 
+    text-decoration: none; color: #333; font-weight: 700; font-size: 14px; 
+    padding-bottom: 5px; border-bottom: 2px solid transparent; transition: 0.2s; white-space: nowrap; 
+}
+nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
+.header-right { flex: 0 0 auto; display: flex; align-items: center; }
+.hotline-block {
+    display: inline-flex; align-items: center; background: #ffd600; border-radius: 50px;
+    padding: 10px 24px 10px 18px; gap: 8px; box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
+    transition: all 0.3s ease; cursor: pointer; white-space: nowrap; 
+}
+.hotline-block:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 214, 0, 0.4); }
+.hotline-icon { display: flex; align-items: center; }
+.hotline-label { color: #333; font-size: 13px; font-weight: 700; margin-right: 2px; letter-spacing: 0.5px; }
+.hotline-number { color: #0072bc; font-size: 19px; font-weight: 900; letter-spacing: 0.5px; }
+
+/* =========================================
+   TRANG CON (BANNER CHUNG TẤT CẢ TRANG)
+========================================= */
+.page-hero { position: relative; height: 500px; display: flex; align-items: center; overflow: hidden; }
+.page-hero.contact-hero { height: 450px; }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.8s ease; }
+.page-hero:hover .hero-bg { transform: scale(1.05); }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0, 26, 51, 0.9) 0%, rgba(0, 114, 188, 0.5) 100%); }
+.hero-content { position: relative; z-index: 2; color: #fff; width: 100%;}
+.hero-text-box { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-left: 6px solid #ffd600; padding: 40px; border-radius: 0 12px 12px 0; max-width: 750px; }
+.hero-subtitle { display: inline-block; color: #ffd600; font-weight: 800; font-size: 13px; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
+.hero-title { font-size: 42px; font-weight: 900; line-height: 1.3; margin: 0 0 15px 0; color: #fff; }
+.hero-title span { color: #ffd600; }
+.hero-desc { font-size: 16px; color: #e2e8f0; line-height: 1.6; margin-bottom: 25px; }
+.breadcrumb-modern { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px;}
+.breadcrumb-modern a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.breadcrumb-modern a:hover { color: #ffd600; }
+.breadcrumb-modern .current { color: #ffd600; font-weight: 600; }
+
+/* =========================================
+   CHÂN TRANG (FOOTER)
+========================================= */
+.main-footer { background: #ffffff; color: #475569; padding: 50px 0 0 0; font-size: 13px; border-top: 1px solid #e2e8f0; }
+.main-footer .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+.main-footer .footer-col { flex: 1; }
+.main-footer .footer-about { flex: 1.4; }
+.main-footer .footer-contact { flex: 1.2; }
+.main-footer .footer-map-block { flex: 1.2; }
+.main-footer .footer-logo-img { height: 45px; display: block; margin-bottom: 15px; }
+.footer-company-name { color: #003366; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+.main-footer .footer-desc { line-height: 1.6; margin-bottom: 20px; text-align: justify; color: #555; }
+.main-footer h4 { color: #003366; margin: 0 0 20px 0; font-size: 14px; font-weight: 800; position: relative; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; }
+.main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 35px; height: 2px; background: #0072bc; }
+.main-footer .contact-list { list-style: none; padding: 0;}
+.main-footer .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #555; }
+.contact-icon { margin-top: 3px; flex-shrink: 0; }
+.main-footer .contact-list span strong { color: #0072bc; font-size: 14px;}
+.main-footer .footer-links ul { list-style: none; padding: 0;}
+.main-footer .footer-links li { margin-bottom: 10px; }
+.main-footer .footer-links a { color: #555; text-decoration: none; transition: all 0.2s ease; display: inline-flex; align-items: center; }
+.main-footer .footer-links a::before { content: '›'; font-size: 16px; margin-right: 8px; color: #cbd5e1; transition: 0.2s; }
+.main-footer .footer-links a:hover { color: #0072bc; transform: translateX(5px); }
+.main-footer .footer-links a:hover::before { color: #0072bc; }
+.social-links { display: flex; gap: 10px; }
+.social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: 0.3s; color: #003366; text-decoration: none;}
+.social-links a:hover { background: #0072bc; color: #fff; transform: translateY(-3px); }
+.main-footer .map-wrapper { width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; }
+.main-footer .copyright { background: #002244; color: #cbd5e1; padding: 15px 0; font-size: 12.5px; }
+.main-footer .copyright-flex { display: flex; justify-content: space-between; align-items: center; }
+
+/* =========================================
+   THIẾT KẾ MỚI TRANG SẢN PHẨM & CHI TIẾT SẢN PHẨM (CHUẨN ĐỒNG BỘ)
+========================================= */
+.products-page-section { padding: 60px 0; background: #fdfdfd; }
+.products-layout-modern { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
+
+/* Sidebar Điều hướng Hãng */
+.product-sidebar { position: sticky; top: 120px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.product-sidebar-header { background: #003366; color: #ffd600; padding: 18px 20px; font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+.product-sidebar-menu { list-style: none; padding: 0; margin: 0; }
+.product-sidebar-menu li { border-bottom: 1px solid #f1f5f9; }
+.product-sidebar-menu li:last-child { border-bottom: none; }
+.product-sidebar-menu a { display: block; padding: 15px 20px; color: #003366; font-weight: 700; font-size: 14px; text-decoration: none; transition: 0.3s; display: flex; justify-content: space-between; align-items: center;}
+.product-sidebar-menu a:hover, .product-sidebar-menu a.active { background: #f8fafc; color: #0072bc; padding-left: 25px; }
+.product-sidebar-menu a i { color: #cbd5e1; font-size: 12px; transition: 0.3s; }
+.product-sidebar-menu a:hover i, .product-sidebar-menu a.active i { color: #0072bc; }
+
+/* Block Thông số kỹ thuật (Dành cho trang chi tiết) */
+.spec-sidebar-card { padding: 20px; }
+.spec-list { list-style: none; margin: 0; padding: 0; }
+.spec-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f5f9; font-size: 13.5px; }
+.spec-list li:last-child { border-bottom: none; }
+.spec-key { color: #64748b; font-weight: 600; }
+.spec-val { color: #003366; font-weight: 800; text-align: right;}
+.contact-sidebar-card { background: linear-gradient(135deg, #003366, #0072bc); padding: 25px 20px; text-align: center; color: #fff; margin: 20px; border-radius: 10px;}
+.contact-sidebar-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 10px; color: #ffd600;}
+.contact-sidebar-card p { font-size: 13px; color: #e2e8f0; margin-bottom: 15px; line-height: 1.5; }
+.btn-sidebar-contact { display: block; background: #ffd600; color: #003366; padding: 12px; border-radius: 6px; font-weight: 800; text-decoration: none; font-size: 13px; transition: 0.3s; }
+.btn-sidebar-contact:hover { background: #fff; transform: translateY(-2px); }
+
+/* Main Grid Trang Tổng Hợp */
+.product-group-modern { margin-bottom: 50px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);}
+.product-group-title { font-size: 20px; color: #003366; font-weight: 900; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid #f1f5f9; display: flex; align-items: center; gap: 12px; text-transform: uppercase; }
+.product-group-title i { color: #ffd600; font-size: 24px;}
+.product-group-title span { color: #0072bc; font-size: 13px; font-weight: 700; text-transform: none; margin-left: auto; letter-spacing: 0.5px;}
+.products-grid-modern { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Product Card Dọc (Trang tổng hợp) */
+.prod-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; position: relative; text-decoration: none;}
+.prod-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,114,188,0.1); border-color: #0072bc; }
+.prod-img { height: 180px; padding: 20px; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative; }
+.prod-img img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; }
+.prod-card:hover .prod-img img { transform: scale(1.1); }
+.prod-tag { position: absolute; top: 12px; left: 12px; background: #003366; color: #fff; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;}
+.prod-info { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.prod-info h4 { font-size: 16px; color: #003366; font-weight: 800; margin-bottom: 10px; line-height: 1.4; transition: 0.3s;}
+.prod-card:hover .prod-info h4 { color: #0072bc; }
+.prod-info p { font-size: 13px; color: #64748b; line-height: 1.6; margin-bottom: 15px; flex: 1; }
+.prod-specs { list-style: none; margin-bottom: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0; }
+.prod-specs li { font-size: 12.5px; color: #475569; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; font-weight: 600;}
+.prod-specs li::before { content: ''; width: 4px; height: 4px; background: #ffd600; border-radius: 50%; }
+.prod-btn { display: inline-flex; align-items: center; justify-content: space-between; background: #f8fafc; color: #0072bc; padding: 12px 15px; border-radius: 6px; font-weight: 800; font-size: 13px; transition: 0.3s; margin-top: auto; border: 1px solid #e2e8f0;}
+.prod-card:hover .prod-btn { background: #0072bc; color: #fff; border-color: #0072bc;}
+
+/* Product Card Ngang (Trang Chi tiết Hãng) */
+.brand-detail-list { display: flex; flex-direction: column; gap: 25px; }
+.prod-h-card { display: flex; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.prod-h-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,114,188,0.1); border-color: #ffd600; }
+.prod-h-img { width: 300px; background: #f8fafc; padding: 25px; display: flex; align-items: center; justify-content: center; position: relative; border-right: 1px solid #e2e8f0;}
+.prod-h-img img { max-width: 100%; max-height: 220px; object-fit: contain; transition: 0.4s;}
+.prod-h-card:hover .prod-h-img img { transform: scale(1.05); }
+.prod-h-info { padding: 35px; flex: 1; display: flex; flex-direction: column; }
+.prod-h-info h3 { font-size: 22px; color: #003366; font-weight: 900; margin-bottom: 12px; text-transform: uppercase;}
+.prod-h-info .desc { font-size: 14.5px; color: #475569; line-height: 1.7; margin-bottom: 20px; }
+.h-spec-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.h-spec-chip { background: #f0f7ff; color: #0072bc; font-size: 12.5px; font-weight: 700; padding: 6px 14px; border-radius: 30px; display: flex; align-items: center; gap: 6px; border: 1px solid #bae6fd;}
+.h-spec-chip i { color: #ffd600; }
+.prod-h-actions { margin-top: auto; display: flex; gap: 15px; }
+.btn-action-main { background: #0072bc; color: #fff; padding: 12px 26px; border-radius: 6px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 13.5px;}
+.btn-action-main:hover { background: #003366; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,51,102,0.2);}
+.btn-action-sub { background: #fff; color: #003366; border: 2px solid #e2e8f0; padding: 10px 24px; border-radius: 6px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 13.5px;}
+.btn-action-sub:hover { border-color: #0072bc; color: #0072bc; }
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .products-layout-modern { grid-template-columns: 240px 1fr; }
+    .products-grid-modern { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 920px) {
+    .header-flex { display: flex; align-items: center; justify-content: space-between; min-height: 70px; padding: 10px 15px;}
+    .menu-toggle { display: flex; flex-direction: column; justify-content: space-evenly; width: 40px; height: 38px; background: #fff; border: 2px solid #555; border-radius: 6px; cursor: pointer; padding: 5px 6px; z-index: 102; order: 3;}
+    .menu-toggle .bar { width: 100%; height: 3px; background-color: #555; border-radius: 2px; transition: all 0.3s; }
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    nav { position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #ffffff; box-shadow: 4px 0 15px rgba(0,0,0,0.1); margin: 0; padding: 90px 20px 30px 20px; flex-direction: column; align-items: flex-start; justify-content: flex-start; transition: left 0.4s; z-index: 101; }
+    nav.open { left: 0; }
+    nav ul { flex-direction: column; width: 100%; gap: 0; }
+    nav li { width: 100%; border-bottom: 1px solid #f1f5f9; }
+    nav a { display: block; padding: 15px 0; font-size: 15px; width: 100%; }
+    .nav-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 100; }
+    .nav-overlay.show { display: block; }
+    .header-right { order: 2; margin-right: 15px; margin-left: auto; }
+    .hotline-label, .hotline-number { display: none; }
+    .hotline-block { width: 38px; height: 38px; padding: 0; border-radius: 50%; justify-content: center; }
+
+    .products-layout-modern { grid-template-columns: 1fr; }
+    .product-sidebar { position: relative; top: 0; margin-bottom: 30px; }
+    .prod-h-card { flex-direction: column; }
+    .prod-h-img { width: 100%; border-right: none; border-bottom: 1px solid #e2e8f0; }
+}
+@media (max-width: 600px) {
+    .products-grid-modern { grid-template-columns: 1fr; }
+    .prod-h-actions { flex-direction: column; }
+    .product-group-title { flex-direction: column; align-items: flex-start; gap: 8px;}
+    .product-group-title span { margin-left: 0; }
+    .main-footer .footer-flex { flex-direction: column; gap: 30px; text-align: center; }
+    .main-footer .footer-logo-img { margin: 0 auto 15px; }
+    .social-links { justify-content: center; }
+    .main-footer h4::after { left: 50%; transform: translateX(-50%); }
+    .main-footer .contact-list li { justify-content: center; text-align: center; }
+    .main-footer .footer-links a { justify-content: center; }
+}
+
+/* =========================================
+   PHÂN TRANG (PAGINATION)
+========================================= */
+.products-pagination { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 40px 0 10px; }
+.page-btn { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 8px; border: 2px solid #e2e8f0; background: #fff; color: #003366; font-weight: 800; font-size: 14px; text-decoration: none; transition: 0.25s; }
+.page-btn:hover, .page-btn.active { background: #003366; color: #ffd600; border-color: #003366; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,51,102,0.15); }
+.page-btn.prev, .page-btn.next { width: auto; padding: 0 18px; gap: 6px; font-size: 13px; }
+.page-btn.disabled { opacity: 0.4; pointer-events: none; }
+.pagination-info { font-size: 13px; color: #64748b; font-weight: 600; margin-left: 8px; }
+
+/* =========================================
+   BRAND TOP BAR
+========================================= */
+.brand-top-bar { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 28px; margin-bottom: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.brand-flag { font-size: 36px; }
+.brand-top-info h2 { font-size: 22px; font-weight: 900; color: #003366; margin-bottom: 4px; }
+.brand-top-info p { font-size: 13px; color: #64748b; margin: 0; }
+.brand-top-badge { margin-left: auto; background: #f0f7ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 10px 16px; text-align: center; }
+.brand-top-badge span { display: block; font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.brand-top-badge strong { font-size: 18px; color: #003366; font-weight: 900; }
+
+/* =========================================
+   PRODUCT DETAIL TABLE
+========================================= */
+.prod-detail-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13.5px; }
+.prod-detail-table tr { border-bottom: 1px solid #f1f5f9; }
+.prod-detail-table tr:last-child { border-bottom: none; }
+.prod-detail-table td:first-child { color: #64748b; font-weight: 600; padding: 9px 0; width: 45%; }
+.prod-detail-table td:last-child { color: #003366; font-weight: 800; padding: 9px 0; }
+
+/* =========================================
+   TRANG PHỤ TÙNG
+========================================= */
+.spare-category-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-bottom: 32px; }
+.spare-cat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px; display: flex; align-items: flex-start; gap: 16px; transition: 0.3s; cursor: default; }
+.spare-cat-card:hover { border-color: #0072bc; box-shadow: 0 8px 24px rgba(0,114,188,0.09); transform: translateY(-4px); }
+.spare-cat-icon { width: 52px; height: 52px; background: linear-gradient(135deg, #003366, #0072bc); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.spare-cat-icon i { color: #ffd600; font-size: 22px; }
+.spare-cat-body h4 { font-size: 15px; font-weight: 800; color: #003366; margin-bottom: 6px; }
+.spare-cat-body p { font-size: 13px; color: #64748b; line-height: 1.5; margin: 0; }
+.spare-oil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.spare-oil-card { background: linear-gradient(135deg, #f0f7ff, #fff); border: 1px solid #bae6fd; border-radius: 10px; padding: 20px; text-align: center; transition: 0.3s; }
+.spare-oil-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,114,188,0.1); }
+.spare-oil-card i { font-size: 28px; color: #ffd600; margin-bottom: 10px; display: block; }
+.spare-oil-card h5 { font-size: 13.5px; font-weight: 800; color: #003366; margin-bottom: 6px; }
+.spare-oil-card p { font-size: 12px; color: #64748b; line-height: 1.5; margin: 0; }
+
+/* =========================================
+   SIDEBAR ACCORDION MENU
+========================================= */
+.acc-menu { list-style: none; margin: 0; padding: 0; }
+.acc-item { border-bottom: 1px solid #e8edf4; }
+.acc-item:last-child { border-bottom: none; }
+.acc-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; padding: 13px 18px; background: none; border: none;
+    color: #1e3a5f; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    text-align: left; transition: background 0.2s, color 0.2s;
+    font-family: inherit; line-height: 1.4;
+}
+.acc-toggle:hover { background: #f0f6ff; color: #0072bc; }
+.acc-toggle.open { background: #003366; color: #ffd600; }
+.acc-toggle .acc-arrow {
+    width: 22px; height: 22px; border-radius: 50%; background: #e8edf4;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform 0.3s, background 0.2s;
+}
+.acc-toggle .acc-arrow i { font-size: 9px; color: #64748b; transition: color 0.2s; }
+.acc-toggle.open .acc-arrow { background: rgba(255,214,0,0.25); transform: rotate(90deg); }
+.acc-toggle.open .acc-arrow i { color: #ffd600; }
+.acc-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+    background: #f8fafd;
+}
+.acc-panel.open { max-height: 700px; }
+.acc-sub { list-style: none; margin: 0; padding: 6px 0 10px; }
+.acc-sub li a {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 16px 8px 28px;
+    font-size: 12.5px; font-weight: 600; color: #334155;
+    text-decoration: none; transition: background 0.15s, color 0.15s;
+    border-left: 3px solid transparent;
+}
+.acc-sub li a:hover { background: #e8f0fb; color: #003366; border-left-color: #0072bc; }
+.acc-sub li a i { font-size: 9px; color: #94a3b8; flex-shrink: 0; }
+.acc-sub li a:hover i { color: #0072bc; }
+.acc-sub li.acc-viewall a {
+    font-weight: 800; color: #0072bc; font-size: 12px;
+    border-left: 3px solid #ffd600; background: #fffbeb;
+    margin: 2px 8px 6px; border-radius: 0 4px 4px 0; padding-left: 18px;
+}
+.acc-sub li.acc-viewall a:hover { background: #fef9c3; color: #003366; }
+.sidebar-back-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; margin: 10px 12px 4px;
+    background: #f0f7ff; border: 1.5px solid #bae6fd;
+    border-radius: 8px; color: #0369a1; font-size: 13px; font-weight: 800;
+    text-decoration: none; transition: 0.2s;
+}
+.sidebar-back-btn:hover { background: #003366; color: #ffd600; border-color: #003366; }
+.sidebar-back-btn i { font-size: 12px; }
+.acc-divider { height: 1px; background: #e2e8f0; margin: 4px 12px 0; }
+
+/* =========================================
+   RESPONSIVE BỔ SUNG
+========================================= */
+@media (max-width: 900px) {
+    .brand-top-bar { flex-wrap: wrap; }
+    .brand-top-badge { margin-left: 0; }
+    .spare-category-grid { grid-template-columns: 1fr; }
+    .spare-oil-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .spare-oil-grid { grid-template-columns: 1fr; }
+    .page-btn.prev span, .page-btn.next span { display: none; }
+}

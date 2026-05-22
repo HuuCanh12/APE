@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phụ Tùng &amp; Dầu Nhớt Chính Hãng - APE Air &amp; Pump Solutions</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Extra styles for this page */
+        .pt-section-title {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 18px; font-weight: 900; color: #003366;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            margin: 36px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #ffd600;
+        }
+        .pt-section-title i { color: #0072bc; font-size: 20px; }
+
+        .pt-brand-tabs {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+        }
+        .pt-brand-tab {
+            padding: 8px 18px; border-radius: 20px; border: 2px solid #e2e8f0;
+            background: #fff; color: #003366; font-weight: 800; font-size: 13px;
+            cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block;
+        }
+        .pt-brand-tab:hover, .pt-brand-tab.active {
+            background: #003366; color: #ffd600; border-color: #003366;
+        }
+
+        /* Spare parts cards - horizontal compact list */
+        .spare-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 12px; }
+        .spare-item {
+            display: flex; align-items: flex-start; gap: 18px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            padding: 20px 22px; transition: 0.25s;
+        }
+        .spare-item:hover { border-color: #0072bc; box-shadow: 0 6px 20px rgba(0,114,188,0.08); transform: translateY(-2px); }
+        .spare-item-icon {
+            width: 46px; height: 46px; border-radius: 9px; flex-shrink: 0;
+            background: linear-gradient(135deg, #003366, #0072bc);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .spare-item-icon i { color: #ffd600; font-size: 18px; }
+        .spare-item-body { flex: 1; }
+        .spare-item-body h4 { font-size: 15px; font-weight: 800; color: #003366; margin-bottom: 5px; }
+        .spare-item-body p { font-size: 13px; color: #64748b; line-height: 1.55; margin-bottom: 8px; }
+        .spare-item-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .spare-item-tag {
+            background: #f0f7ff; border: 1px solid #bae6fd;
+            color: #0369a1; font-size: 11.5px; font-weight: 700;
+            border-radius: 4px; padding: 3px 9px;
+        }
+        .spare-item-action { flex-shrink: 0; }
+        .spare-item-action a {
+            display: inline-block; background: #003366; color: #ffd600;
+            padding: 9px 16px; border-radius: 7px; font-size: 12px; font-weight: 800;
+            text-decoration: none; white-space: nowrap; transition: 0.2s;
+        }
+        .spare-item-action a:hover { background: #0072bc; }
+
+        /* Oil cards - styled grid */
+        .oil-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 16px; }
+        .oil-full-card {
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+            padding: 22px; display: flex; gap: 16px; align-items: flex-start; transition: 0.25s;
+        }
+        .oil-full-card:hover { border-color: #ffd600; box-shadow: 0 6px 20px rgba(255,214,0,0.12); transform: translateY(-2px); }
+        .oil-full-icon {
+            width: 52px; height: 52px; border-radius: 10px; flex-shrink: 0;
+            background: linear-gradient(135deg, #ffd600, #f59e0b);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .oil-full-icon i { color: #003366; font-size: 22px; }
+        .oil-full-body h4 { font-size: 14.5px; font-weight: 900; color: #003366; margin-bottom: 4px; }
+        .oil-full-body .oil-brand { font-size: 11px; font-weight: 700; color: #0072bc; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .oil-full-body p { font-size: 13px; color: #64748b; line-height: 1.5; margin-bottom: 10px; }
+        .oil-specs { display: flex; flex-wrap: wrap; gap: 6px; }
+        .oil-spec-badge {
+            background: #fefce8; border: 1px solid #fef08a;
+            color: #713f12; font-size: 11px; font-weight: 700;
+            border-radius: 4px; padding: 3px 8px;
+        }
+
+        /* Order CTA box */
+        .order-cta {
+            background: linear-gradient(135deg, #003366 0%, #005a9e 100%);
+            border-radius: 14px; padding: 36px; color: #fff;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 24px; flex-wrap: wrap; margin-top: 36px;
+        }
+        .order-cta h3 { font-size: 21px; font-weight: 900; color: #ffd600; margin-bottom: 10px; }
+        .order-cta p { font-size: 14px; color: #e2e8f0; line-height: 1.65; margin: 0; }
+        .order-cta-info { flex: 1; min-width: 260px; }
+        .order-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+        .cta-btn-primary {
+            background: #ffd600; color: #003366; padding: 14px 26px;
+            border-radius: 8px; font-weight: 900; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px; font-size: 14px; transition: 0.2s;
+        }
+        .cta-btn-primary:hover { background: #f59e0b; }
+        .cta-btn-secondary {
+            background: rgba(255,255,255,0.12); color: #fff;
+            border: 2px solid rgba(255,255,255,0.35);
+            padding: 14px 26px; border-radius: 8px; font-weight: 800;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; transition: 0.2s;
+        }
+        .cta-btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+        /* How to order steps */
+        .order-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 8px; }
+        .order-step {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+            padding: 20px 16px; text-align: center; position: relative;
+        }
+        .order-step-num {
+            width: 34px; height: 34px; background: #003366; color: #ffd600;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 15px; margin: 0 auto 12px;
+        }
+        .order-step h5 { font-size: 13.5px; font-weight: 800; color: #003366; margin-bottom: 6px; }
+        .order-step p { font-size: 12px; color: #64748b; line-height: 1.5; margin: 0; }
+
+        @media (max-width: 900px) {
+            .oil-full-grid { grid-template-columns: 1fr; }
+            .order-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .spare-item { flex-direction: column; }
+            .spare-item-action { width: 100%; }
+            .spare-item-action a { width: 100%; text-align: center; }
+            .order-steps { grid-template-columns: 1fr; }
+            .order-cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="index.html"><img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img"></a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="san-pham.html" class="active">SẢN PHẨM</a></li>
+                    <li><a href="du-an.html">DỰ ÁN</a></li>
+                    <li><a href="thuong-hieu.html">THƯƠNG HIỆU</a></li>
+                    <li><a href="dich-vu.html">DỊCH VỤ</a></li>
+                    <li><a href="khach-hang.html">KHÁCH HÀNG</a></li>
+                    <li><a href="lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <span class="hotline-block">
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline" style="filter:brightness(0) invert(1);"></span>
+                    <span class="hotline-label" style="color:#003366;">HOTLINE</span>
+                    <strong class="hotline-number" style="color:#003366;">0938 756 577</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero contact-hero">
+        <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <span class="hero-subtitle">CHÍNH HÃNG – BẢO HÀNH ĐẦY ĐỦ – GIAO HÀNG 24–48H</span>
+                <h1 class="hero-title">PHỤ TÙNG &amp; <br><span>DẦU NHỚT CÔNG NGHIỆP</span></h1>
+                <p class="hero-desc">Cung cấp phụ tùng thay thế chính hãng và dầu nhớt chuyên dụng cho toàn bộ dải thiết bị Quincy, Friulair, Tapflo, Becker, DVP &amp; Pneumofore. Kỹ sư APE tư vấn đúng mã, giao nhanh toàn quốc.</p>
+                <nav class="breadcrumb-modern">
+                    <a href="index.html">Trang chủ</a>
+                    <i class="fa-solid fa-angle-right" style="font-size:11px;"></i>
+                    <a href="san-pham.html">Sản phẩm</a>
+                    <i class="fa-solid fa-angle-right" style="font-size:11px;"></i>
+                    <span class="current">Phụ Tùng &amp; Dầu Nhớt</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-page-section">
+        <div class="container products-layout-modern">
+                        <aside class="product-sidebar">
+                <div class="product-sidebar-header"><i class="fa-solid fa-list-ul"></i> DANH MỤC THƯƠNG HIỆU</div>
+
+                <a href="san-pham.html" class="sidebar-back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về tổng sản phẩm
+                </a>
+                <div class="acc-divider"></div>
+
+                <ul class="acc-menu">
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-quincy">
+                            &#127482;&#127480; Quincy (Mỹ)
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-quincy">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-quincy.html"><i class="fa-solid fa-star"></i> Xem tất cả Quincy</a></li>
+                                <li><a href="san-pham-quincy.html#qsi"><i class="fa-solid fa-circle-dot"></i> Máy nén trục vít QSI</a></li>
+                                <li><a href="san-pham-quincy.html#qof"><i class="fa-solid fa-circle-dot"></i> Máy nén không dầu QOF</a></li>
+                                <li><a href="san-pham-quincy.html#qgv"><i class="fa-solid fa-circle-dot"></i> Máy nén biến tần QGV</a></li>
+                                <li><a href="san-pham-quincy.html#qsvd"><i class="fa-solid fa-circle-dot"></i> Bơm chân không QSVD</a></li>
+                                <li><a href="san-pham-quincy.html#qr"><i class="fa-solid fa-circle-dot"></i> Máy nén pittông QR-25</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-friulair">
+                            &#127470;&#127481; Friulair (Ý)
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-friulair">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-friulair.html"><i class="fa-solid fa-star"></i> Xem tất cả Friulair</a></li>
+                                <li><a href="san-pham-friulair.html#lanh"><i class="fa-solid fa-circle-dot"></i> Máy sấy khí kiểu lạnh</a></li>
+                                <li><a href="san-pham-friulair.html#hapthu"><i class="fa-solid fa-circle-dot"></i> Máy sấy hấp thụ Desiccant</a></li>
+                                <li><a href="san-pham-friulair.html#loc"><i class="fa-solid fa-circle-dot"></i> Bộ lọc khí công nghiệp</a></li>
+                                <li><a href="san-pham-friulair.html#condensate"><i class="fa-solid fa-circle-dot"></i> Thiết bị tách dầu-nước OWS</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-tapflo">
+                            &#127480;&#127466; Tapflo (Thụy Điển)
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-tapflo">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-tapflo.html"><i class="fa-solid fa-star"></i> Xem tất cả Tapflo</a></li>
+                                <li><a href="san-pham-tapflo.html#mang"><i class="fa-solid fa-circle-dot"></i> Bơm màng khí nén AODD</a></li>
+                                <li><a href="san-pham-tapflo.html#lytam"><i class="fa-solid fa-circle-dot"></i> Bơm ly tâm CTM / CTS</a></li>
+                                <li><a href="san-pham-tapflo.html#thucpham"><i class="fa-solid fa-circle-dot"></i> Bơm vi sinh thực phẩm</a></li>
+                                <li><a href="san-pham-tapflo.html#nhudong"><i class="fa-solid fa-circle-dot"></i> Bơm nhu động Peristaltic</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-becker">
+                            &#127465;&#127466; Becker (Đức)
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-becker">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-becker.html"><i class="fa-solid fa-star"></i> Xem tất cả Becker</a></li>
+                                <li><a href="san-pham-becker.html#canhgat"><i class="fa-solid fa-circle-dot"></i> Bơm cánh gạt có dầu KVT</a></li>
+                                <li><a href="san-pham-becker.html#canhgat-khodau"><i class="fa-solid fa-circle-dot"></i> Bơm cánh gạt không dầu VTLF</a></li>
+                                <li><a href="san-pham-becker.html#vads"><i class="fa-solid fa-circle-dot"></i> Trục vít biến tần VADS</a></li>
+                                <li><a href="san-pham-becker.html#thoi"><i class="fa-solid fa-circle-dot"></i> Máy thổi khí Side Channel</a></li>
+                                <li><a href="san-pham-becker.html#tram"><i class="fa-solid fa-circle-dot"></i> Trạm chân không tổng hợp</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-dvp">
+                            &#127470;&#127481; DVP &amp; Pneumofore (Ý)
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-dvp">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-dvp.html"><i class="fa-solid fa-star"></i> Xem tất cả DVP &amp; Pneumofore</a></li>
+                                <li><a href="san-pham-dvp.html#dvp-canh"><i class="fa-solid fa-circle-dot"></i> DVP &mdash; Cánh gạt có dầu LC/RC</a></li>
+                                <li><a href="san-pham-dvp.html#dvp-khodau"><i class="fa-solid fa-circle-dot"></i> DVP &mdash; Cánh gạt không dầu VC</a></li>
+                                <li><a href="san-pham-dvp.html#dvp-truc"><i class="fa-solid fa-circle-dot"></i> DVP &mdash; Trục vít khô DX/DV</a></li>
+                                <li><a href="san-pham-dvp.html#dvp-roots"><i class="fa-solid fa-circle-dot"></i> DVP &mdash; Roots Booster RM/RV</a></li>
+                                <li><a href="san-pham-dvp.html#pneumofore"><i class="fa-solid fa-circle-dot"></i> Pneumofore &mdash; UV Series</a></li>
+                                <li><a href="san-pham-dvp.html#pneumofore-nen"><i class="fa-solid fa-circle-dot"></i> Pneumofore &mdash; A Series</a></li>
+                                <li><a href="san-pham-dvp.html#he-thong-cv"><i class="fa-solid fa-circle-dot"></i> Hệ thống chân không tổng</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-phutung">
+                            &#128295; Phụ Tùng &amp; Dầu Nhớt
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-phutung">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-phu-tung.html"><i class="fa-solid fa-star"></i> Xem tất cả Phụ Tùng</a></li>
+                                <li><a href="san-pham-phu-tung.html"><i class="fa-solid fa-circle-dot"></i> Phụ tùng Quincy</a></li>
+                                <li><a href="san-pham-phu-tung.html"><i class="fa-solid fa-circle-dot"></i> Phụ tùng Tapflo</a></li>
+                                <li><a href="san-pham-phu-tung.html"><i class="fa-solid fa-circle-dot"></i> Phụ tùng Becker &amp; DVP</a></li>
+                                <li><a href="san-pham-phu-tung.html"><i class="fa-solid fa-circle-dot"></i> Phụ tùng Friulair</a></li>
+                                <li><a href="san-pham-phu-tung.html"><i class="fa-solid fa-circle-dot"></i> Dầu nhớt chuyên dụng</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-vongnuoc">
+                            🇹🇼 Bơm Chân Không Vòng Nước
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-vongnuoc">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-vong-nuoc.html"><i class="fa-solid fa-star"></i> Xem tất cả Vòng Nước</a></li>
+                                <li><a href="san-pham-vong-nuoc.html#tich-hop"><i class="fa-solid fa-circle-dot"></i> Bơm CV vòng nước tích hợp</a></li>
+                                <li><a href="san-pham-vong-nuoc.html#don"><i class="fa-solid fa-circle-dot"></i> Bơm CV vòng nước đơn</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-nito">
+                            ⚗️ Máy Tạo Khí Nitơ / Oxy
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-nito">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-nito-oxy.html"><i class="fa-solid fa-star"></i> Xem tất cả Nitơ/Oxy</a></li>
+                                <li><a href="san-pham-nito-oxy.html#nito"><i class="fa-solid fa-circle-dot"></i> Máy tạo khí Nitơ</a></li>
+                                <li><a href="san-pham-nito-oxy.html#oxy"><i class="fa-solid fa-circle-dot"></i> Máy tạo khí Oxy</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="acc-item">
+                        <button class="acc-toggle" data-target="acc-solberg">
+                            🇺🇸 SOLBERG (USA) – Lọc Chân Không
+                            <span class="acc-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <div class="acc-panel" id="acc-solberg">
+                            <ul class="acc-sub">
+                                <li class="acc-viewall"><a href="san-pham-solberg.html"><i class="fa-solid fa-star"></i> Xem tất cả Solberg</a></li>
+                                <li><a href="san-pham-solberg.html#dau-vao"><i class="fa-solid fa-circle-dot"></i> Bộ lọc đầu vào</a></li>
+                                <li><a href="san-pham-solberg.html#dau-xa"><i class="fa-solid fa-circle-dot"></i> Bộ lọc đầu xả</a></li>
+                                <li><a href="san-pham-solberg.html#loi-loc"><i class="fa-solid fa-circle-dot"></i> Lõi lọc chân không</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                <div class="contact-sidebar-card">
+                    <i class="fa-solid fa-headset" style="font-size:32px;color:#ffd600;margin-bottom:15px;"></i>
+                    <h4>TƯ VẤN &amp; BÁO GIÁ</h4>
+                    <p>Liên hệ kỹ sư APE để được tư vấn lựa chọn thiết bị phù hợp nhất cho nhà máy.</p>
+                    <a href="tel:0938756577" class="btn-sidebar-contact"><i class="fa-solid fa-phone"></i> Gọi ngay: 0938 756 577</a>
+                </div>
+            </aside>
+
+            <main>
+
+                <!-- Quy trình đặt hàng -->
+                <div class="pt-section-title"><i class="fa-solid fa-cart-shopping"></i> QUY TRÌNH ĐẶT HÀNG PHỤ TÙNG</div>
+                <div class="order-steps">
+                    <div class="order-step">
+                        <div class="order-step-num">1</div>
+                        <h5>Cung cấp thông tin máy</h5>
+                        <p>Model máy, số serial, hãng sản xuất và năm lắp đặt</p>
+                    </div>
+                    <div class="order-step">
+                        <div class="order-step-num">2</div>
+                        <h5>Kỹ sư APE tư vấn</h5>
+                        <p>Xác định đúng mã phụ tùng, kiểm tra kho và báo giá trong 30 phút</p>
+                    </div>
+                    <div class="order-step">
+                        <div class="order-step-num">3</div>
+                        <h5>Xác nhận đơn hàng</h5>
+                        <p>Ký hợp đồng hoặc đặt cọc, APE xuất kho và đóng gói bảo vệ</p>
+                    </div>
+                    <div class="order-step">
+                        <div class="order-step-num">4</div>
+                        <h5>Giao hàng &amp; Bảo hành</h5>
+                        <p>Giao tận nơi toàn quốc trong 24–48h, kèm chứng từ CO/CQ đầy đủ</p>
+                    </div>
+                </div>
+
+                <!-- PHỤ TÙNG QUINCY -->
+                <div id="quincy-pt" class="pt-section-title"><i class="fa-solid fa-wind"></i> PHỤ TÙNG QUINCY COMPRESSOR</div>
+                <div class="pt-brand-tabs">
+                    <span class="pt-brand-tab active">Tất cả</span>
+                    <span class="pt-brand-tab">Lọc dầu</span>
+                    <span class="pt-brand-tab">Lọc khí</span>
+                    <span class="pt-brand-tab">Tách dầu</span>
+                    <span class="pt-brand-tab">Bộ Kit</span>
+                </div>
+                <div class="spare-list">
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-filter"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Lõi tách dầu Quincy (Oil Separator Element)</h4>
+                            <p>Phụ tùng quan trọng nhất trong máy nén trục vít — lọc và tách dầu khỏi khí nén trước khi đưa vào hệ thống. Sử dụng đúng loại Quincy chính hãng đảm bảo hàm lượng dầu trong khí &lt;3 ppm và bảo hành máy nguyên vẹn.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">QSI Series</span>
+                                <span class="spare-item-tag">QGV Series</span>
+                                <span class="spare-item-tag">QOF Series</span>
+                                <span class="spare-item-tag">Thay mỗi 4.000h</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Lõi lọc dầu &amp; Lõi lọc không khí Quincy</h4>
+                            <p>Bộ đôi lõi lọc thiết yếu — lọc dầu ngăn tạp chất từ dầu bôi trơn, lọc không khí đầu vào bảo vệ đầu nén khỏi bụi và dị vật. Chính hãng Quincy, thay định kỳ 2.000 giờ hoặc theo chỉ số áp suất.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Tất cả dòng Quincy</span>
+                                <span class="spare-item-tag">Thay mỗi 2.000h</span>
+                                <span class="spare-item-tag">Sẵn kho HCM</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-gear"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Bộ Kit Bảo Dưỡng Quincy (Maintenance Kit)</h4>
+                            <p>Trọn bộ linh kiện cho một kỳ bảo dưỡng định kỳ 2.000h / 4.000h / 8.000h — gồm lõi tách dầu, lõi lọc dầu, lọc khí, ron làm kín, dầu Quin-Syn Plus. Tiết kiệm chi phí hơn mua lẻ, đảm bảo máy vận hành đúng thông số.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Kit 2.000h</span>
+                                <span class="spare-item-tag">Kit 4.000h</span>
+                                <span class="spare-item-tag">Kit 8.000h</span>
+                                <span class="spare-item-tag">Tiết kiệm 15%</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Cảm biến, Van điện từ &amp; Bộ điều khiển ICON™ Quincy</h4>
+                            <p>Phụ tùng điện tử và điều khiển: cảm biến áp suất, nhiệt độ, van solenoid xả áp, van minimum pressure, board ICON™ thay thế. APE cam kết hàng chính hãng, kiểm tra trước khi xuất kho.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">ICON™ Controller</span>
+                                <span class="spare-item-tag">Cảm biến áp suất</span>
+                                <span class="spare-item-tag">Van solenoid</span>
+                                <span class="spare-item-tag">Van minimum pressure</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                </div>
+
+                <!-- PHỤ TÙNG TAPFLO -->
+                <div id="tapflo-pt" class="pt-section-title"><i class="fa-solid fa-droplet"></i> PHỤ TÙNG BƠM TAPFLO</div>
+                <div class="spare-list">
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-pump-soap"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Màng Bơm Tapflo (Diaphragm Kit)</h4>
+                            <p>Màng bơm là linh kiện tiêu hao chính của bơm màng AODD. Tapflo cung cấp đầy đủ vật liệu: PTFE (chịu hóa chất cao), Santoprene (đàn hồi tốt), EPDM (chịu nhiệt), Neoprene (đa năng). Chọn đúng vật liệu theo tính chất lưu chất để kéo dài tuổi thọ màng.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">PTFE</span>
+                                <span class="spare-item-tag">Santoprene</span>
+                                <span class="spare-item-tag">EPDM</span>
+                                <span class="spare-item-tag">Neoprene</span>
+                                <span class="spare-item-tag">Size 1/2" – 3"</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Bộ Van Bi &amp; Van Check Tapflo (Ball &amp; Check Valve Kit)</h4>
+                            <p>Van bi check (ball valve kit) là trái tim của bơm màng — kiểm soát chiều dòng chảy chính xác. Vật liệu bi: PTFE, Polypropylene, Teflon-coated SS316. Vật liệu đế van: PTFE, EPDM, Santoprene. APE có sẵn kho cho dòng T15 đến T80.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Ball PTFE / PP / SS316</span>
+                                <span class="spare-item-tag">Seat EPDM / Santoprene</span>
+                                <span class="spare-item-tag">T15 – T80</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-ring"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Mechanical Seal &amp; O-ring Bơm Ly Tâm Tapflo (CTM / CTS)</h4>
+                            <p>Seal kit đầy đủ cho bơm ly tâm CTM Magdrive và CTS tự mồi — gồm mechanical seal, O-ring, lip seal. Vật liệu: Silicon Carbide/Carbon, PTFE, Viton, EPDM. Kỹ sư APE hỗ trợ xác định đúng bộ seal theo model bơm.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">CTM Magdrive</span>
+                                <span class="spare-item-tag">CTS Tự mồi</span>
+                                <span class="spare-item-tag">SiC/Carbon seal</span>
+                                <span class="spare-item-tag">Viton / EPDM O-ring</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                </div>
+
+                <!-- PHỤ TÙNG BECKER & DVP -->
+                <div id="becker-dvp-pt" class="pt-section-title"><i class="fa-solid fa-gauge-high"></i> PHỤ TÙNG BECKER &amp; DVP / PNEUMOFORE</div>
+                <div class="spare-list">
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-ruler-horizontal"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Cánh Gạt Carbon (Carbon Vane) — Becker &amp; DVP</h4>
+                            <p>Cánh gạt là linh kiện mài mòn chính của bơm cánh gạt. Vật liệu carbon composite cao cấp tự bôi trơn, chịu nhiệt và không gây nhiễm bẩn khí. Thay định kỳ theo số giờ vận hành hoặc khi áp chân không giảm. APE có sẵn cho toàn dòng KVT, VTLF (Becker) và LC, RC, VC (DVP).</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Becker KVT / VTLF</span>
+                                <span class="spare-item-tag">DVP LC / RC / VC</span>
+                                <span class="spare-item-tag">Carbon composite</span>
+                                <span class="spare-item-tag">Thay mỗi 4.000 – 8.000h</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-filter"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Bộ Lọc Khí Thải &amp; Lọc Dầu Bơm Chân Không Becker / DVP</h4>
+                            <p>Lõi lọc khí thải (exhaust filter) ngăn hơi dầu thoát ra môi trường — bắt buộc với bơm cánh gạt có dầu. Lõi lọc dầu bôi trơn đảm bảo dầu trong máy luôn sạch. APE cung cấp đúng model theo số sê-ri máy.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Exhaust filter</span>
+                                <span class="spare-item-tag">Oil filter</span>
+                                <span class="spare-item-tag">Intake filter</span>
+                                <span class="spare-item-tag">Becker &amp; DVP</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-gear"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Vòng Bi (Bearing) &amp; Phớt Trục (Shaft Seal) Becker / DVP / Pneumofore</h4>
+                            <p>Vòng bi đầu bơm và phớt trục chịu tải cao, chuyên dụng cho bơm chân không công nghiệp. APE sử dụng hàng chính hãng SKF, FAG hoặc NSK theo đúng thông số kỹ thuật gốc của Becker, DVP và Pneumofore để đảm bảo độ chính xác và tuổi thọ.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">SKF / FAG / NSK</span>
+                                <span class="spare-item-tag">Shaft seal PTFE</span>
+                                <span class="spare-item-tag">Becker / DVP / Pneumofore</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                </div>
+
+                <!-- PHỤ TÙNG FRIULAIR -->
+                <div id="friulair-pt" class="pt-section-title"><i class="fa-solid fa-snowflake"></i> PHỤ TÙNG MÁY SẤY FRIULAIR</div>
+                <div class="spare-list">
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Lõi Lọc Tách Nước (Coalescing Filter &amp; Water Separator) Friulair</h4>
+                            <p>Lõi lọc tập hợp FSL/FSH và bộ tách nước tự động cho máy sấy lạnh Friulair. Đảm bảo nước ngưng tụ được loại bỏ hoàn toàn, không tích tụ trong đường ống. Thay định kỳ 4.000 – 8.000 giờ tùy điều kiện vận hành.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">FSL / FSH Series</span>
+                                <span class="spare-item-tag">Coalescing element</span>
+                                <span class="spare-item-tag">Auto drain valve</span>
+                                <span class="spare-item-tag">Thay 4.000 – 8.000h</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                    <div class="spare-item">
+                        <div class="spare-item-icon"><i class="fa-solid fa-recycle"></i></div>
+                        <div class="spare-item-body">
+                            <h4>Hạt Hấp Thụ Silica Gel &amp; Zeolite (Desiccant Refill) Friulair</h4>
+                            <p>Vật liệu hấp thụ cho máy sấy kiểu hấp thụ ALU/ALH — silica gel tái sinh hoặc zeolite 4A không tái sinh. Thay thế khi hiệu suất giảm (điểm sương tăng vượt ngưỡng). APE cung cấp đúng chủng loại và khối lượng theo từng tower.</p>
+                            <div class="spare-item-tags">
+                                <span class="spare-item-tag">Silica gel tái sinh</span>
+                                <span class="spare-item-tag">Zeolite 4A</span>
+                                <span class="spare-item-tag">ALU / ALH Series</span>
+                            </div>
+                        </div>
+                        <div class="spare-item-action"><a href="lien-he.html"><i class="fa-solid fa-paper-plane"></i> Báo giá</a></div>
+                    </div>
+                </div>
+
+                <!-- ===== DẦU NHỚT ===== -->
+                <div id="dau-nhot" class="pt-section-title"><i class="fa-solid fa-oil-can"></i> DẦU NHỚT CHUYÊN DỤNG CHÍNH HÃNG</div>
+
+                <!-- Klüber Summit brand bar -->
+                <div class="brand-top-bar" style="margin-bottom:20px;">
+                    <div class="brand-flag">🇩🇪</div>
+                    <div class="brand-top-info">
+                        <h2>KLÜBER LUBRICANTS — SUMMIT OILS</h2>
+                        <p>Thương hiệu dầu nhớt chuyên dụng hàng đầu thế giới từ Đức — Được Quincy, Becker, DVP khuyến nghị sử dụng chính thức cho toàn dòng sản phẩm</p>
+                    </div>
+                    <div class="brand-top-badge">
+                        <span>Nhập khẩu chính hãng</span>
+                        <strong>Made in Germany</strong>
+                    </div>
+                </div>
+
+                <div class="oil-full-grid">
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Klüber Summit SH-68</h4>
+                            <div class="oil-brand">Klüber Lubricants — Dầu máy nén khí trục vít</div>
+                            <p>Dầu tổng hợp PAO (Poly Alpha Olefin) cao cấp chuyên dụng cho máy nén khí trục vít có dầu. Chống oxy hóa và nhiệt vượt trội, giảm thiểu cặn lắng, chu kỳ thay dầu lên đến 8.000 giờ — tiêu chuẩn Quincy QSI &amp; QGV.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">Độ nhớt ISO 68</span>
+                                <span class="oil-spec-badge">PAO Synthetic</span>
+                                <span class="oil-spec-badge">Chu kỳ 8.000h</span>
+                                <span class="oil-spec-badge">Quincy &amp; Becker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Klüber Summit RO-100</h4>
+                            <div class="oil-brand">Klüber Lubricants — Dầu bơm cánh gạt</div>
+                            <p>Dầu tổng hợp chuyên dụng cho bơm chân không và máy nén cánh gạt. Ức chế hình thành cặn carbon trong buồng bơm, bảo vệ cánh gạt carbon composite, duy trì hiệu suất chân không ổn định theo thời gian.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">Độ nhớt ISO 100</span>
+                                <span class="oil-spec-badge">Synthetic</span>
+                                <span class="oil-spec-badge">Becker KVT</span>
+                                <span class="oil-spec-badge">DVP LC / RC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Klüber Summit HySyn FG-68</h4>
+                            <div class="oil-brand">Klüber Lubricants — Dầu cấp thực phẩm NSF H1</div>
+                            <p>Dầu tổng hợp cấp thực phẩm NSF H1 — tiêu chuẩn bắt buộc cho máy nén và bơm chân không trong nhà máy thực phẩm, đồ uống và dược phẩm. Hoàn toàn không gây nguy hại nếu tiếp xúc ngẫu nhiên với thực phẩm.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">NSF H1 Certified</span>
+                                <span class="oil-spec-badge">FDA 21 CFR</span>
+                                <span class="oil-spec-badge">ISO 68</span>
+                                <span class="oil-spec-badge">Food Grade</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Quincy Quin-Syn Plus</h4>
+                            <div class="oil-brand">Quincy Compressor — Dầu chính hãng Quincy</div>
+                            <p>Dầu tổng hợp chính hãng Quincy Compressor, được đặc chế riêng cho toàn dòng QSI, QGV, QOF. Sử dụng dầu Quin-Syn Plus là điều kiện bắt buộc để giữ bảo hành đầu nén 24 tháng. Chu kỳ thay 8.000 giờ.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">OEM Quincy</span>
+                                <span class="oil-spec-badge">Chu kỳ 8.000h</span>
+                                <span class="oil-spec-badge">QSI / QGV / QOF</span>
+                                <span class="oil-spec-badge">Bảo hành 24 tháng</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Pneumofore Rotary Oil PF-100</h4>
+                            <div class="oil-brand">Pneumofore — Dầu chính hãng máy chân không cánh quay</div>
+                            <p>Dầu tổng hợp chuyên dụng cho toàn dòng máy chân không Pneumofore UV Series và A Series. Hệ thống làm mát dầu vòng kín đòi hỏi dầu đặc biệt có độ nhớt, điểm chớp cháy và khả năng tản nhiệt cao. Thay mỗi 6.000 – 8.000 giờ.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">OEM Pneumofore</span>
+                                <span class="oil-spec-badge">UV &amp; A Series</span>
+                                <span class="oil-spec-badge">Oil-Cooling</span>
+                                <span class="oil-spec-badge">Chu kỳ 6.000–8.000h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oil-full-card">
+                        <div class="oil-full-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="oil-full-body">
+                            <h4>Dầu Tổng Hợp PAO 46 Đa Năng</h4>
+                            <div class="oil-brand">APE — Dầu tổng hợp đa năng PAO ISO 46</div>
+                            <p>Dầu tổng hợp PAO ISO 46 phổ thông tương thích nhiều dòng máy nén khí trục vít công nghiệp. Lựa chọn kinh tế cho các ứng dụng không yêu cầu dầu OEM đặc biệt, vận hành ổn định, bảo vệ tốt trong điều kiện nhiệt độ cao.</p>
+                            <div class="oil-specs">
+                                <span class="oil-spec-badge">PAO ISO 46</span>
+                                <span class="oil-spec-badge">Đa năng</span>
+                                <span class="oil-spec-badge">Chu kỳ 4.000h</span>
+                                <span class="oil-spec-badge">Kinh tế</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Đặt hàng -->
+                <div class="order-cta">
+                    <div class="order-cta-info">
+                        <h3>Cần đặt phụ tùng hoặc dầu nhớt?</h3>
+                        <p>Cung cấp cho kỹ sư APE: <strong style="color:#fff;">tên hãng máy + model + số serial + số giờ vận hành.</strong> Chúng tôi sẽ tư vấn đúng mã linh kiện, kiểm tra tồn kho và báo giá trong vòng <strong style="color:#ffd600;">30 phút</strong> — giao hàng toàn quốc trong 24–48 giờ kèm chứng từ CO/CQ đầy đủ.</p>
+                    </div>
+                    <div class="order-cta-btns">
+                        <a href="tel:0938756577" class="cta-btn-primary"><i class="fa-solid fa-phone"></i> 0938 756 577</a>
+                        <a href="lien-he.html" class="cta-btn-secondary"><i class="fa-solid fa-envelope"></i> Gửi yêu cầu</a>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-col footer-about">
+                <img src="images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
+                <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
+                <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp. Cam kết thiết bị chất lượng, tiết kiệm năng lượng và dịch vụ chuẩn quốc tế.</p>
+                <div class="social-links">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/ffffff/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/ffffff/youtube-play.png" alt="YouTube"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/ffffff/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+                    <li><a href="san-pham.html">Sản phẩm chủ lực</a></li>
+                    <li><a href="dich-vu.html">Dịch vụ kỹ thuật</a></li>
+                    <li><a href="du-an.html">Dự án tiêu biểu</a></li>
+                    <li><a href="thuong-hieu.html">Thương hiệu đối tác</a></li>
+                    <li><a href="khach-hang.html">Khách hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <ul class="contact-list">
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div><span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div><span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div><span>info@apeco.vn</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-map-block">
+                <h4>BẢN ĐỒ VỊ TRÍ</h4>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=46+%C4%90.+S%E1%BB%91+6%2C+G%C3%B2+V%E1%BA%A5p%2C+H%E1%BB%93+Ch%C3%AD+Minh%2C+Vi%E1%BB%87t+Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container copyright-flex">
+                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
+                <span>Thiết kế và phát triển bởi APE</span>
+            </div>
+        </div>
+    </footer>
+
+        <script>
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        }
+        menuToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        // Accordion sidebar
+        document.querySelectorAll('.acc-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+                var panel = document.getElementById(targetId);
+                var isOpen = this.classList.contains('open');
+                document.querySelectorAll('.acc-toggle').forEach(function(b) { b.classList.remove('open'); });
+                document.querySelectorAll('.acc-panel').forEach(function(p) { p.classList.remove('open'); });
+                if (!isOpen) {
+                    this.classList.add('open');
+                    panel.classList.add('open');
+                }
+            });
+        });
+
+        // Tu dong mo accordion dung trang + scroll den anchor
+        (function autoOpen() {
+            var url = window.location.pathname;
+            var hash = window.location.hash;
+            var slugMap = {
+                'quincy':  'san-pham-quincy',
+                'friulair':'san-pham-friulair',
+                'tapflo':  'san-pham-tapflo',
+                'becker':  'san-pham-becker',
+                'dvp':     'san-pham-dvp',
+                'phutung': 'san-pham-phu-tung'
+            };
+            Object.keys(slugMap).forEach(function(key) {
+                if (url.indexOf(slugMap[key]) !== -1) {
+                    var btn = document.querySelector('[data-target="acc-' + key + '"]');
+                    var panel = document.getElementById('acc-' + key);
+                    if (btn && panel) { btn.classList.add('open'); panel.classList.add('open'); }
+                }
+            });
+            if (hash) {
+                setTimeout(function() {
+                    var el = document.querySelector(hash);
+                    if (el) {
+                        var offset = 80;
+                        var top = el.getBoundingClientRect().top + window.scrollY - offset;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                }, 350);
+            }
+        })();
+    </script>
+</body>
+</html>
