@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,206 @@
     <title>Khách hàng & Đối tác - APE Air & Pump Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002244;
+            --blue: #0072bc;
+            --gold: #ffd600;
+            --light: #f4f7fb;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif; background: #fff; color: var(--text); overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── HEADER ── */
+        .main-header { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 200; }
+        .header-flex { display: flex; align-items: center; justify-content: space-between; min-height: 90px; }
+        .logo-img { height: 52px; width: auto; object-fit: contain; display: block; }
+        .menu-toggle { display: none; }
+        nav ul { list-style: none; display: flex; gap: 22px; }
+        nav a { text-decoration: none; color: #444; font-weight: 700; font-size: 13.5px; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: .2s; white-space: nowrap; letter-spacing: .3px; }
+        nav a.active, nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+        .hotline-block { display: inline-flex; align-items: center; background: var(--gold); border-radius: 50px; padding: 9px 20px 9px 14px; gap: 8px; box-shadow: 0 4px 12px rgba(255,214,0,.35); cursor: pointer; white-space: nowrap; transition: .3s; }
+        .hotline-block:hover { transform: translateY(-2px); }
+        .hotline-label { color: #333; font-size: 12px; font-weight: 700; letter-spacing: .5px; }
+        .hotline-number { color: var(--navy); font-size: 17px; font-weight: 900; }
+        .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+
+        /* ── HERO ── */
+        .page-hero { position: relative; height: 460px; display: flex; align-items: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .8s ease; }
+        .page-hero:hover .hero-bg { transform: scale(1.04); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,26,60,.92) 0%, rgba(0,80,160,.55) 60%, rgba(0,114,188,.2) 100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; }
+        .hero-text-box { max-width: 680px; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+        .hero-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--gold); }
+        .hero-title { font-size: 46px; font-weight: 900; line-height: 1.2; color: #fff; margin-bottom: 18px; }
+        .hero-title span { color: var(--gold); }
+        .hero-desc { font-size: 15.5px; color: #c8daf0; line-height: 1.7; max-width: 580px; }
+
+        /* ── TRUST STRIP ── */
+        .trust-strip { background: var(--navy); padding: 22px 0; }
+        .trust-inner { display: flex; justify-content: space-around; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 12px; color: #fff; padding: 6px 16px; }
+        .trust-icon { font-size: 26px; color: var(--gold); }
+        .trust-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: .5px; }
+        .trust-value { font-size: 20px; font-weight: 900; color: #fff; line-height: 1; }
+        .trust-sep { width: 1px; height: 40px; background: rgba(255,255,255,.12); }
+
+        /* ── SECTION HEADER ── */
+        .sec-header { text-align: center; margin-bottom: 50px; padding-top: 70px; }
+        .sec-tag { display: inline-block; background: rgba(0,114,188,.08); color: var(--blue); font-size: 11.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 30px; margin-bottom: 14px; }
+        .sec-title { font-size: 30px; font-weight: 900; color: var(--navy); position: relative; display: inline-block; }
+        .sec-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 2px; }
+        .sec-desc { max-width: 620px; margin: 18px auto 0; color: #64748b; font-size: 15px; line-height: 1.7; }
+
+        /* ── CLIENT GRID ── */
+        .clients-section { background: var(--light); padding-bottom: 80px; }
+        .client-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .client-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px 20px 22px;
+            text-align: center;
+            border: 1.5px solid var(--border);
+            transition: all .35s cubic-bezier(.175,.885,.32,1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .client-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--gold));
+            transform: scaleX(0);
+            transition: transform .35s ease;
+            transform-origin: left;
+        }
+        .client-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,80,160,.1); border-color: transparent; }
+        .client-card:hover::before { transform: scaleX(1); }
+        .client-logo-wrap { width: 100%; height: 120px; background: var(--light); border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 16px; margin-bottom: 16px; transition: .3s; }
+        .client-card:hover .client-logo-wrap { background: #eef5ff; }
+        .client-logo-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: .4s; }
+        .client-card:hover .client-logo-wrap img { transform: scale(1.08); }
+        .client-name { font-size: 13px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .5px; transition: .3s; }
+        .client-card:hover .client-name { color: var(--blue); }
+
+        /* ── PAGINATION ── */
+        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 50px; }
+        .page-btn {
+            width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+            background: #fff; border: 1.5px solid var(--border); color: var(--navy); font-weight: 800;
+            font-size: 15px; border-radius: 8px; cursor: pointer; transition: .3s; font-family: inherit;
+        }
+        .page-btn:hover { border-color: var(--blue); color: var(--blue); }
+        .page-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); box-shadow: 0 4px 12px rgba(255,214,0,.4); }
+
+        /* ── PARTNER SECTION ── */
+        .partner-section { background: #fff; padding: 70px 0 80px; }
+        .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .partner-card { background: var(--light); border-radius: 14px; padding: 32px 24px; border-left: 4px solid var(--blue); transition: .3s; }
+        .partner-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,114,188,.1); border-left-color: var(--gold); }
+        .partner-icon { font-size: 28px; color: var(--blue); margin-bottom: 14px; }
+        .partner-card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+        .partner-card p { font-size: 14px; color: #64748b; line-height: 1.6; margin: 0; }
+
+        /* ── CTA ── */
+        .cta-section { background: linear-gradient(110deg, var(--navy) 0%, #004080 100%); padding: 65px 0; }
+        .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+        .cta-text h2 { font-size: 26px; font-weight: 900; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; }
+        .cta-text p { color: #94a3b8; font-size: 15px; max-width: 620px; line-height: 1.6; }
+        .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 800; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: .3s; }
+        .btn-gold:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,.15); }
+
+        /* ── FOOTER ── */
+        .main-footer { background: #fff; color: #475569; padding: 55px 0 0; font-size: 13px; border-top: 1px solid var(--border); }
+        .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-about { flex: 1.4; }
+        .footer-logo-img { height: 44px; display: block; margin-bottom: 14px; }
+        .footer-company-name { color: var(--navy); font-weight: 800; font-size: 13.5px; margin-bottom: 10px; }
+        .footer-desc { line-height: 1.65; margin-bottom: 18px; color: #64748b; }
+        .main-footer h4 { color: var(--navy); margin: 0 0 18px; font-size: 13px; font-weight: 800; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; position: relative; }
+        .main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 32px; height: 2px; background: var(--blue); }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 9px; }
+        .footer-links a { color: #64748b; text-decoration: none; transition: .2s; display: inline-flex; align-items: center; font-size: 13px; }
+        .footer-links a::before { content: '›'; font-size: 16px; margin-right: 7px; color: #cbd5e1; transition: .2s; }
+        .footer-links a:hover { color: var(--blue); transform: translateX(4px); }
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #64748b; }
+        .contact-icon { margin-top: 2px; flex-shrink: 0; }
+        .social-links { display: flex; gap: 9px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: .3s; }
+        .social-links a:hover { background: var(--blue); transform: translateY(-3px); }
+        .social-links a:hover img { filter: brightness(0) invert(1); }
+        .map-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+        .copyright { background: var(--navy); color: #94a3b8; padding: 15px 0; font-size: 12px; margin-top: 10px; }
+        .copyright-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+        
+        /* phone pulse */
+        .fc-phone .fc-icon { background: #e53935; }
+        .fc-phone .fc-icon::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(229,57,53,.45);
+            animation: pulse 1.8s infinite;
+        }
+        .fc-messenger .fc-icon { background: linear-gradient(135deg, #0099ff 0%, #a033ff 100%); }
+        .fc-zalo .fc-icon { background: #006AF5; }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            70% { transform: scale(1.45); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 920px) {
+            .header-flex { min-height: 68px; padding: 10px 15px; position: relative; }
+            .menu-toggle { display: flex; flex-direction: column; justify-content: space-evenly; width: 40px; height: 38px; background: #fff; border: 2px solid #555; border-radius: 6px; cursor: pointer; padding: 5px 6px; z-index: 102; }
+            .menu-toggle .bar { width: 100%; height: 3px; background: #555; border-radius: 2px; transition: all .3s; }
+            .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+            .nav-overlay.show { display: block; }
+            nav { position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #fff; box-shadow: 4px 0 20px rgba(0,0,0,.12); padding: 80px 20px 30px; flex-direction: column; align-items: flex-start; transition: left .4s ease; z-index: 101; }
+            nav.open { left: 0; }
+            nav ul { flex-direction: column; width: 100%; gap: 0; }
+            nav li { border-bottom: 1px solid #f1f5f9; }
+            nav a { display: block; padding: 14px 0; font-size: 15px; }
+            .hotline-block { width: 38px; height: 38px; padding: 0; border-radius: 50%; justify-content: center; }
+            .hotline-label, .hotline-number { display: none; }
+            .page-hero { height: auto; padding: 70px 0; }
+            .hero-title { font-size: 30px; }
+            .client-grid { grid-template-columns: repeat(2, 1fr); }
+            .partner-grid { grid-template-columns: 1fr 1fr; }
+            .trust-sep { display: none; }
+            .trust-inner { justify-content: center; gap: 20px; }
+        }
+        @media (max-width: 540px) {
+            .client-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .partner-grid { grid-template-columns: 1fr; }
+            .cta-inner { flex-direction: column; text-align: center; }
+            .btn-gold { width: 100%; justify-content: center; }
+            .footer-flex { flex-direction: column; }
+            .copyright-flex { flex-direction: column; text-align: center; }
+            .fc-icon { width: 46px; height: 46px; }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ═══ HEADER ═══ -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
@@ -15,15 +213,10 @@
                     <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
                 </a>
             </div>
-            
             <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
-
             <div class="nav-overlay" id="navOverlay"></div>
-
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">TRANG CHỦ</a></li>
@@ -38,9 +231,7 @@
             </nav>
             <div class="header-right">
                 <span class="hotline-block">
-                    <span class="hotline-icon">
-                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
-                    </span>
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline"></span>
                     <span class="hotline-label">HOTLINE</span>
                     <strong class="hotline-number">0938 756 577</strong>
                 </span>
@@ -48,129 +239,233 @@
         </div>
     </header>
 
-    <section class="page-hero contact-hero">
+    <!-- ═══ HERO ═══ -->
+    <section class="page-hero">
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text-box">
-                <span class="hero-subtitle">ĐỐI TÁC & KHÁCH HÀNG</span>
+                <div class="hero-eyebrow">ĐỐI TÁC & KHÁCH HÀNG</div>
                 <h1 class="hero-title">NIỀM TIN TỪ <br><span>CHẤT LƯỢNG THỰC TẾ</span></h1>
                 <p class="hero-desc">Hàng ngàn nhà máy và doanh nghiệp hàng đầu tại Việt Nam đã tin tưởng lựa chọn giải pháp khí nén, máy bơm công nghiệp và dịch vụ kỹ thuật của APE.</p>
-                
             </div>
         </div>
     </section>
 
-    <section class="clients-gallery">
+    <!-- ═══ TRUST STRIP ═══ -->
+    <div class="trust-strip">
         <div class="container">
-            <h2 class="section-title">KHÁCH HÀNG CỦA APE</h2>
-            
-            <div id="page-1" class="client-logo-grid-modern">
-                <div class="client-card-premium">
+            <div class="trust-inner">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-industry"></i></div>
+                    <div>
+                        <div class="trust-value">500+</div>
+                        <div class="trust-label">Khách hàng doanh nghiệp</div>
+                    </div>
+                </div>
+                <div class="trust-sep"></div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-medal"></i></div>
+                    <div>
+                        <div class="trust-value">15+</div>
+                        <div class="trust-label">Năm kinh nghiệm</div>
+                    </div>
+                </div>
+                <div class="trust-sep"></div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div>
+                        <div class="trust-value">30+</div>
+                        <div class="trust-label">Tỉnh thành phủ sóng</div>
+                    </div>
+                </div>
+                <div class="trust-sep"></div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-star"></i></div>
+                    <div>
+                        <div class="trust-value">98%</div>
+                        <div class="trust-label">Khách hàng hài lòng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CLIENTS GRID ═══ -->
+    <section class="clients-section">
+        <div class="container">
+            <div class="sec-header">
+                <div class="sec-tag">Đối tác tin cậy</div>
+                <h2 class="sec-title">KHÁCH HÀNG CỦA APE</h2>
+                <p class="sec-desc">Những tên tuổi hàng đầu Việt Nam và quốc tế đã chọn APE làm đối tác cung cấp giải pháp khí nén và bơm công nghiệp.</p>
+            </div>
+
+            <!-- PAGE 1 -->
+            <div id="page-1" class="client-grid">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Masan.jpg" alt="Tập đoàn Masan"></div>
                     <div class="client-name">Tập đoàn Masan</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Vinamilk.png" alt="Vinamilk"></div>
                     <div class="client-name">Vinamilk</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Nestle.png" alt="Nestle Vietnam"></div>
                     <div class="client-name">Nestle Vietnam</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo THP.png" alt="Tập đoàn Tân Hiệp Phát"></div>
                     <div class="client-name">Tập đoàn Tân Hiệp Phát</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo  HS.jpg" alt="Hyosung Việt Nam"></div>
                     <div class="client-name">Hyosung Việt Nam</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo KD.jpg" alt="Mondelez Kinh Đô"></div>
                     <div class="client-name">Mondelez Kinh Đô</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo  HS.jpg" alt="Tập đoàn Hoa Sen"></div>
                     <div class="client-name">Tập đoàn Hoa Sen</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Trung Nguyen.jpg" alt="Trung Nguyên"></div>
                     <div class="client-name">Trung Nguyên</div>
                 </div>
-                <div class="client-card-premium">
-                    <div class="client-logo-wrap"><img src="images/Logo/Logo liksin.png" alt="BAO BÌ LIKSIN"></div>
-                    <div class="client-name">BAO BÌ LIKSIN</div>
+                <div class="client-card">
+                    <div class="client-logo-wrap"><img src="images/Logo/Logo liksin.png" alt="Bao Bì Liksin"></div>
+                    <div class="client-name">Bao Bì Liksin</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Insee.png" alt="INSEE Việt Nam"></div>
                     <div class="client-name">INSEE Việt Nam</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Phu my.png" alt="Thép Tấm Lá Phú Mỹ"></div>
                     <div class="client-name">Thép Tấm Lá Phú Mỹ</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Vinataba.png" alt="Vinataba"></div>
                     <div class="client-name">Vinataba</div>
                 </div>
             </div>
 
-            <div id="page-2" class="client-logo-grid-modern" style="display: none;">
-                <div class="client-card-premium">
+            <!-- PAGE 2 -->
+            <div id="page-2" class="client-grid" style="display:none;">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo bibica.jpg" alt="Bibica"></div>
                     <div class="client-name">Bibica</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo toto.jpg" alt="TOTO Việt Nam"></div>
                     <div class="client-name">TOTO Việt Nam</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Theodore.jpg" alt="Gỗ Theodore Alexander"></div>
                     <div class="client-name">Gỗ Theodore Alexander</div>
                 </div>
-                <div class="client-card-premium">
-                    <div class="client-logo-wrap"><img src="images/Logo/Logo OIBJC.png" alt="O-I BJC VIET NAM"></div>
-                    <div class="client-name">O-I BJC VIET NAM</div>
+                <div class="client-card">
+                    <div class="client-logo-wrap"><img src="images/Logo/Logo OIBJC.png" alt="O-I BJC Viet Nam"></div>
+                    <div class="client-name">O-I BJC Viet Nam</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo TPC.png" alt="TPC Vina"></div>
                     <div class="client-name">TPC Vina</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo BienHoa.png" alt="Bao Bì Biên Hòa"></div>
                     <div class="client-name">Bao Bì Biên Hòa</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo DuyTaan.png" alt="Nhựa Duy Tân"></div>
                     <div class="client-name">Nhựa Duy Tân</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Domes.png" alt="Dược Domesco"></div>
                     <div class="client-name">Dược Domesco</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo ThiPha.png" alt="Cáp điện Thịnh Phát"></div>
                     <div class="client-name">Cáp điện Thịnh Phát</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo DongWha.png" alt="Dongwha"></div>
                     <div class="client-name">Dongwha</div>
                 </div>
-                <div class="client-card-premium">
+                <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Scancom.jpg" alt="ScanCom Việt Nam"></div>
                     <div class="client-name">ScanCom Việt Nam</div>
                 </div>
             </div>
 
+            <!-- PAGINATION -->
             <div class="pagination">
                 <button class="page-btn active" id="btn-page-1" onclick="changePage(1)">1</button>
                 <button class="page-btn" id="btn-page-2" onclick="changePage(2)">2</button>
             </div>
-
         </div>
     </section>
 
+    <!-- ═══ PARTNER TYPES ═══ -->
+    <section class="partner-section">
+        <div class="container">
+            <div class="sec-header" style="padding-top: 0;">
+                <div class="sec-tag">Lĩnh vực phục vụ</div>
+                <h2 class="sec-title">NGÀNH CÔNG NGHIỆP ĐÃ PHỤC VỤ</h2>
+            </div>
+            <div class="partner-grid">
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-bottle-water"></i></div>
+                    <h3>Thực phẩm & Đồ uống</h3>
+                    <p>Cung cấp hệ thống khí nén sạch đạt chuẩn vệ sinh thực phẩm cho các nhà máy chế biến F&B hàng đầu Việt Nam.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-pills"></i></div>
+                    <h3>Dược phẩm & Hóa chất</h3>
+                    <p>Giải pháp bơm hóa chất chính xác, chống ăn mòn và hệ thống khí nén y tế cho ngành sản xuất dược phẩm.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h3>Cơ khí & Sản xuất</h3>
+                    <p>Tối ưu hóa hệ thống khí nén, máy nén khí công suất lớn cho các nhà máy sản xuất, gia công cơ khí.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3>Bao bì & In ấn</h3>
+                    <p>Hệ thống khí nén áp suất ổn định, lọc khí chất lượng cao cho dây chuyền in offset, in nhãn và bao bì.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3>Xây dựng & Vật liệu</h3>
+                    <p>Cung cấp máy nén khí di động và cố định cho ngành xây dựng, sản xuất xi măng, thép và vật liệu xây dựng.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon"><i class="fa-solid fa-tree"></i></div>
+                    <h3>Gỗ & Nội thất</h3>
+                    <p>Trang bị hệ thống khí nén và bơm hút chân không tích hợp cho các nhà máy chế biến gỗ và sản xuất nội thất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>Trở thành đối tác của APE</h2>
+                    <p>Liên hệ ngay để được tư vấn giải pháp khí nén và bơm công nghiệp phù hợp nhất cho nhà máy của bạn.</p>
+                </div>
+                <a href="lien-he.html" class="btn-gold">
+                    <i class="fa-solid fa-phone-volume"></i> Liên hệ ngay
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
     <footer class="main-footer">
         <div class="container footer-flex">
             <div class="footer-col footer-about">
@@ -183,7 +478,6 @@
                     <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-            
             <div class="footer-col footer-links">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
@@ -195,77 +489,78 @@
                     <li><a href="khach-hang.html">Khách hàng</a></li>
                 </ul>
             </div>
-
-            <div class="footer-col footer-contact">
+            <div class="footer-col">
                 <h4>THÔNG TIN LIÊN HỆ</h4>
                 <ul class="contact-list">
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
-                        <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
+                        <span>46 đường số 6, KDC CityLand, P.Gò Vấp, TP.HCM</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
-                        <span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span>
+                        <span><strong style="color:#0072bc;">0938 756 577</strong> (Hỗ trợ 24/7)</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
-                        <span>info@apeco.vn</span>
+                        <span>support@apeco.vn</span>
                     </li>
                 </ul>
             </div>
-            
-            <div class="footer-col footer-map-block">
+            <div class="footer-col">
                 <h4>BẢN ĐỒ VỊ TRÍ</h4>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="145" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
             <div class="container copyright-flex">
-                <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
+                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
                 <span>Thiết kế và phát triển bởi APE</span>
             </div>
         </div>
     </footer>
 
+    <div class="floating-contact">
+        <a href="tel:0938756577" class="fc-btn fc-phone">
+            <span class="fc-label">Hotline: 0938 756 577</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone">
+            </div>
+        </a>
+        <a href="https://m.me/" class="fc-btn fc-messenger" target="_blank">
+            <span class="fc-label">Chat Messenger</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-messenger.png" alt="Messenger">
+            </div>
+        </a>
+        <a href="https://zalo.me/" class="fc-btn fc-zalo" target="_blank">
+            <span class="fc-label">Chat Zalo</span>
+            <div class="fc-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:28px;height:28px;">
+            </div>
+        </a>
+    </div>
+
     <script>
-        // JS CHUYỂN TRANG KHÁCH HÀNG (PAGINATION)
-        function changePage(pageNumber) {
-            // Ẩn tất cả các trang
+        function changePage(n) {
             document.getElementById('page-1').style.display = 'none';
             document.getElementById('page-2').style.display = 'none';
-            
-            // Xóa class active của tất cả các nút
             document.getElementById('btn-page-1').classList.remove('active');
             document.getElementById('btn-page-2').classList.remove('active');
-            
-            // Hiển thị trang được chọn
-            document.getElementById('page-' + pageNumber).style.display = 'grid'; // Dùng 'grid' để giữ nguyên bố cục
-            document.getElementById('btn-page-' + pageNumber).classList.add('active');
-
-            // Tự động cuộn mượt mà lên đầu danh sách khách hàng khi ấn chuyển trang
-            document.querySelector('.clients-gallery').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('page-' + n).style.display = 'grid';
+            document.getElementById('btn-page-' + n).classList.add('active');
+            document.querySelector('.clients-section').scrollIntoView({ behavior: 'smooth' });
         }
-
-        // JS MENU MOBILE
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
-
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mainNav.classList.toggle('open');
             navOverlay.classList.toggle('show');
-            
-            if (mainNav.classList.contains('open')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
         }
-
         menuToggle.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
     </script>

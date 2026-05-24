@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hạn Chế Tiếng Ồn Máy Nén Khí - APE Air &amp; Pump Solutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .article-layout { display: flex; gap: 40px; padding: 60px 0 80px; }
+        .article-main { flex: 1; min-width: 0; }
+        .article-sidebar { width: 300px; flex-shrink: 0; }
+        .article-header { margin-bottom: 30px; }
+        .article-category { display: inline-block; background: #f0f7ff; color: #0072bc; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 14px; border-radius: 50px; margin-bottom: 15px; }
+        .article-header h1 { font-size: 32px; color: #003366; font-weight: 900; line-height: 1.3; margin-bottom: 15px; }
+        .article-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; padding-bottom: 20px; border-bottom: 2px solid #f1f5f9; }
+        .article-meta i { color: #0072bc; margin-right: 5px; }
+        .article-featured-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; margin-bottom: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .article-body { font-size: 15.5px; line-height: 1.85; color: #374151; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body h2 { font-size: 22px; color: #003366; font-weight: 800; margin: 40px 0 18px; padding-left: 16px; border-left: 4px solid #ffd600; }
+        .article-body h3 { font-size: 18px; color: #0072bc; font-weight: 700; margin: 30px 0 14px; }
+        .article-body strong { color: #003366; }
+        .article-body ul, .article-body ol { padding-left: 25px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 10px; }
+        .article-body img { max-width: 100%; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .article-body .note-box { background: #f0f7ff; border-left: 4px solid #0072bc; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; font-size: 14.5px; color: #334155; }
+        .article-body .warning-box { background: #fffbeb; border-left: 4px solid #ffd600; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; font-size: 14.5px; color: #334155; }
+        .step-box { display: flex; gap: 18px; background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 18px; border: 1px solid #e2e8f0; }
+        .step-num { width: 40px; height: 40px; background: #0072bc; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; flex-shrink: 0; }
+        .step-body h4 { font-size: 15px; font-weight: 700; color: #003366; margin-bottom: 6px; }
+        .step-body p { font-size: 14px; color: #64748b; margin: 0; }
+        .article-tags { margin-top: 40px; padding-top: 25px; border-top: 2px solid #f1f5f9; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .article-tags span { font-size: 13px; font-weight: 700; color: #003366; }
+        .tag { display: inline-block; background: #f1f5f9; color: #475569; font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 50px; text-decoration: none; transition: 0.2s; }
+        .tag:hover { background: #0072bc; color: #fff; }
+        .article-nav { display: flex; gap: 20px; margin-top: 40px; }
+        .article-nav-btn { flex: 1; display: block; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; text-decoration: none; transition: 0.3s; }
+        .article-nav-btn:hover { background: #0072bc; border-color: #0072bc; }
+        .article-nav-btn:hover .nav-btn-label, .article-nav-btn:hover .nav-btn-title { color: #fff; }
+        .article-nav-btn.next { text-align: right; }
+        .nav-btn-label { font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 5px; }
+        .nav-btn-title { font-size: 14px; font-weight: 700; color: #003366; display: block; line-height: 1.4; }
+        .sidebar-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; margin-bottom: 25px; }
+        .sidebar-box h4 { font-size: 14px; color: #003366; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid #f1f5f9; position: relative; }
+        .sidebar-box h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 30px; height: 2px; background: #0072bc; }
+        .related-list { list-style: none; padding: 0; }
+        .related-list li { border-bottom: 1px solid #f1f5f9; }
+        .related-list li:last-child { border-bottom: none; }
+        .related-list a { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; text-decoration: none; color: #374151; font-size: 14px; font-weight: 600; transition: 0.2s; line-height: 1.4; }
+        .related-list a i { color: #0072bc; flex-shrink: 0; margin-top: 2px; }
+        .related-list a:hover { color: #0072bc; }
+        .sidebar-contact-box { background: linear-gradient(135deg, #003366, #0072bc); color: #fff; border-radius: 16px; padding: 30px 25px; text-align: center; }
+        .sidebar-contact-box h4 { color: #ffd600; border: none; padding: 0; margin-bottom: 12px; }
+        .sidebar-contact-box h4::after { display: none; }
+        .sidebar-contact-box p { font-size: 13.5px; color: #e2e8f0; line-height: 1.6; margin-bottom: 20px; }
+        .sidebar-contact-box .btn-contact { display: inline-flex; align-items: center; gap: 8px; background: #ffd600; color: #222; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+        .sidebar-contact-box .btn-contact:hover { background: #ffe066; transform: translateY(-2px); }
+        .sidebar-phone { font-size: 22px; font-weight: 900; color: #ffd600; display: block; margin: 10px 0 20px; }
+        @media (max-width: 920px) {
+            .article-layout { flex-direction: column; gap: 40px; }
+            .article-sidebar { width: 100%; }
+            .article-header h1 { font-size: 26px; }
+            .article-featured-img { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="../index.html"><img src="../images/Logo/Logo APE.png" alt="APE Logo" class="logo-img"></a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">TRANG CHỦ</a></li>
+                    <li><a href="../gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="../san-pham.html">SẢN PHẨM</a></li>
+                    <li><a href="../du-an.html">DỰ ÁN</a></li>
+                    <li><a href="../thuong-hieu.html">THƯƠNG HIỆU</a></li>
+                    <li><a href="../dich-vu.html" class="active">DỊCH VỤ</a></li>
+                    <li><a href="../khach-hang.html">KHÁCH HÀNG</a></li>
+                    <li><a href="../lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <span class="hotline-block">
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline"></span>
+                    <span class="hotline-label">HOTLINE</span>
+                    <strong class="hotline-number">0938 756 577</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+    <section class="page-hero contact-hero">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <span class="hero-subtitle">CẨM NANG KỸ THUẬT</span>
+                <h1 class="hero-title">DỊCH VỤ KỸ THUẬT <br><span>CHUYÊN NGHIỆP</span></h1>
+                <nav class="breadcrumb-modern">
+                    <a href="../index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right" style="font-size:10px"></i>
+                    <a href="../dich-vu.html">Dịch vụ</a> <i class="fa-solid fa-chevron-right" style="font-size:10px"></i>
+                    <span class="current">Hạn Chế Tiếng Ồn Máy Nén Khí</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="article-layout">
+            <main class="article-main">
+                <div class="article-header">
+                    <span class="article-category"><i class="fa-solid fa-volume-xmark"></i> Sửa chữa & Bảo trì</span>
+                    <h1>Hạn Chế Tiếng Ồn Máy Nén Khí</h1>
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> APE Technical Team</span>
+                        <span><i class="fa-solid fa-tag"></i> Tiếng ồn, Máy nén khí, Bảo trì</span>
+                    </div>
+                </div>
+                <img src="http://apequipments.com/UserUpload/Services/Han-che-tieng-on-may-nen-khi.jpg" alt="Hạn Chế Tiếng Ồn Máy Nén Khí" class="article-featured-img" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80'">
+                <div class="article-body">
+                    
+<p>Máy nén khí đang được sử dụng rất phổ biến trên thị trường hiện nay bởi tác dụng to lớn không thể phủ nhận. Trong quá trình sử dụng người dùng sẽ đôi lần bắt gặp phải tiếng kêu khó chịu từ thiết bị này làm ảnh hưởng đến công việc. Vì vậy, bạn nên kiểm tra máy ngay lập tức và khắc phục để bảo vệ máy móc và hiệu quả công việc của mình.</p>
+
+<h2>Máy nén khí kêu to do đâu?</h2>
+<img src="http://apequipments.com/UserUpload/Editor/34068cbb73fd9aa3c3ec.jpg" alt="Máy nén khí kêu to" onerror="this.style.display='none'">
+<p>Khi chúng ta vận hành máy bơm khí nén cần tuân thủ đúng những yêu cầu từ nhà sản xuất hoặc đơn vị cung cấp máy. Khi hệ thống nén khí của bạn có tiếng kêu lạ thì đây chính là những nguyên nhân:</p>
+
+<h3>1. Máy nén khí lắp đặt sai vị trí</h3>
+<img src="http://apequipments.com/UserUpload/Editor/sua-chua-may-nen-khi-ptsc.JPG" alt="Lắp đặt sai vị trí" onerror="this.style.display='none'">
+<p>Trong quá trình lắp đặt máy bơm nén khí bạn đã lắp máy sai vị trí tại những nơi gồ ghề, chật chội và không thông thoáng. Bên cạnh đó, những vật dụng sắc nhọn vô tình chạm vào máy và gây nên tiếng kêu lạ.</p>
+
+<h3>2. Máy nén khí thiếu dầu hoặc dầu bị biến chất</h3>
+<img src="http://apequipments.com/UserUpload/Editor/klueber-summit-2-1.jpg" alt="Thiếu dầu máy nén khí" onerror="this.style.display='none'">
+<p>Dầu nhớt đóng vai trò quan trọng và không thể thiếu cho sự hoạt động của máy nén. Vậy nên khi thiết bị bơm nén khí có tiếng ồn lớn là do máy bị cạn dầu làm cho các chi tiết bị ma sát mạnh khi hoạt động.</p>
+
+<h3>3. Đường hút gió bị tắc nghẽn hoặc vỡ</h3>
+<p>Bạn ít khi vệ sinh cho các bộ phận trong máy như bộ lọc quá bẩn hoặc đường ống bị vỡ nên mới phát ra tiếng ồn.</p>
+
+<h3>4. Bánh răng, vòng bi bị xước hoặc lắp sai</h3>
+<p>Có thể bộ phận này bị lắp sai hoặc đã cũ nên cũng làm tác động đến tiếng ồn của máy.</p>
+
+<h2>Cách làm giảm tiếng ồn cho máy nén khí</h2>
+<img src="http://apequipments.com/UserUpload/Editor/130e118cc0468ced032fad6aefd48032.jpg" alt="Cách làm giảm tiếng ồn" onerror="this.style.display='none'">
+<p>Để khắc phục được sự cố máy nén khí bị kêu to thì người dùng nên quan sát và theo dõi trực tiếp hoạt động của máy thường xuyên, ghi chép lại tình trạng hoạt động sau mỗi lần vận hành. Sau nửa năm hoặc một năm sử dụng, tùy theo tình trạng làm việc của máy mà người dùng cần có một chế độ bảo dưỡng cho phù hợp.</p>
+<ul>
+    <li>Nhà sản xuất đã ghi rõ trong tài liệu kỹ thuật về tiêu chuẩn chọn vị trí đặt máy. Bạn cần tìm vị trí <strong>bằng phẳng, không gồ ghề, không gian rộng rãi và thông thoáng</strong>. Không được để các vật dụng sắc nhọn cận kề máy.</li>
+    <li>Bạn cần <strong>cung cấp đủ dầu hoặc thay dầu định kỳ</strong> để bôi trơn, làm mát cho các linh kiện máy nén khí.</li>
+    <li>Thợ kỹ thuật thường xuyên bảo dưỡng, <strong>làm sạch đường hút gió</strong> hoặc thay mới khi nó đã bị hỏng.</li>
+    <li>Tiến hành tháo bánh răng, vòng bi và lắp đặt máy nén khí đúng vị trí. Nếu bánh răng và vòng bi đã cũ, hỏng vỡ thì nên thay mới.</li>
+    <li>Nếu là máy truyền động gián tiếp thì máy bơm khí nén sẽ có tiếng kêu lớn do <strong>cân chỉnh V-belt bị trượt</strong> hoặc đã đến hạn thay V-belt.</li>
+</ul>
+
+<div class="note-box">
+    <i class="fa-solid fa-circle-info" style="color:#0072bc;margin-right:8px"></i>
+    Việc hạn chế tiếng ồn cho máy nén khí sẽ không làm ảnh hưởng đến những người xung quanh cũng như đảm bảo hiệu quả công việc. Nếu tiếng ồn không giảm sau khi đã kiểm tra tất cả các nguyên nhân trên, hãy liên hệ đội ngũ kỹ thuật APE để được hỗ trợ.
+</div>
+
+                </div>
+                <div class="article-tags">
+                    <span>Tags:</span>
+                    <a href="#" class="tag">Tiếng ồn</a><a href="#" class="tag">Máy nén khí</a><a href="#" class="tag">Bảo trì</a>
+                </div>
+                <div class="article-nav">
+                    <a href="khac-phuc-nhiet-do-cao.html" class="article-nav-btn prev"><span class="nav-btn-label"><i class="fa-solid fa-arrow-left"></i> Bài trước</span><span class="nav-btn-title">Khắc phục lỗi nhiệt độ cao</span></a><a href="bao-tri-phu-tung.html" class="article-nav-btn next"><span class="nav-btn-label">Bài tiếp theo <i class="fa-solid fa-arrow-right"></i></span><span class="nav-btn-title">Hướng dẫn bảo trì phụ tùng</span></a>
+                </div>
+            </main>
+            <aside class="article-sidebar">
+                <div class="sidebar-box">
+                    <h4>Bài viết liên quan</h4>
+                    <ul class="related-list">
+                        <li><a href="khac-phuc-nhiet-do-cao.html"><i class="fa-solid fa-chevron-right"></i> Khắc phục lỗi nhiệt độ cao</a></li>
+                        <li><a href="han-che-tieng-on.html"><i class="fa-solid fa-chevron-right"></i> Hạn chế tiếng ồn máy nén khí</a></li>
+                        <li><a href="bao-tri-phu-tung.html"><i class="fa-solid fa-chevron-right"></i> Bảo trì phụ tùng máy nén khí</a></li>
+                        <li><a href="lam-sach-ket-giai-nhiet.html"><i class="fa-solid fa-chevron-right"></i> Làm sạch két giải nhiệt</a></li>
+                        <li><a href="lap-dat-may-nen-khi.html"><i class="fa-solid fa-chevron-right"></i> Tiêu chuẩn lắp đặt máy nén khí</a></li>
+                        <li><a href="dieu-chinh-ap-suat.html"><i class="fa-solid fa-chevron-right"></i> Điều chỉnh rơ le áp suất</a></li>
+                        <li><a href="su-dung-an-toan.html"><i class="fa-solid fa-chevron-right"></i> 6 điều cần nhớ sử dụng an toàn</a></li>
+                        <li><a href="van-hanh-becker.html"><i class="fa-solid fa-chevron-right"></i> Vận hành bơm chân không Becker</a></li>
+                        <li><a href="van-hanh-tapflo.html"><i class="fa-solid fa-chevron-right"></i> Vận hành bơm màng Tapflo</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-contact-box">
+                    <h4><i class="fa-solid fa-headset"></i> HỖ TRỢ KỸ THUẬT</h4>
+                    <p>Gặp sự cố với máy nén khí hoặc máy bơm? Đội ngũ kỹ thuật APE sẵn sàng hỗ trợ 24/7.</p>
+                    <span class="sidebar-phone">0938 756 577</span>
+                    <a href="../lien-he.html" class="btn-contact"><i class="fa-solid fa-phone"></i> Liên hệ ngay</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-col footer-about">
+                <img src="../images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
+                <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
+                <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp.</p>
+                <div class="social-links">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/youtube-play.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="../gioi-thieu.html">Về chúng tôi</a></li>
+                    <li><a href="../san-pham.html">Sản phẩm</a></li>
+                    <li><a href="../dich-vu.html">Dịch vụ kỹ thuật</a></li>
+                    <li><a href="../lien-he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <ul class="contact-list">
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div><span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh</span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div><span><strong>0938 756 577</strong></span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div><span>info@apeco.vn</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-map-block">
+                <h4>BẢN ĐỒ VỊ TRÍ</h4>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=46%20%C4%90.%20S%E1%BB%91%206,%20G%C3%B2%20V%E1%BA%A5p,%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container copyright-flex">
+                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
+                <span>Thiết kế và phát triển bởi APE</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        }
+        menuToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

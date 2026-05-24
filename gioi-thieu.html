@@ -6,24 +6,299 @@
     <title>Giới thiệu - APE Air & Pump Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002244;
+            --blue: #0072bc;
+            --gold: #ffd600;
+            --light: #f4f7fb;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif; background: #fff; color: var(--text); overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── HEADER ── */
+        .main-header { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.07); position: sticky; top: 0; z-index: 200; }
+        .header-flex { display: flex; align-items: center; justify-content: space-between; min-height: 90px; }
+        .logo-img { height: 52px; width: auto; object-fit: contain; display: block; }
+        .menu-toggle { display: none; }
+        nav ul { list-style: none; display: flex; gap: 22px; }
+        nav a { text-decoration: none; color: #444; font-weight: 700; font-size: 13.5px; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: .2s; white-space: nowrap; letter-spacing: .3px; }
+        nav a.active, nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+        .hotline-block { display: inline-flex; align-items: center; background: var(--gold); border-radius: 50px; padding: 9px 20px 9px 14px; gap: 8px; box-shadow: 0 4px 12px rgba(255,214,0,.35); cursor: pointer; white-space: nowrap; transition: .3s; }
+        .hotline-block:hover { transform: translateY(-2px); }
+        .hotline-label { color: #333; font-size: 12px; font-weight: 700; letter-spacing: .5px; }
+        .hotline-number { color: var(--navy); font-size: 17px; font-weight: 900; }
+        .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+
+        /* ══════════════════════════════
+           HERO
+        ══════════════════════════════ */
+        .page-hero {
+            position: relative; height: 500px; display: flex; align-items: center; overflow: hidden;
+        }
+        .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .8s ease; }
+        .page-hero:hover .hero-bg { transform: scale(1.04); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(110deg, rgba(0,20,55,.93) 0%, rgba(0,80,160,.6) 55%, rgba(0,114,188,.2) 100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 11.5px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; }
+        .hero-eyebrow::before { content: ''; width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+        .hero-title { font-size: 50px; font-weight: 900; line-height: 1.18; color: #fff; margin-bottom: 18px; }
+        .hero-title span { color: var(--gold); }
+        .hero-desc { font-size: 16px; color: #c8daf0; line-height: 1.75; max-width: 620px; margin-bottom: 32px; }
+        .hero-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,.1);
+            backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.18); border-radius: 30px;
+            padding: 7px 16px; color: #fff; font-size: 13px; font-weight: 600;
+        }
+        .hero-badge i { color: var(--gold); font-size: 13px; }
+
+        /* ══════════════════════════════
+           STATS STRIP
+        ══════════════════════════════ */
+        .stats-strip { background: var(--navy); padding: 0; }
+        .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .stat-cell {
+            padding: 30px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,.08);
+            position: relative; transition: .3s;
+        }
+        .stat-cell:last-child { border-right: none; }
+        .stat-cell:hover { background: rgba(255,255,255,.04); }
+        .stat-cell::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 0; height: 3px; background: var(--gold); transition: width .4s ease;
+        }
+        .stat-cell:hover::after { width: 60%; }
+        .stat-num { font-size: 38px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+        .stat-label { font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .8px; }
+
+        /* ══════════════════════════════
+           ABOUT SECTION
+        ══════════════════════════════ */
+        .about-section { padding: 90px 0; background: #fff; }
+        .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+
+        /* Image side */
+        .about-visual { position: relative; }
+        .about-img-main {
+            width: 100%; aspect-ratio: 4/3; object-fit: cover;
+            border-radius: 16px; display: block;
+            box-shadow: 0 20px 60px rgba(0,50,120,.15);
+        }
+        .about-img-badge {
+            position: absolute; bottom: -24px; left: -24px;
+            background: var(--navy); color: #fff; border-radius: 14px;
+            padding: 20px 28px; box-shadow: 0 12px 40px rgba(0,34,68,.3);
+            display: flex; align-items: center; gap: 14px;
+        }
+        .badge-icon { font-size: 32px; color: var(--gold); }
+        .badge-num { font-size: 36px; font-weight: 900; color: #fff; line-height: 1; }
+        .badge-text { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+        .about-img-accent {
+            position: absolute; top: -18px; right: -18px;
+            width: 100px; height: 100px; border-radius: 50%;
+            background: var(--gold); opacity: .12;
+        }
+
+        /* Text side */
+        .about-tag { display: inline-block; background: rgba(0,114,188,.08); color: var(--blue); font-size: 11.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 30px; margin-bottom: 14px; }
+        .about-title { font-size: 32px; font-weight: 900; color: var(--navy); line-height: 1.25; margin-bottom: 8px; }
+        .about-title span { color: var(--blue); }
+        .about-underline { width: 50px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 24px; }
+        .about-body { font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 16px; }
+        .about-body strong { color: var(--navy); }
+
+        .feature-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+        .feature-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: var(--light); border-radius: 12px; padding: 16px 18px;
+            border-left: 3px solid var(--blue); transition: .3s;
+        }
+        .feature-item:hover { background: #eef5ff; border-left-color: var(--gold); transform: translateX(4px); }
+        .fi-icon { font-size: 20px; color: var(--blue); margin-top: 1px; flex-shrink: 0; width: 26px; text-align: center; }
+        .feature-item:hover .fi-icon { color: var(--gold); }
+        .fi-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+        .fi-desc { font-size: 13px; color: #64748b; }
+
+        /* ══════════════════════════════
+           TIMELINE / HISTORY
+        ══════════════════════════════ */
+        .history-section { background: var(--light); padding: 80px 0; }
+        .sec-header { text-align: center; margin-bottom: 56px; }
+        .sec-tag { display: inline-block; background: rgba(0,114,188,.08); color: var(--blue); font-size: 11.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 30px; margin-bottom: 14px; }
+        .sec-title { font-size: 30px; font-weight: 900; color: var(--navy); position: relative; display: inline-block; }
+        .sec-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 2px; }
+
+        .timeline { position: relative; max-width: 860px; margin: 0 auto; }
+        .timeline::before {
+            content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+            width: 2px; background: var(--border); transform: translateX(-50%);
+        }
+        .tl-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 36px); margin-bottom: 40px; position: relative; }
+        .tl-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 36px); }
+        .tl-dot {
+            position: absolute; left: 50%; top: 16px; transform: translateX(-50%);
+            width: 16px; height: 16px; background: var(--blue); border: 3px solid #fff;
+            border-radius: 50%; box-shadow: 0 0 0 3px var(--blue); z-index: 1;
+        }
+        .tl-card { background: #fff; border-radius: 14px; padding: 22px 26px; box-shadow: 0 4px 20px rgba(0,50,120,.07); max-width: 340px; width: 100%; transition: .3s; border: 1.5px solid var(--border); }
+        .tl-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,80,160,.12); border-color: var(--blue); }
+        .tl-year { font-size: 11px; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+        .tl-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+        .tl-card p { font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; }
+
+        /* ══════════════════════════════
+           CORE VALUES
+        ══════════════════════════════ */
+        .values-section { background: #fff; padding: 80px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .value-card {
+            border-radius: 18px; padding: 44px 34px; text-align: center; position: relative; overflow: hidden;
+            border: 1.5px solid var(--border); transition: all .35s ease;
+        }
+        .value-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, var(--navy), #004080);
+            opacity: 0; transition: opacity .35s ease;
+        }
+        .value-card:hover { border-color: transparent; transform: translateY(-8px); box-shadow: 0 24px 50px rgba(0,50,120,.15); }
+        .value-card:hover::before { opacity: 1; }
+        .value-icon-wrap {
+            width: 72px; height: 72px; margin: 0 auto 22px; border-radius: 50%;
+            background: rgba(0,114,188,.08); display: flex; align-items: center; justify-content: center;
+            font-size: 28px; color: var(--blue); transition: .35s; position: relative; z-index: 1;
+        }
+        .value-card:hover .value-icon-wrap { background: rgba(255,214,0,.15); color: var(--gold); }
+        .value-card h3 { font-size: 18px; font-weight: 900; color: var(--navy); margin-bottom: 14px; letter-spacing: .5px; position: relative; z-index: 1; transition: .35s; }
+        .value-card:hover h3 { color: var(--gold); }
+        .value-card p { font-size: 14.5px; color: #64748b; line-height: 1.7; position: relative; z-index: 1; transition: .35s; }
+        .value-card:hover p { color: #c8daf0; }
+
+        /* ══════════════════════════════
+           PARTNERS
+        ══════════════════════════════ */
+        .partners-section { background: var(--navy); padding: 80px 0; }
+        .partners-section .sec-title { color: #fff; }
+        .partners-section .sec-tag { background: rgba(255,214,0,.12); color: var(--gold); }
+        .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .partner-card {
+            background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+            border-radius: 14px; padding: 30px 26px; transition: .35s; position: relative; overflow: hidden;
+        }
+        .partner-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform .35s ease; transform-origin: left; }
+        .partner-card:hover { background: rgba(255,255,255,.09); transform: translateY(-5px); border-color: rgba(255,255,255,.2); }
+        .partner-card:hover::after { transform: scaleX(1); }
+        .partner-flag { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .partner-flag::before { content: ''; width: 18px; height: 2px; background: var(--gold); border-radius: 2px; }
+        .partner-card h3 { font-size: 18px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+        .partner-card p { font-size: 13.5px; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+        /* ══════════════════════════════
+           CTA BANNER
+        ══════════════════════════════ */
+        .cta-section { background: linear-gradient(110deg, #001830 0%, #003366 50%, #004080 100%); padding: 70px 0; position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 350px; height: 350px; border-radius: 50%; background: rgba(0,114,188,.15); }
+        .cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+        .cta-text h2 { font-size: 28px; font-weight: 900; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; }
+        .cta-text p { color: #94a3b8; font-size: 15px; max-width: 600px; line-height: 1.65; }
+        .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 30px; border-radius: 8px; font-size: 14px; font-weight: 800; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: .3s; }
+        .btn-gold:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+        .btn-outline-white { border: 2px solid rgba(255,255,255,.3); color: #fff; padding: 13px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: .3s; }
+        .btn-outline-white:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+
+        /* ══════════════════════════════
+           FOOTER
+        ══════════════════════════════ */
+        .main-footer { background: #fff; color: #475569; padding: 55px 0 0; font-size: 13px; border-top: 1px solid var(--border); }
+        .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-about { flex: 1.4; }
+        .footer-logo-img { height: 44px; display: block; margin-bottom: 14px; }
+        .footer-company-name { color: var(--navy); font-weight: 800; font-size: 13.5px; margin-bottom: 10px; }
+        .footer-desc { line-height: 1.65; margin-bottom: 18px; color: #64748b; }
+        .main-footer h4 { color: var(--navy); margin: 0 0 18px; font-size: 13px; font-weight: 800; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; position: relative; }
+        .main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 32px; height: 2px; background: var(--blue); }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 9px; }
+        .footer-links a { color: #64748b; text-decoration: none; transition: .2s; display: inline-flex; align-items: center; font-size: 13px; }
+        .footer-links a::before { content: '›'; font-size: 16px; margin-right: 7px; color: #cbd5e1; }
+        .footer-links a:hover { color: var(--blue); transform: translateX(4px); }
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #64748b; }
+        .contact-icon { margin-top: 2px; flex-shrink: 0; }
+        .social-links { display: flex; gap: 9px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: .3s; }
+        .social-links a:hover { background: var(--blue); transform: translateY(-3px); }
+        .social-links a:hover img { filter: brightness(0) invert(1); }
+        .map-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+        .copyright { background: var(--navy); color: #94a3b8; padding: 15px 0; font-size: 12px; margin-top: 10px; }
+        .copyright-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+        
+        /* ══════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════ */
+        @media (max-width: 920px) {
+            .header-flex { min-height: 68px; padding: 10px 15px; }
+            .menu-toggle { display: flex; flex-direction: column; justify-content: space-evenly; width: 40px; height: 38px; background: #fff; border: 2px solid #555; border-radius: 6px; cursor: pointer; padding: 5px 6px; z-index: 102; }
+            .menu-toggle .bar { width: 100%; height: 3px; background: #555; border-radius: 2px; transition: all .3s; }
+            .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+            .nav-overlay.show { display: block; }
+            nav { position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #fff; box-shadow: 4px 0 20px rgba(0,0,0,.12); padding: 80px 20px 30px; flex-direction: column; align-items: flex-start; transition: left .4s ease; z-index: 101; }
+            nav.open { left: 0; }
+            nav ul { flex-direction: column; width: 100%; gap: 0; }
+            nav li { border-bottom: 1px solid #f1f5f9; }
+            nav a { display: block; padding: 14px 0; font-size: 15px; }
+            .hotline-block { width: 38px; height: 38px; padding: 0; border-radius: 50%; justify-content: center; }
+            .hotline-label, .hotline-number { display: none; }
+            .page-hero { height: auto; padding: 80px 0; }
+            .hero-title { font-size: 34px; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat-cell { border-bottom: 1px solid rgba(255,255,255,.08); }
+            .about-layout { grid-template-columns: 1fr; gap: 50px; }
+            .about-visual { padding: 0 10px 40px; }
+            .about-img-badge { left: 10px; }
+            .values-grid { grid-template-columns: 1fr; gap: 18px; }
+            .partner-grid { grid-template-columns: 1fr 1fr; }
+            .timeline::before { left: 16px; }
+            .tl-item, .tl-item:nth-child(even) { justify-content: flex-start; padding-left: 52px; padding-right: 0; }
+            .tl-dot { left: 16px; }
+            .tl-card { max-width: 100%; }
+            .cta-inner { flex-direction: column; text-align: center; }
+            .cta-btns { justify-content: center; }
+        }
+        @media (max-width: 540px) {
+            .hero-title { font-size: 28px; }
+            .partner-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .footer-flex { flex-direction: column; }
+            .copyright-flex { flex-direction: column; text-align: center; }
+            .btn-gold, .btn-outline-white { width: 100%; justify-content: center; }
+            .hero-badges { flex-direction: column; align-items: flex-start; gap: 8px; }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ═══ HEADER ═══ -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
-                <a href="index.html">
-                    <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
-                </a>
+                <a href="index.html"><img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img"></a>
             </div>
-            
             <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
-
             <div class="nav-overlay" id="navOverlay"></div>
-
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">TRANG CHỦ</a></li>
@@ -38,9 +313,7 @@
             </nav>
             <div class="header-right">
                 <span class="hotline-block">
-                    <span class="hotline-icon">
-                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
-                    </span>
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline"></span>
                     <span class="hotline-label">HOTLINE</span>
                     <strong class="hotline-number">0938 756 577</strong>
                 </span>
@@ -48,115 +321,189 @@
         </div>
     </header>
 
-    <section class="page-hero contact-hero">
+    <!-- ═══ HERO ═══ -->
+    <section class="page-hero">
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <div class="hero-text-box">
-                <span class="hero-subtitle">CÂU CHUYỆN CỦA CHÚNG TÔI</span>
+            <div>
+                <div class="hero-eyebrow">Câu chuyện của chúng tôi</div>
                 <h1 class="hero-title">ĐỐI TÁC TIN CẬY TRONG NGÀNH <br><span>KHÍ NÉN & MÁY BƠM</span></h1>
-                <p class="hero-desc">Với hơn 18 năm kinh nghiệm, APE cam kết mang lại những giải pháp thiết bị công nghiệp đột phá, tối ưu năng lượng và kiến tạo giá trị bền vững cho doanh nghiệp của bạn.</p>
-                
+                <p class="hero-desc">Với hơn 18 năm kinh nghiệm, APE cam kết mang đến những giải pháp thiết bị công nghiệp đột phá, tối ưu năng lượng và kiến tạo giá trị bền vững cho doanh nghiệp của bạn.</p>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fa-solid fa-calendar-check"></i> Thành lập 2008</span>
+                    <span class="hero-badge"><i class="fa-solid fa-industry"></i> 500+ Nhà máy phục vụ</span>
+                    <span class="hero-badge"><i class="fa-solid fa-earth-asia"></i> Nhập khẩu Đức · Mỹ · Ý · Thụy Điển</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="about-modern-section">
+    <!-- ═══ STATS STRIP ═══ -->
+    <div class="stats-strip">
         <div class="container">
-            <div class="about-grid-modern">
-                <div class="about-text-content">
-                    <span class="section-subtitle">TỔNG QUAN DOANH NGHIỆP</span>
-                    <h2 class="section-title align-left" style="margin-top: 10px; margin-bottom: 25px;">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</h2>
-                    <p>Được thành lập từ năm 2008, APE tự hào là đơn vị tiên phong trong việc cung cấp các thiết bị và giải pháp kỹ thuật công nghiệp được nhập khẩu trực tiếp từ các quốc gia tiên tiến như Đức, Mỹ, Ý và Thụy Điển.</p>
-                    
-                    <p>Với hơn <strong>18 năm kinh nghiệm</strong> thực chiến trong ngành công nghiệp, đội ngũ kỹ sư của chúng tôi am hiểu sâu sắc về hệ thống vận hành. APE không chỉ cung cấp máy móc, mà chúng tôi mang đến những giải pháp trọn gói giúp khách hàng <strong>tối ưu hóa năng suất, tiết kiệm chi phí năng lượng và đảm bảo sự vận hành bền bỉ</strong> của toàn hệ thống.</p>
-                    
-                    <div class="about-features-list">
-                        <div class="feature-item-modern">
+            <div class="stats-inner">
+                <div class="stat-cell">
+                    <div class="stat-num">18+</div>
+                    <div class="stat-label">Năm kinh nghiệm</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">500+</div>
+                    <div class="stat-label">Khách hàng doanh nghiệp</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">30+</div>
+                    <div class="stat-label">Tỉnh thành phủ sóng</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">6</div>
+                    <div class="stat-label">Thương hiệu quốc tế</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-layout">
+                <!-- Visual -->
+                <div class="about-visual">
+                    <div class="about-img-accent"></div>
+                    <img src="images/Logo/Gioithieu.jpg" alt="APE - Nhà máy" class="about-img-main">
+                    <div class="about-img-badge">
+                        <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+                        <div>
+                            <div class="badge-num">18</div>
+                            <div class="badge-text">Năm kinh nghiệm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="about-text">
+                    <div class="about-tag">Tổng quan doanh nghiệp</div>
+                    <h2 class="about-title">CÔNG TY TNHH <br><span>THIẾT BỊ ANH PHƯƠNG</span></h2>
+                    <div class="about-underline"></div>
+                    <p class="about-body">Được thành lập từ năm 2008, APE tự hào là đơn vị tiên phong trong việc cung cấp các thiết bị và giải pháp kỹ thuật công nghiệp được nhập khẩu trực tiếp từ các quốc gia tiên tiến như <strong>Đức, Mỹ, Ý và Thụy Điển</strong>.</p>
+                    <p class="about-body">Với hơn <strong>18 năm kinh nghiệm thực chiến</strong>, đội ngũ kỹ sư của chúng tôi am hiểu sâu sắc về hệ thống vận hành. APE không chỉ cung cấp máy móc — chúng tôi mang đến <strong>giải pháp trọn gói</strong> giúp khách hàng tối ưu hóa năng suất, tiết kiệm năng lượng và đảm bảo sự vận hành bền bỉ của toàn hệ thống.</p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
                             <div class="fi-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            <div class="fi-text">
-                                <h4>Nhập Khẩu Chính Hãng</h4>
-                                <span>Phân phối trực tiếp 100% đầy đủ CO/CQ</span>
+                            <div>
+                                <div class="fi-title">Nhập Khẩu Chính Hãng 100%</div>
+                                <div class="fi-desc">Phân phối trực tiếp, đầy đủ CO/CQ, bảo hành chính hãng</div>
                             </div>
                         </div>
-                        <div class="feature-item-modern">
+                        <div class="feature-item">
                             <div class="fi-icon"><i class="fa-solid fa-bolt"></i></div>
-                            <div class="fi-text">
-                                <h4>Tối Ưu Năng Lượng</h4>
-                                <span>Giải pháp tiết kiệm điện năng vận hành</span>
+                            <div>
+                                <div class="fi-title">Tối Ưu Năng Lượng</div>
+                                <div class="fi-desc">Giải pháp tiết kiệm điện năng vận hành cho toàn hệ thống</div>
                             </div>
                         </div>
-                        <div class="feature-item-modern">
+                        <div class="feature-item">
                             <div class="fi-icon"><i class="fa-solid fa-headset"></i></div>
-                            <div class="fi-text">
-                                <h4>Hỗ Trợ Kỹ Thuật 24/7</h4>
-                                <span>Đội ngũ kỹ sư trực chiến xử lý sự cố</span>
+                            <div>
+                                <div class="fi-title">Hỗ Trợ Kỹ Thuật 24/7</div>
+                                <div class="fi-desc">Đội ngũ kỹ sư trực chiến, xử lý sự cố trong thời gian ngắn nhất</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="about-image-collage">
-                    <img src="images/Logo/Gioithieu.jpg" alt="APE Factory" class="img-main">
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="core-values-section">
+    
+
+    <!-- ═══ CORE VALUES ═══ -->
+    <section class="values-section">
         <div class="container">
-            <div class="cv-grid">
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="sec-header">
+                <div class="sec-tag">Nền tảng phát triển</div>
+                <h2 class="sec-title">TẦM NHÌN · SỨ MỆNH · GIÁ TRỊ</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon-wrap"><i class="fa-solid fa-eye"></i></div>
                     <h3>TẦM NHÌN</h3>
                     <p>Trở thành đơn vị phân phối thiết bị và cung cấp giải pháp trọn gói về hệ thống khí nén, bơm công nghiệp số 1 tại thị trường Việt Nam.</p>
                 </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="value-card">
+                    <div class="value-icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
                     <h3>SỨ MỆNH</h3>
                     <p>Mang đến những sản phẩm chất lượng cao, công nghệ tiên tiến nhằm tối ưu hóa năng suất và tiết kiệm năng lượng tối đa cho các nhà máy sản xuất.</p>
                 </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fa-solid fa-gem"></i></div>
+                <div class="value-card">
+                    <div class="value-icon-wrap"><i class="fa-solid fa-gem"></i></div>
                     <h3>GIÁ TRỊ CỐT LÕI</h3>
-                    <p>Uy tín - Chuyên nghiệp - Tận tâm. Chúng tôi lấy sự hài lòng và thành công của khách hàng làm thước đo cao nhất cho sự phát triển của APE.</p>
+                    <p>Uy tín — Chuyên nghiệp — Tận tâm. Chúng tôi lấy sự hài lòng và thành công của khách hàng làm thước đo cao nhất cho sự phát triển của APE.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══ PARTNERS ═══ -->
     <section class="partners-section">
         <div class="container">
-            <h2 class="section-title">ĐỐI TÁC PHÂN PHỐI CHÍNH THỨC</h2>
+            <div class="sec-header">
+                <div class="sec-tag">Hợp tác quốc tế</div>
+                <h2 class="sec-title">ĐỐI TÁC PHÂN PHỐI CHÍNH THỨC</h2>
+            </div>
             <div class="partner-grid">
-                <div class="partner-item">
-                    <h3>Quincy (Mỹ)</h3>
-                    <p>NSX máy nén khí và thiết bị xử lý khí hàng đầu thế giới.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Mỹ</div>
+                    <h3>Quincy</h3>
+                    <p>Nhà sản xuất máy nén khí và thiết bị xử lý khí hàng đầu thế giới, nổi tiếng với độ bền và tiết kiệm năng lượng vượt trội.</p>
                 </div>
-                <div class="partner-item">
-                    <h3>Friulair (Ý)</h3>
-                    <p>NSX Máy sấy khô khí nén, máy làm lạnh nước công nghiệp.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Ý</div>
+                    <h3>Friulair</h3>
+                    <p>Chuyên gia sản xuất máy sấy khô khí nén và hệ thống làm lạnh nước công nghiệp chuẩn châu Âu.</p>
                 </div>
-                <div class="partner-item">
-                    <h3>Tapflo (Thụy Điển)</h3>
-                    <p>Chuyên gia máy bơm màng và bơm ly tâm công nghiệp.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Thụy Điển</div>
+                    <h3>Tapflo</h3>
+                    <p>Nhà sản xuất máy bơm màng khí nén và bơm ly tâm công nghiệp ứng dụng đa dạng trong mọi ngành.</p>
                 </div>
-                <div class="partner-item">
-                    <h3>Becker (Đức)</h3>
-                    <p>NSX máy bơm chân không và máy thổi khí công nghệ cao.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Đức</div>
+                    <h3>Becker</h3>
+                    <p>Nhà sản xuất máy bơm chân không và máy thổi khí công nghệ cao, tiêu chuẩn kỹ thuật Đức.</p>
                 </div>
-                <div class="partner-item">
-                    <h3>DVP (Ý)</h3>
-                    <p>Giải pháp bơm chân không ứng dụng trong ngành ceramic, in ấn.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Ý</div>
+                    <h3>DVP</h3>
+                    <p>Giải pháp bơm chân không chuyên biệt ứng dụng trong ngành ceramic, in ấn và đóng gói.</p>
                 </div>
-                <div class="partner-item">
-                    <h3>Kluber Summit (Đức)</h3>
-                    <p>NSX dầu nhớt bôi trơn chuyên dụng chất lượng cao.</p>
+                <div class="partner-card">
+                    <div class="partner-flag">Đức</div>
+                    <h3>Klüber Summit</h3>
+                    <p>Nhà sản xuất dầu nhớt bôi trơn chuyên dụng chất lượng cao cho máy nén khí và thiết bị công nghiệp.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>Sẵn sàng hợp tác cùng APE?</h2>
+                    <p>Liên hệ ngay để được đội ngũ kỹ sư tư vấn giải pháp khí nén và bơm công nghiệp phù hợp nhất cho nhà máy của bạn — hoàn toàn miễn phí.</p>
+                </div>
+                <div class="cta-btns">
+                    <a href="lien-he.html" class="btn-gold"><i class="fa-solid fa-phone-volume"></i> Liên hệ ngay</a>
+                    <a href="san-pham.html" class="btn-outline-white"><i class="fa-solid fa-box-open"></i> Xem sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
     <footer class="main-footer">
         <div class="container footer-flex">
             <div class="footer-col footer-about">
@@ -169,7 +516,6 @@
                     <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-            
             <div class="footer-col footer-links">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
@@ -181,58 +527,71 @@
                     <li><a href="khach-hang.html">Khách hàng</a></li>
                 </ul>
             </div>
-
-            <div class="footer-col footer-contact">
+            <div class="footer-col">
                 <h4>THÔNG TIN LIÊN HỆ</h4>
                 <ul class="contact-list">
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
-                        <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
+                        <span>46 đường số 6, KDC CityLand, P.Gò Vấp, TP.HCM</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
-                        <span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span>
+                        <span><strong style="color:#0072bc;">0938 756 577</strong> (Hỗ trợ 24/7)</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
-                        <span>info@apeco.vn</span>
+                        <span>support@apeco.vn</span>
                     </li>
                 </ul>
             </div>
-            
-            <div class="footer-col footer-map-block">
+            <div class="footer-col">
                 <h4>BẢN ĐỒ VỊ TRÍ</h4>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="145" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
             <div class="container copyright-flex">
-                <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
+                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
                 <span>Thiết kế và phát triển bởi APE</span>
             </div>
         </div>
     </footer>
 
+    
+
+    <div class="floating-contact">
+        <a href="tel:0938756577" class="fc-btn fc-phone">
+            <span class="fc-label">Hotline: 0938 756 577</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone">
+            </div>
+        </a>
+        <a href="https://m.me/" class="fc-btn fc-messenger" target="_blank">
+            <span class="fc-label">Chat Messenger</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-messenger.png" alt="Messenger">
+            </div>
+        </a>
+        <a href="https://zalo.me/" class="fc-btn fc-zalo" target="_blank">
+            <span class="fc-label">Chat Zalo</span>
+            <div class="fc-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:28px;height:28px;">
+            </div>
+        </a>
+    </div>
+
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
-
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mainNav.classList.toggle('open');
             navOverlay.classList.toggle('show');
-            
-            if (mainNav.classList.contains('open')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
         }
-
         menuToggle.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
     </script>

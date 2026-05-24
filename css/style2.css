@@ -320,3 +320,109 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .spare-oil-grid { grid-template-columns: 1fr; }
     .page-btn.prev span, .page-btn.next span { display: none; }
 }
+
+ /* ── FLOATING CONTACT (REDESIGN CHUYÊN NGHIỆP) ── */
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+        .fc-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .fc-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 2;
+        }
+        .fc-icon img { width: 24px; height: 24px; object-fit: contain; }
+
+        .fc-label {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #fff;
+            background: rgba(0, 34, 68, 0.9);
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+        .fc-label::after {
+            content: ''; position: absolute; top: 50%; right: -5px; transform: translateY(-50%);
+            border-width: 6px 0 6px 6px; border-style: solid; border-color: transparent transparent transparent rgba(0, 34, 68, 0.9);
+        }
+
+        .fc-btn:hover .fc-icon { transform: scale(1.1); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .fc-btn:hover .fc-label { opacity: 1; visibility: visible; transform: translateX(0); }
+
+        .fc-phone .fc-icon { background: #e53935; }
+        .fc-messenger .fc-icon { background: linear-gradient(135deg, #00B2FF 0%, #006AFF 100%); }
+        .fc-zalo .fc-icon { background: #006AF5; }
+
+        .fc-phone .fc-icon::before {
+            content: ''; position: absolute; inset: -6px; border-radius: 50%;
+            border: 2px solid rgba(229,57,53,0.5); animation: pulse-ring 2s infinite; z-index: -1;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 920px) {
+            .header-flex { min-height: 68px; padding: 10px 15px; }
+            .menu-toggle { display: flex; flex-direction: column; justify-content: space-evenly; width: 40px; height: 38px; background: #fff; border: 2px solid #555; border-radius: 6px; cursor: pointer; padding: 5px 6px; z-index: 102; }
+            .menu-toggle .bar { width: 100%; height: 3px; background: #555; border-radius: 2px; transition: all .3s; }
+            .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+            .nav-overlay.show { display: block; }
+            nav { position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #fff; box-shadow: 4px 0 20px rgba(0,0,0,.12); padding: 80px 20px 30px; flex-direction: column; align-items: flex-start; transition: left .4s ease; z-index: 101; }
+            nav.open { left: 0; }
+            nav ul { flex-direction: column; width: 100%; gap: 0; }
+            nav li { border-bottom: 1px solid #f1f5f9; }
+            nav a { display: block; padding: 14px 0; font-size: 15px; }
+            .hotline-block { width: 38px; height: 38px; padding: 0; border-radius: 50%; justify-content: center; }
+            .hotline-label, .hotline-number { display: none; }
+            .page-hero { height: auto; padding: 70px 0; }
+            .hero-title { font-size: 30px; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .quick-inner { grid-template-columns: 1fr; }
+            .quick-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+        }
+        @media (max-width: 768px) {
+            .floating-contact { right: 15px; bottom: 20px; gap: 12px; }
+            .fc-icon { width: 44px; height: 44px; } 
+            .fc-icon img { width: 20px; height: 20px; }
+            .fc-zalo .fc-icon img { width: 22px !important; height: 22px !important; }
+            .fc-label { display: none !important; }
+        }
+        @media (max-width: 540px) {
+            .contact-info-card { padding: 32px 24px; }
+            .contact-form-card { padding: 32px 24px; }
+            .footer-flex { flex-direction: column; }
+            .copyright-flex { flex-direction: column; text-align: center; }
+        }

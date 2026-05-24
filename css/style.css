@@ -163,28 +163,87 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .breadcrumb-modern .current { color: #ffd600; font-weight: 600; }
 
 /* =========================================
-   TRANG THƯƠNG HIỆU (BRANDS PAGE)
+   TRANG THƯƠNG HIỆU MỚI (BỐ CỤC 2 CỘT LUXURY)
 ========================================= */
-.brands-page-section { padding: 80px 0; background: #fdfdfd; }
-.brand-page-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
-.brand-card-premium {
-    text-decoration: none; display: block; background: #fff; border: 1px solid #e2e8f0;
-    border-radius: 16px; overflow: hidden; transition: all 0.4s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+.brands-premium-section { padding: 80px 0; background: #fdfdfd; }
+.brands-list-lux {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Đổi thành 2 cột to rộng */
+    gap: 35px;
 }
-.brand-card-premium:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,114,188,0.1); border-color: #ffd600; }
-.brand-card-logo {
-    height: 180px; display: flex; align-items: center; justify-content: center; background: #f8fafc; padding: 30px; transition: 0.4s;
+.brand-item-lux {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.brand-card-logo img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; }
-.brand-card-premium:hover .brand-card-logo img { transform: scale(1.1); }
-.brand-card-info { padding: 30px 25px; text-align: center; border-top: 1px solid #e2e8f0; }
-.brand-card-info h3 { color: #003366; font-size: 18px; font-weight: 800; margin-bottom: 12px; transition: 0.3s; }
-.brand-card-premium:hover .brand-card-info h3 { color: #0072bc; }
-.brand-card-info p { color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; min-height: 45px; }
-.brand-btn { display: inline-flex; align-items: center; color: #0072bc; font-weight: 700; font-size: 14px; transition: 0.3s; }
-.brand-btn i { margin-left: 8px; font-size: 16px; transition: transform 0.3s ease; }
-.brand-card-premium:hover .brand-btn { color: #003366; }
-.brand-card-premium:hover .brand-btn i { transform: translateX(6px); }
+.brand-item-lux:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 114, 188, 0.08);
+    border-color: #ffd600;
+}
+.brand-lux-logo {
+    flex: 0 0 220px; /* Cột Logo cố định chiều rộng */
+    height: 100%;
+    min-height: 220px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-right: 1px solid #e2e8f0;
+    transition: 0.4s;
+}
+.brand-lux-logo img {
+    max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s;
+}
+.brand-item-lux:hover .brand-lux-logo { background: #fff; }
+.brand-item-lux:hover .brand-lux-logo img { transform: scale(1.1); }
+
+.brand-lux-info {
+    flex: 1;
+    padding: 30px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.brand-origin {
+    font-size: 12px; font-weight: 800; color: #64748b;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+}
+.brand-origin i { color: #0072bc; margin-right: 5px; }
+.brand-lux-info h3 {
+    font-size: 22px; font-weight: 900; color: #003366; margin-bottom: 12px; transition: 0.3s;
+}
+.brand-item-lux:hover .brand-lux-info h3 { color: #0072bc; }
+.brand-lux-info p {
+    font-size: 14.5px; color: #475569; line-height: 1.6; margin-bottom: 20px;
+}
+.brand-lux-link {
+    font-size: 14px; font-weight: 800; color: #0072bc; display: inline-flex; align-items: center; transition: 0.3s;
+}
+.brand-lux-link i { margin-left: 8px; transition: transform 0.3s ease; }
+.brand-item-lux:hover .brand-lux-link { color: #003366; }
+.brand-item-lux:hover .brand-lux-link i { transform: translateX(8px); }
+
+/* Khối Đại Lý Ủy Quyền */
+.authorized-dealer-section { background: #f1f5f9; padding: 50px 0; border-top: 1px solid #e2e8f0; }
+.authorized-flex { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.authorized-text { flex: 1; }
+.authorized-text h2 { font-size: 22px; color: #003366; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
+.authorized-text p { font-size: 14.5px; color: #475569; margin: 0; line-height: 1.6; }
+.authorized-badges { display: flex; gap: 20px; flex-wrap: wrap; }
+.auth-badge-item {
+    background: #fff; padding: 15px 20px; border-radius: 8px; border: 1px solid #e2e8f0;
+    display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 13px; color: #003366;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+.auth-badge-item i { font-size: 20px; color: #ffd600; }
 
 /* =========================================
    TRANG DỊCH VỤ (SERVICES PAGE)
@@ -334,9 +393,35 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .partner-item p { font-size: 14px; color: #64748b; line-height: 1.5; margin: 0; }
 
 /* =========================================
-   TRANG DỰ ÁN (PORTFOLIO GRID HIỆN ĐẠI)
+   TRANG DỰ ÁN MỚI (PORTFOLIO CHUẨN DOANH NGHIỆP)
 ========================================= */
-.portfolio-section { padding: 80px 0; background: #fff; }
+
+/* 1. Dải Quy Trình Triển Khai */
+.project-process-section { padding: 70px 0; background: #fff; border-bottom: 1px solid #e2e8f0; }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; position: relative; }
+/* Tạo đường line chạy ngang nối các bước (ẩn trên mobile) */
+.process-grid::before {
+    content: ''; position: absolute; top: 40px; left: 10%; right: 10%;
+    height: 2px; background: #e2e8f0; z-index: 1;
+}
+.process-step { position: relative; z-index: 2; text-align: center; }
+.step-icon {
+    width: 80px; height: 80px; margin: 0 auto 20px; background: #fff;
+    border: 3px solid #ffd600; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; color: #0072bc; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.4s;
+}
+.process-step:hover .step-icon { background: #ffd600; color: #003366; transform: scale(1.1); }
+.step-number {
+    position: absolute; top: -10px; right: 25%; background: #003366; color: #fff;
+    width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900; box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.process-step h3 { font-size: 16px; color: #003366; font-weight: 800; margin-bottom: 10px; text-transform: uppercase;}
+.process-step p { font-size: 13.5px; color: #64748b; line-height: 1.6; padding: 0 10px; }
+
+
+/* 2. Khu Vực Lưới Dự Án & Bộ Lọc */
+.portfolio-section { padding: 80px 0; background: #fdfdfd; }
 .portfolio-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
 .filter-btn {
     background: #f1f5f9; border: 1px solid #e2e8f0; color: #475569;
@@ -355,29 +440,40 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 }
 /* Ép kích thước ảnh chuẩn 4:3, chống dãn */
 .portfolio-img {
-    width: 100%;
-    aspect-ratio: 4/3; 
-    overflow: hidden;
+    width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #e2e8f0;
 }
 .portfolio-img img { 
-    width: 100%; height: 100%; object-fit: cover; 
-    display: block; transition: transform 0.6s ease; 
+    width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; 
 }
 .portfolio-item:hover .portfolio-img img { transform: scale(1.1); }
 
 .portfolio-overlay {
     position: absolute; inset: 0; 
-    background: linear-gradient(to top, rgba(0,34,68,0.95) 0%, rgba(0,34,68,0.3) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,51,102,0.95) 0%, rgba(0,51,102,0.3) 60%, transparent 100%);
     display: flex; flex-direction: column; justify-content: flex-end; 
     padding: 30px 25px; color: #fff; transition: 0.4s ease;
 }
-.portfolio-item:hover .portfolio-overlay { background: linear-gradient(to top, rgba(0,114,188,0.95) 0%, rgba(0,114,188,0.5) 60%, transparent 100%); }
+.portfolio-item:hover .portfolio-overlay { background: linear-gradient(to top, rgba(0,114,188,0.95) 0%, rgba(0,114,188,0.6) 60%, rgba(0,114,188,0.1) 100%); }
 .portfolio-cat { font-size: 11px; font-weight: 800; color: #ffd600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; transform: translateY(10px); opacity: 0.8; transition: 0.4s ease; }
 .portfolio-item:hover .portfolio-cat { transform: translateY(0); opacity: 1; }
 .portfolio-title { font-size: 20px; font-weight: 800; margin-bottom: 5px; transform: translateY(10px); transition: 0.4s ease; transition-delay: 0.05s; }
 .portfolio-item:hover .portfolio-title { transform: translateY(0); }
 .portfolio-desc { font-size: 14px; color: #e2e8f0; margin: 0; opacity: 0; max-height: 0; transform: translateY(10px); transition: 0.4s ease; transition-delay: 0.1s; }
 .portfolio-item:hover .portfolio-desc { opacity: 1; max-height: 80px; margin-top: 10px; transform: translateY(0); }
+
+
+/* 3. Dải Banner CTA Kêu Gọi Hành Động (Cuối Trang) */
+.cta-blue-section { background: #003366; padding: 60px 0; }
+.cta-blue-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.cta-blue-text { flex: 1; color: #fff; }
+.cta-blue-text h2 { font-size: 28px; font-weight: 900; margin-bottom: 10px; color: #ffd600; text-transform: uppercase; }
+.cta-blue-text p { font-size: 15px; color: #cbd5e1; max-width: 700px; margin: 0; }
+.btn-gold-solid {
+    background: #ffd600; color: #003366; padding: 16px 35px; border-radius: 6px;
+    font-size: 15px; font-weight: 800; text-transform: uppercase; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
+}
+.btn-gold-solid:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
 
 /* =========================================================================
@@ -454,6 +550,17 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .img-sub { width: 60%; height: auto; aspect-ratio: 1/1; border-width: 6px;}
     .experience-badge-modern { top: auto; bottom: -20px; left: auto; right: 0; }
     .cv-grid { grid-template-columns: 1fr; }
+
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .process-grid::before { display: none; } /* Ẩn vạch ngang nối các bước trên iPad */
+    .step-number { right: 35%; }
+    .cta-blue-inner { flex-direction: column; text-align: center; }
+    
+    .brands-list-lux { grid-template-columns: 1fr; }
+    .authorized-flex { flex-direction: column; text-align: center; }
+    .authorized-badges { justify-content: center; }
+
 }
 
 @media (max-width: 768px) {
@@ -479,6 +586,20 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .portfolio-filters { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
     .filter-btn { flex-shrink: 0; }
     .portfolio-grid { grid-template-columns: 1fr; } /* Dự án thành 1 cột trên Phone */
+
+    .portfolio-filters { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .filter-btn { flex-shrink: 0; } 
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    .step-number { right: 40%; }
+    .cta-blue-text h2 { font-size: 24px; }
+    .btn-gold-solid { width: 100%; justify-content: center; }
+
+    .brand-item-lux { flex-direction: column; }
+    .brand-lux-logo { flex: 0 0 auto; width: 100%; height: 180px; min-height: auto; border-right: none; border-bottom: 1px solid #e2e8f0; }
+    .brand-lux-info { padding: 25px 20px; text-align: center; }
+    .auth-badge-item { width: 100%; justify-content: center; }
+
 }
 
 @media (max-width: 900px) {
@@ -522,4 +643,86 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     gap: 8px;
     text-align: center;
   }
+}
+
+/* ===================================================
+   BỘ NÚT LIÊN HỆ NỔI (FLOATING CONTACT) - ĐỒNG BỘ 100%
+   =================================================== */
+.floating-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+.fc-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fc-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 2;
+}
+.fc-icon img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Hiệu ứng chữ trượt ra khi rê chuột (Desktop) */
+.fc-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 34, 68, 0.9); /* Đồng bộ màu nền Navy */
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(15px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+}
+.fc-label::after {
+    content: ''; position: absolute; top: 50%; right: -5px; transform: translateY(-50%);
+    border-width: 6px 0 6px 6px; border-style: solid; border-color: transparent transparent transparent rgba(0, 34, 68, 0.9);
+}
+
+.fc-btn:hover .fc-icon { transform: scale(1.1); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.fc-btn:hover .fc-label { opacity: 1; visibility: visible; transform: translateX(0); }
+
+/* Màu nền icon theo thương hiệu */
+.fc-phone .fc-icon { background: #e53935; }
+.fc-messenger .fc-icon { background: linear-gradient(135deg, #00B2FF 0%, #006AFF 100%); }
+.fc-zalo .fc-icon { background: #006AF5; }
+
+/* Hiệu ứng sóng rung cho nút gọi điện */
+.fc-phone .fc-icon::before {
+    content: ''; position: absolute; inset: -6px; border-radius: 50%;
+    border: 2px solid rgba(229,57,53,0.5); animation: pulse-ring 2s infinite; z-index: -1;
+}
+@keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Tối ưu hiển thị mượt mà trên điện thoại (Mobile Responsive) */
+@media (max-width: 768px) {
+    .floating-contact { right: 15px; bottom: 20px; gap: 12px; }
+    .fc-icon { width: 44px; height: 44px; } 
+    .fc-icon img { width: 20px; height: 20px; }
+    .fc-zalo .fc-icon img { width: 22px !important; height: 22px !important; }
+    .fc-label { display: none !important; } /* Ẩn chữ trên mobile chống che mắt nội dung */
 }

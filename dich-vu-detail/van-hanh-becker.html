@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Vận Hành Bơm Chân Không Becker - APE Air &amp; Pump Solutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .article-layout { display: flex; gap: 40px; padding: 60px 0 80px; }
+        .article-main { flex: 1; min-width: 0; }
+        .article-sidebar { width: 300px; flex-shrink: 0; }
+        .article-header { margin-bottom: 30px; }
+        .article-category { display: inline-block; background: #f0f7ff; color: #0072bc; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 14px; border-radius: 50px; margin-bottom: 15px; }
+        .article-header h1 { font-size: 32px; color: #003366; font-weight: 900; line-height: 1.3; margin-bottom: 15px; }
+        .article-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; padding-bottom: 20px; border-bottom: 2px solid #f1f5f9; }
+        .article-meta i { color: #0072bc; margin-right: 5px; }
+        .article-featured-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; margin-bottom: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .article-body { font-size: 15.5px; line-height: 1.85; color: #374151; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body h2 { font-size: 22px; color: #003366; font-weight: 800; margin: 40px 0 18px; padding-left: 16px; border-left: 4px solid #ffd600; }
+        .article-body h3 { font-size: 18px; color: #0072bc; font-weight: 700; margin: 30px 0 14px; }
+        .article-body strong { color: #003366; }
+        .article-body ul, .article-body ol { padding-left: 25px; margin-bottom: 20px; }
+        .article-body li { margin-bottom: 10px; }
+        .article-body img { max-width: 100%; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .article-body .note-box { background: #f0f7ff; border-left: 4px solid #0072bc; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; font-size: 14.5px; color: #334155; }
+        .article-body .warning-box { background: #fffbeb; border-left: 4px solid #ffd600; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; font-size: 14.5px; color: #334155; }
+        .step-box { display: flex; gap: 18px; background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 18px; border: 1px solid #e2e8f0; }
+        .step-num { width: 40px; height: 40px; background: #0072bc; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; flex-shrink: 0; }
+        .step-body h4 { font-size: 15px; font-weight: 700; color: #003366; margin-bottom: 6px; }
+        .step-body p { font-size: 14px; color: #64748b; margin: 0; }
+        .article-tags { margin-top: 40px; padding-top: 25px; border-top: 2px solid #f1f5f9; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .article-tags span { font-size: 13px; font-weight: 700; color: #003366; }
+        .tag { display: inline-block; background: #f1f5f9; color: #475569; font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 50px; text-decoration: none; transition: 0.2s; }
+        .tag:hover { background: #0072bc; color: #fff; }
+        .article-nav { display: flex; gap: 20px; margin-top: 40px; }
+        .article-nav-btn { flex: 1; display: block; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; text-decoration: none; transition: 0.3s; }
+        .article-nav-btn:hover { background: #0072bc; border-color: #0072bc; }
+        .article-nav-btn:hover .nav-btn-label, .article-nav-btn:hover .nav-btn-title { color: #fff; }
+        .article-nav-btn.next { text-align: right; }
+        .nav-btn-label { font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 5px; }
+        .nav-btn-title { font-size: 14px; font-weight: 700; color: #003366; display: block; line-height: 1.4; }
+        .sidebar-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; margin-bottom: 25px; }
+        .sidebar-box h4 { font-size: 14px; color: #003366; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid #f1f5f9; position: relative; }
+        .sidebar-box h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 30px; height: 2px; background: #0072bc; }
+        .related-list { list-style: none; padding: 0; }
+        .related-list li { border-bottom: 1px solid #f1f5f9; }
+        .related-list li:last-child { border-bottom: none; }
+        .related-list a { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; text-decoration: none; color: #374151; font-size: 14px; font-weight: 600; transition: 0.2s; line-height: 1.4; }
+        .related-list a i { color: #0072bc; flex-shrink: 0; margin-top: 2px; }
+        .related-list a:hover { color: #0072bc; }
+        .sidebar-contact-box { background: linear-gradient(135deg, #003366, #0072bc); color: #fff; border-radius: 16px; padding: 30px 25px; text-align: center; }
+        .sidebar-contact-box h4 { color: #ffd600; border: none; padding: 0; margin-bottom: 12px; }
+        .sidebar-contact-box h4::after { display: none; }
+        .sidebar-contact-box p { font-size: 13.5px; color: #e2e8f0; line-height: 1.6; margin-bottom: 20px; }
+        .sidebar-contact-box .btn-contact { display: inline-flex; align-items: center; gap: 8px; background: #ffd600; color: #222; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+        .sidebar-contact-box .btn-contact:hover { background: #ffe066; transform: translateY(-2px); }
+        .sidebar-phone { font-size: 22px; font-weight: 900; color: #ffd600; display: block; margin: 10px 0 20px; }
+        @media (max-width: 920px) {
+            .article-layout { flex-direction: column; gap: 40px; }
+            .article-sidebar { width: 100%; }
+            .article-header h1 { font-size: 26px; }
+            .article-featured-img { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><a href="../index.html"><img src="../images/Logo/Logo APE.png" alt="APE Logo" class="logo-img"></a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">TRANG CHỦ</a></li>
+                    <li><a href="../gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="../san-pham.html">SẢN PHẨM</a></li>
+                    <li><a href="../du-an.html">DỰ ÁN</a></li>
+                    <li><a href="../thuong-hieu.html">THƯƠNG HIỆU</a></li>
+                    <li><a href="../dich-vu.html" class="active">DỊCH VỤ</a></li>
+                    <li><a href="../khach-hang.html">KHÁCH HÀNG</a></li>
+                    <li><a href="../lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <span class="hotline-block">
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline"></span>
+                    <span class="hotline-label">HOTLINE</span>
+                    <strong class="hotline-number">0938 756 577</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+    <section class="page-hero contact-hero">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <span class="hero-subtitle">CẨM NANG KỸ THUẬT</span>
+                <h1 class="hero-title">DỊCH VỤ KỸ THUẬT <br><span>CHUYÊN NGHIỆP</span></h1>
+                <nav class="breadcrumb-modern">
+                    <a href="../index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right" style="font-size:10px"></i>
+                    <a href="../dich-vu.html">Dịch vụ</a> <i class="fa-solid fa-chevron-right" style="font-size:10px"></i>
+                    <span class="current">Hướng Dẫn Vận Hành Bơm Chân Không Becker</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="article-layout">
+            <main class="article-main">
+                <div class="article-header">
+                    <span class="article-category"><i class="fa-solid fa-pump-soap"></i> Hướng dẫn sử dụng Bơm</span>
+                    <h1>Hướng Dẫn Vận Hành Bơm Chân Không Becker</h1>
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> APE Technical Team</span>
+                        <span><i class="fa-solid fa-tag"></i> Bơm Becker, Chân không, Vận hành</span>
+                    </div>
+                </div>
+                <img src="http://apequipments.com/UserUpload/Services/HUONG-DAN-VAN-HANH-BOM-CHAN-KHONG-BECKER.jpg" alt="Hướng Dẫn Vận Hành Bơm Chân Không Becker" class="article-featured-img" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80'">
+                <div class="article-body">
+                    
+<p>Để bơm hút chân không vòng dầu Becker vận hành hiệu quả, cần được kiểm tra bảo dưỡng theo định kỳ để kéo dài tuổi thọ và tránh những hỏng hóc không đáng có xảy ra. Dưới đây là hướng dẫn chi tiết từ đội ngũ kỹ thuật APE.</p>
+
+<img src="http://apequipments.com/UserUpload/Services/HUONG-DAN-VAN-HANH-BOM-CHAN-KHONG-BECKER.jpg" alt="Bơm chân không Becker" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80'">
+
+<h2>Nguyên tắc vận hành và bảo dưỡng</h2>
+
+<h3>1. Giữ sạch sẽ & ngăn chặn tạp chất</h3>
+<p>Bơm cần được giữ sạch sẽ, tránh bụi bẩn, nước và các vật lạ vào bên trong bơm. Để khắc phục điều này nên:</p>
+<ul>
+    <li>Lắp thêm <strong>bộ lọc khí, bộ tách nước</strong> trước bơm để ngăn chặn các tác nhân ảnh hưởng đến bơm.</li>
+    <li>Thường xuyên kiểm tra buồng bơm và vệ sinh nếu bơm hoạt động trong môi trường có tác nhân làm bẩn.</li>
+</ul>
+
+<h3>2. Thay dầu chân không định kỳ</h3>
+<p>Dầu chân không cần được thay thế định kỳ sau thời gian máy hoạt động, thông thường <strong>700–1.000 giờ</strong>.</p>
+<ul>
+    <li>Nên dùng <strong>dầu chính hãng BECKER</strong> để bơm hoạt động hiệu quả và ổn định hơn.</li>
+    <li>Lượng dầu thay cần đạt mức yêu cầu để bơm vận hành đạt hiệu suất cao nhất.</li>
+    <li>Thường xuyên <strong>kiểm tra mắt thăm dầu</strong> để biết lượng dầu trong bơm có đạt yêu cầu.</li>
+</ul>
+
+<div class="note-box">
+    <i class="fa-solid fa-circle-info" style="color:#0072bc;margin-right:8px"></i>
+    <strong>Chu kỳ thay dầu BECKER:</strong> Thay dầu mới hoàn toàn sau mỗi 700–1.000 giờ hoạt động. Trong điều kiện môi trường bụi bẩn hoặc nhiệt độ cao, chu kỳ thay dầu nên được rút ngắn.
+</div>
+
+<h3>3. Kiểm tra và thay lọc dầu, lọc tách dầu</h3>
+<p>Lọc dầu và lọc tách dầu cần được thường xuyên kiểm tra, vệ sinh và thay thế định kỳ để đảm bảo cho bơm luôn được sạch, việc hút/xả của bơm diễn ra tốt hơn.</p>
+<ul>
+    <li>Kiểm tra tình trạng lọc sau mỗi <strong>500 giờ hoạt động</strong>.</li>
+    <li>Thay lọc mới khi áp lực qua lọc vượt quá mức cho phép.</li>
+    <li>Sử dụng phụ tùng <strong>chính hãng BECKER</strong> để đảm bảo hiệu năng tối ưu.</li>
+</ul>
+
+<h3>4. Kiểm tra và thay cánh gạt</h3>
+<p>Cánh gạt là bộ phận quan trọng quyết định <strong>độ chân không của bơm</strong>. Cánh gạt cần được thay thế sau thời gian hoạt động nhất định để đảm bảo áp suất chân không và độ an toàn khi sử dụng.</p>
+<div class="warning-box">
+    <i class="fa-solid fa-triangle-exclamation" style="color:#d97706;margin-right:8px"></i>
+    <strong>Cảnh báo:</strong> Cánh gạt mòn khi chạy có thể bị <strong>gãy gây bó kẹt</strong>, dẫn đến cháy động cơ và hư hỏng các chi tiết khác. Đừng bỏ qua việc kiểm tra định kỳ cánh gạt.
+</div>
+
+<h2>Lịch bảo dưỡng khuyến nghị</h2>
+<div class="step-box">
+    <div class="step-num"><i class="fa-solid fa-calendar-day" style="font-size:14px"></i></div>
+    <div class="step-body"><h4>Hàng ngày/ca</h4><p>Kiểm tra mức dầu qua mắt thăm, nghe tiếng bất thường, kiểm tra nhiệt độ vỏ bơm.</p></div>
+</div>
+<div class="step-box">
+    <div class="step-num"><i class="fa-solid fa-calendar-week" style="font-size:14px"></i></div>
+    <div class="step-body"><h4>Hàng tuần</h4><p>Vệ sinh bề mặt ngoài bơm, kiểm tra bộ lọc đầu vào.</p></div>
+</div>
+<div class="step-box">
+    <div class="step-num"><i class="fa-solid fa-calendar" style="font-size:14px"></i></div>
+    <div class="step-body"><h4>700–1.000 giờ</h4><p>Thay dầu chân không BECKER chính hãng, kiểm tra và thay lọc dầu nếu cần.</p></div>
+</div>
+<div class="step-box">
+    <div class="step-num"><i class="fa-solid fa-wrench" style="font-size:14px"></i></div>
+    <div class="step-body"><h4>Theo tình trạng</h4><p>Thay cánh gạt khi đo thấy độ chân không giảm dưới mức yêu cầu.</p></div>
+</div>
+
+                </div>
+                <div class="article-tags">
+                    <span>Tags:</span>
+                    <a href="#" class="tag">Bơm Becker</a><a href="#" class="tag">Chân không</a><a href="#" class="tag">Vận hành</a>
+                </div>
+                <div class="article-nav">
+                    <a href="su-dung-an-toan.html" class="article-nav-btn prev"><span class="nav-btn-label"><i class="fa-solid fa-arrow-left"></i> Bài trước</span><span class="nav-btn-title">6 điều cần nhớ sử dụng an toàn</span></a><a href="van-hanh-tapflo.html" class="article-nav-btn next"><span class="nav-btn-label">Bài tiếp theo <i class="fa-solid fa-arrow-right"></i></span><span class="nav-btn-title">Quy trình vận hành bơm màng Tapflo</span></a>
+                </div>
+            </main>
+            <aside class="article-sidebar">
+                <div class="sidebar-box">
+                    <h4>Bài viết liên quan</h4>
+                    <ul class="related-list">
+                        <li><a href="khac-phuc-nhiet-do-cao.html"><i class="fa-solid fa-chevron-right"></i> Khắc phục lỗi nhiệt độ cao</a></li>
+                        <li><a href="han-che-tieng-on.html"><i class="fa-solid fa-chevron-right"></i> Hạn chế tiếng ồn máy nén khí</a></li>
+                        <li><a href="bao-tri-phu-tung.html"><i class="fa-solid fa-chevron-right"></i> Bảo trì phụ tùng máy nén khí</a></li>
+                        <li><a href="lam-sach-ket-giai-nhiet.html"><i class="fa-solid fa-chevron-right"></i> Làm sạch két giải nhiệt</a></li>
+                        <li><a href="lap-dat-may-nen-khi.html"><i class="fa-solid fa-chevron-right"></i> Tiêu chuẩn lắp đặt máy nén khí</a></li>
+                        <li><a href="dieu-chinh-ap-suat.html"><i class="fa-solid fa-chevron-right"></i> Điều chỉnh rơ le áp suất</a></li>
+                        <li><a href="su-dung-an-toan.html"><i class="fa-solid fa-chevron-right"></i> 6 điều cần nhớ sử dụng an toàn</a></li>
+                        <li><a href="van-hanh-becker.html"><i class="fa-solid fa-chevron-right"></i> Vận hành bơm chân không Becker</a></li>
+                        <li><a href="van-hanh-tapflo.html"><i class="fa-solid fa-chevron-right"></i> Vận hành bơm màng Tapflo</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-contact-box">
+                    <h4><i class="fa-solid fa-headset"></i> HỖ TRỢ KỸ THUẬT</h4>
+                    <p>Gặp sự cố với máy nén khí hoặc máy bơm? Đội ngũ kỹ thuật APE sẵn sàng hỗ trợ 24/7.</p>
+                    <span class="sidebar-phone">0938 756 577</span>
+                    <a href="../lien-he.html" class="btn-contact"><i class="fa-solid fa-phone"></i> Liên hệ ngay</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-col footer-about">
+                <img src="../images/Logo/Logo APE.png" alt="APE Logo" class="footer-logo-img">
+                <p class="footer-company-name">CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</p>
+                <p class="footer-desc">Đối tác tin cậy cung cấp giải pháp toàn diện về khí nén và bơm công nghiệp.</p>
+                <div class="social-links">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/youtube-play.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="../gioi-thieu.html">Về chúng tôi</a></li>
+                    <li><a href="../san-pham.html">Sản phẩm</a></li>
+                    <li><a href="../dich-vu.html">Dịch vụ kỹ thuật</a></li>
+                    <li><a href="../lien-he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <ul class="contact-list">
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div><span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh</span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div><span><strong>0938 756 577</strong></span></li>
+                    <li><div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div><span>info@apeco.vn</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-map-block">
+                <h4>BẢN ĐỒ VỊ TRÍ</h4>
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=46%20%C4%90.%20S%E1%BB%91%206,%20G%C3%B2%20V%E1%BA%A5p,%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container copyright-flex">
+                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
+                <span>Thiết kế và phát triển bởi APE</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        }
+        menuToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

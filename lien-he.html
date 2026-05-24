@@ -6,8 +6,268 @@
     <title>Liên hệ - APE Air & Pump Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002244;
+            --blue: #0072bc;
+            --gold: #ffd600;
+            --light: #f4f7fb;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif; background: #fff; color: var(--text); overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── HEADER ── */
+        .main-header { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.07); position: sticky; top: 0; z-index: 200; }
+        .header-flex { display: flex; align-items: center; justify-content: space-between; min-height: 90px; }
+        .logo-img { height: 52px; width: auto; object-fit: contain; display: block; }
+        .menu-toggle { display: none; }
+        nav ul { list-style: none; display: flex; gap: 22px; }
+        nav a { text-decoration: none; color: #444; font-weight: 700; font-size: 13.5px; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: .2s; white-space: nowrap; letter-spacing: .3px; }
+        nav a.active, nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+        .hotline-block { display: inline-flex; align-items: center; background: var(--gold); border-radius: 50px; padding: 9px 20px 9px 14px; gap: 8px; box-shadow: 0 4px 12px rgba(255,214,0,.35); cursor: pointer; white-space: nowrap; transition: .3s; }
+        .hotline-block:hover { transform: translateY(-2px); }
+        .hotline-label { color: #333; font-size: 12px; font-weight: 700; letter-spacing: .5px; }
+        .hotline-number { color: var(--navy); font-size: 17px; font-weight: 900; }
+        .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+
+        /* ── HERO ── */
+        .page-hero { position: relative; height: 460px; display: flex; align-items: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .8s ease; }
+        .page-hero:hover .hero-bg { transform: scale(1.04); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,26,60,.92) 0%, rgba(0,80,160,.55) 60%, rgba(0,114,188,.2) 100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; }
+        .hero-text-box { max-width: 680px; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+        .hero-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--gold); }
+        .hero-title { font-size: 46px; font-weight: 900; line-height: 1.2; color: #fff; margin-bottom: 18px; }
+        .hero-title span { color: var(--gold); }
+        .hero-desc { font-size: 15.5px; color: #c8daf0; line-height: 1.7; max-width: 580px; }
+
+        /* ── CONTACT MAIN SECTION ── */
+        .contact-main { padding: 80px 0 90px; background: var(--light); }
+        .contact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: start; }
+
+        /* ── INFO CARD ── */
+        .contact-info-card { background: linear-gradient(135deg, #005c9e 0%, #003366 100%); border-radius: 20px; padding: 50px 40px; color: #fff; position: relative; overflow: hidden; }
+        .contact-info-card::before {
+            content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px;
+            border-radius: 50%; background: rgba(255,255,255,.06);
+        }
+        .contact-info-card::after {
+            content: ''; position: absolute; bottom: -80px; left: -40px; width: 260px; height: 260px;
+            border-radius: 50%; background: rgba(255,255,255,.04);
+        }
+        .info-logo { height: 48px; margin-bottom: 20px; }
+        .info-company { font-size: 14.5px; font-weight: 800; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; letter-spacing: .5px; }
+        .info-tagline { font-size: 13.5px; color: #b8d4f0; margin-bottom: 36px; line-height: 1.5; }
+        .info-items { display: flex; flex-direction: column; gap: 22px; position: relative; z-index: 1; }
+        .info-item { display: flex; gap: 14px; align-items: flex-start; }
+        .info-item-icon {
+            width: 42px; height: 42px; background: rgba(255,255,255,.1); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; font-size: 17px;
+            color: var(--gold); flex-shrink: 0; transition: .3s;
+        }
+        .info-item:hover .info-item-icon { background: rgba(255,255,255,.2); color: #fff; }
+        .info-item-label { font-size: 11px; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .info-item-value { font-size: 14.5px; font-weight: 600; color: #f8fafc; line-height: 1.5; }
+        .info-item-value strong { color: var(--gold); font-size: 18px; }
+        .info-divider { border: none; border-top: 1px solid rgba(255,255,255,.15); margin: 28px 0; }
+        .info-socials { display: flex; gap: 10px; position: relative; z-index: 1; }
+        .social-btn {
+            display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px;
+            background: rgba(255,255,255,.08); border-radius: 8px; color: #fff;
+            font-size: 13.5px; font-weight: 700; text-decoration: none; transition: .3s; border: 1px solid rgba(255,255,255,.15);
+        }
+        .social-btn:hover { background: #fff; border-color: #fff; color: var(--blue); transform: translateY(-2px); }
+        .social-btn:hover img { filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1634%) hue-rotate(185deg) !important; }
+        .social-btn i { font-size: 15px; }
+
+        /* ── FORM CARD ── */
+        .contact-form-card { background: #fff; border-radius: 20px; padding: 50px 42px; box-shadow: 0 10px 50px rgba(0,50,120,.07); }
+        .form-header { margin-bottom: 32px; }
+        .form-tag { display: inline-block; background: rgba(0,114,188,.08); color: var(--blue); font-size: 11.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 30px; margin-bottom: 12px; }
+        .form-title { font-size: 24px; font-weight: 900; color: var(--navy); }
+        .form-subtitle { font-size: 14px; color: #64748b; margin-top: 6px; line-height: 1.5; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+        .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+        .form-group label { font-size: 13px; font-weight: 700; color: var(--navy); }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 16px;
+            font-size: 14px; font-family: inherit; color: var(--text); background: #fafbfc;
+            transition: .25s; outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: var(--blue); background: #fff; box-shadow: 0 0 0 3px rgba(0,114,188,.1); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit {
+            width: 100%; padding: 15px; background: var(--blue); color: #fff;
+            border: none; border-radius: 10px; font-size: 15px; font-weight: 800; font-family: inherit;
+            cursor: pointer; transition: .3s; display: flex; align-items: center; justify-content: center; gap: 10px; letter-spacing: .5px;
+        }
+        .form-submit:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,80,160,.25); }
+        .form-note { text-align: center; font-size: 12.5px; color: #94a3b8; margin-top: 14px; }
+        .form-note i { color: var(--blue); margin-right: 4px; }
+
+        /* ── QUICK CONTACT STRIP ── */
+        .quick-strip { background: linear-gradient(135deg, #005c9e 0%, #003366 100%); padding: 0; }
+        .quick-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .quick-item {
+            display: flex; align-items: center; gap: 16px; padding: 28px 32px;
+            border-right: 1px solid rgba(255,255,255,.15); text-decoration: none; transition: .3s; cursor: pointer;
+        }
+        .quick-item:last-child { border-right: none; }
+        .quick-item:hover { background: rgba(255,255,255,.1); }
+        .quick-icon { font-size: 26px; color: var(--gold); flex-shrink: 0; }
+        .quick-label { font-size: 12px; color: #cbd5e1; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 3px; }
+        .quick-value { font-size: 15px; font-weight: 800; color: #fff; }
+
+        /* ── MAP SECTION ── */
+        .map-section { }
+        .map-section iframe { display: block; width: 100%; height: 420px; border: none; }
+
+        /* ── FOOTER ── */
+        .main-footer { background: #fff; color: #475569; padding: 55px 0 0; font-size: 13px; border-top: 1px solid var(--border); }
+        .footer-flex { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-about { flex: 1.4; }
+        .footer-logo-img { height: 44px; display: block; margin-bottom: 14px; }
+        .footer-company-name { color: var(--navy); font-weight: 800; font-size: 13.5px; margin-bottom: 10px; }
+        .footer-desc { line-height: 1.65; margin-bottom: 18px; color: #64748b; }
+        .main-footer h4 { color: var(--navy); margin: 0 0 18px; font-size: 13px; font-weight: 800; padding-bottom: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; position: relative; }
+        .main-footer h4::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 32px; height: 2px; background: var(--blue); }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 9px; }
+        .footer-links a { color: #64748b; text-decoration: none; transition: .2s; display: inline-flex; align-items: center; font-size: 13px; }
+        .footer-links a::before { content: '›'; font-size: 16px; margin-right: 7px; color: #cbd5e1; transition: .2s; }
+        .footer-links a:hover { color: var(--blue); transform: translateX(4px); }
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; line-height: 1.5; color: #64748b; }
+        .contact-icon { margin-top: 2px; flex-shrink: 0; }
+        .social-links { display: flex; gap: 9px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; transition: .3s; }
+        .social-links a:hover { background: var(--blue); transform: translateY(-3px); }
+        .social-links a:hover img { filter: brightness(0) invert(1); }
+        .map-wrapper { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+        .copyright { background: var(--navy); color: #94a3b8; padding: 15px 0; font-size: 12px; margin-top: 10px; }
+        .copyright-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+        /* ── FLOATING CONTACT (REDESIGN CHUYÊN NGHIỆP) ── */
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+        .fc-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .fc-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 2;
+        }
+        .fc-icon img { width: 24px; height: 24px; object-fit: contain; }
+
+        .fc-label {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #fff;
+            background: rgba(0, 34, 68, 0.9);
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+        .fc-label::after {
+            content: ''; position: absolute; top: 50%; right: -5px; transform: translateY(-50%);
+            border-width: 6px 0 6px 6px; border-style: solid; border-color: transparent transparent transparent rgba(0, 34, 68, 0.9);
+        }
+
+        .fc-btn:hover .fc-icon { transform: scale(1.1); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .fc-btn:hover .fc-label { opacity: 1; visibility: visible; transform: translateX(0); }
+
+        .fc-phone .fc-icon { background: #e53935; }
+        .fc-messenger .fc-icon { background: linear-gradient(135deg, #00B2FF 0%, #006AFF 100%); }
+        .fc-zalo .fc-icon { background: #006AF5; }
+
+        .fc-phone .fc-icon::before {
+            content: ''; position: absolute; inset: -6px; border-radius: 50%;
+            border: 2px solid rgba(229,57,53,0.5); animation: pulse-ring 2s infinite; z-index: -1;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 920px) {
+            .header-flex { min-height: 68px; padding: 10px 15px; }
+            .menu-toggle { display: flex; flex-direction: column; justify-content: space-evenly; width: 40px; height: 38px; background: #fff; border: 2px solid #555; border-radius: 6px; cursor: pointer; padding: 5px 6px; z-index: 102; }
+            .menu-toggle .bar { width: 100%; height: 3px; background: #555; border-radius: 2px; transition: all .3s; }
+            .menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100; }
+            .nav-overlay.show { display: block; }
+            nav { position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; background: #fff; box-shadow: 4px 0 20px rgba(0,0,0,.12); padding: 80px 20px 30px; flex-direction: column; align-items: flex-start; transition: left .4s ease; z-index: 101; }
+            nav.open { left: 0; }
+            nav ul { flex-direction: column; width: 100%; gap: 0; }
+            nav li { border-bottom: 1px solid #f1f5f9; }
+            nav a { display: block; padding: 14px 0; font-size: 15px; }
+            .hotline-block { width: 38px; height: 38px; padding: 0; border-radius: 50%; justify-content: center; }
+            .hotline-label, .hotline-number { display: none; }
+            .page-hero { height: auto; padding: 70px 0; }
+            .hero-title { font-size: 30px; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .quick-inner { grid-template-columns: 1fr; }
+            .quick-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+        }
+        @media (max-width: 768px) {
+            .floating-contact { right: 15px; bottom: 20px; gap: 12px; }
+            .fc-icon { width: 44px; height: 44px; } 
+            .fc-icon img { width: 20px; height: 20px; }
+            .fc-zalo .fc-icon img { width: 22px !important; height: 22px !important; }
+            .fc-label { display: none !important; }
+        }
+        @media (max-width: 540px) {
+            .contact-info-card { padding: 32px 24px; }
+            .contact-form-card { padding: 32px 24px; }
+            .footer-flex { flex-direction: column; }
+            .copyright-flex { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
+
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
@@ -15,15 +275,10 @@
                     <img src="images/Logo/Logo APE.png" alt="APE Logo" class="logo-img">
                 </a>
             </div>
-            
             <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
-
             <div class="nav-overlay" id="navOverlay"></div>
-
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">TRANG CHỦ</a></li>
@@ -38,9 +293,7 @@
             </nav>
             <div class="header-right">
                 <span class="hotline-block">
-                    <span class="hotline-icon">
-                        <img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline">
-                    </span>
+                    <span class="hotline-icon"><img src="https://img.icons8.com/ios-filled/24/003366/phone.png" alt="Hotline"></span>
                     <span class="hotline-label">HOTLINE</span>
                     <strong class="hotline-number">0938 756 577</strong>
                 </span>
@@ -48,64 +301,162 @@
         </div>
     </header>
 
-    <section class="page-hero contact-hero">
+    <section class="page-hero">
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text-box">
-                <span class="hero-subtitle">KẾT NỐI VỚI CHÚNG TÔI</span>
+                <div class="hero-eyebrow">KẾT NỐI VỚI CHÚNG TÔI</div>
                 <h1 class="hero-title">SẴN SÀNG ĐỒNG HÀNH <br><span>CÙNG DOANH NGHIỆP</span></h1>
                 <p class="hero-desc">Đội ngũ kỹ sư APE luôn trực chiến 24/7 để lắng nghe, tư vấn và cung cấp các giải pháp khí nén, máy bơm công nghiệp tối ưu nhất cho nhà máy của bạn.</p>
-                
             </div>
         </div>
     </section>
 
-    <section class="contact-floating-section">
+    <div class="quick-strip">
         <div class="container">
-            <div class="floating-contact-card">
-                <div class="fcc-left">
-                    <div class="fcc-logo-box">
-                        <img src="images/Logo/Logo APE.png" alt="APE Logo">
+            <div class="quick-inner">
+                <a href="tel:0938756577" class="quick-item">
+                    <div class="quick-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                    <div>
+                        <div class="quick-label">Gọi ngay</div>
+                        <div class="quick-value">0938 756 577</div>
                     </div>
-                    <h3>CÔNG TY TNHH THIẾT BỊ ANH PHƯƠNG</h3>
-                    <p>Giải pháp khí nén & bơm công nghiệp chuyên nghiệp</p>
+                </a>
+                <a href="mailto:info@apeco.vn" class="quick-item">
+                    <div class="quick-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <div class="quick-label">Gửi email</div>
+                        <div class="quick-value">support@apeco.vn</div>
+                    </div>
+                </a>
+                <div class="quick-item">
+                    <div class="quick-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <div class="quick-label">Giờ làm việc</div>
+                        <div class="quick-value">T2–T7 | 08:00–17:00</div>
+                    </div>
                 </div>
-                
-                <div class="fcc-right">
-                    <div class="fcc-col">
-                        <div class="fcc-item">
-                            <h4>TRỤ SỞ CHÍNH</h4>
-                            <p>46 Đ. Số 6, Gò Vấp<br>Hồ Chí Minh, Việt Nam</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-layout">
+
+                <div class="contact-info-card">
+                    <img src="images/Logo/Logo APE.png" alt="APE Logo" class="info-logo">
+                    <p class="info-company">Công ty TNHH Thiết Bị Anh Phương</p>
+                    <p class="info-tagline">Giải pháp khí nén & bơm công nghiệp chuyên nghiệp</p>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <div class="info-item-label">Trụ sở chính</div>
+                                <div class="info-item-value">46 đường số 6, KDC CityLand,<br>P. Gò Vấp, TP.HCM, Việt Nam</div>
+                            </div>
                         </div>
-                        <div class="fcc-item">
-                            <h4>HOTLINE</h4>
-                            <p class="highlight-text">0938 756 577</p>
+                        <div class="info-item">
+                            <div class="info-item-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <div class="info-item-label">Hotline hỗ trợ 24/7</div>
+                                <div class="info-item-value"><strong>0938 756 577</strong></div>
+                            </div>
                         </div>
-                        <div class="fcc-item">
-                            <h4>KẾT NỐI MẠNG XÃ HỘI</h4>
-                            <div class="fcc-socials">
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i> Zalo</a>
-                                <a href="#"><i class="fa-solid fa-envelope"></i> Email</a>
+                        <div class="info-item">
+                            <div class="info-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div class="info-item-label">Email tư vấn</div>
+                                <div class="info-item-value">support@apeco.vn</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                            <div>
+                                <div class="info-item-label">Thời gian làm việc</div>
+                                <div class="info-item-value">Thứ 2 – Thứ 7<br>08:00 AM – 17:00 PM</div>
                             </div>
                         </div>
                     </div>
-                    <div class="fcc-col">
-                        <div class="fcc-item">
-                            <h4>EMAIL TƯ VẤN</h4>
-                            <p>info@apeco.vn</p>
-                        </div>
-                        <div class="fcc-item">
-                            <h4>THỜI GIAN LÀM VIỆC</h4>
-                            <p>Thứ 2 - Thứ 7<br>08:00 AM - 17:00 PM</p>
-                        </div>
+
+                    <hr class="info-divider">
+
+                    <div class="info-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://zalo.me/" target="_blank" class="social-btn">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width: 14px; height: 14px; filter: brightness(0) invert(1); margin-top: -2px;"> Zalo
+                        </a>
                     </div>
                 </div>
+
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <div class="form-tag">Gửi yêu cầu tư vấn</div>
+                        <h2 class="form-title">Để lại thông tin</h2>
+                        <p class="form-subtitle">Chúng tôi sẽ liên hệ lại trong vòng 30 phút trong giờ làm việc.</p>
+                    </div>
+
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input type="hidden" name="access_key" value="c5375c8c-0cde-483b-a283-134fe9f7409a">
+                        
+                        <input type="hidden" name="from_name" value="Khách yêu cầu tư vấn từ Website APE">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fname">Họ và tên *</label>
+                                <input type="text" id="fname" name="Họ_và_Tên" placeholder="Nguyễn Văn A" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fphone">Số điện thoại *</label>
+                                <input type="tel" id="fphone" name="Số_Điện_Thoại" placeholder="0938 756 577" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="femail">Email</label>
+                                <input type="email" id="femail" name="Email" placeholder="email@congty.vn">
+                            </div>
+                            <div class="form-group">
+                                <label for="fcompany">Công ty</label>
+                                <input type="text" id="fcompany" name="Công_Ty" placeholder="Tên công ty của bạn">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fservice">Dịch vụ quan tâm</label>
+                            <select id="fservice" name="Dịch_Vụ_Quan_Tâm">
+                                <option value="Chưa chọn">-- Chọn dịch vụ --</option>
+                                <option value="Máy nén khí công nghiệp">Máy nén khí công nghiệp</option>
+                                <option value="Máy bơm công nghiệp">Máy bơm công nghiệp</option>
+                                <option value="Hệ thống xử lý khí nén">Hệ thống xử lý khí nén</option>
+                                <option value="Bảo trì & sửa chữa">Bảo trì & sửa chữa</option>
+                                <option value="Tư vấn giải pháp tổng thể">Tư vấn giải pháp tổng thể</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fmessage">Nội dung yêu cầu</label>
+                            <textarea id="fmessage" name="Nội_Dung_Yêu_Cầu" placeholder="Mô tả nhu cầu của bạn (công suất, môi trường làm việc, yêu cầu đặc biệt…)"></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <i class="fa-solid fa-paper-plane"></i> GỬI YÊU CẦU TƯ VẤN
+                        </button>
+                        <p class="form-note"><i class="fa-solid fa-shield-halved"></i> Thông tin của bạn được bảo mật hoàn toàn.</p>
+                    </form>
+                </div>
+
             </div>
         </div>
     </section>
 
-    
+    <div class="map-section">
+        <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
     <footer class="main-footer">
         <div class="container footer-flex">
@@ -119,7 +470,6 @@
                     <a href="#"><img src="https://img.icons8.com/ios-filled/16/0072bc/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-            
             <div class="footer-col footer-links">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
@@ -131,33 +481,30 @@
                     <li><a href="khach-hang.html">Khách hàng</a></li>
                 </ul>
             </div>
-
-            <div class="footer-col footer-contact">
+            <div class="footer-col">
                 <h4>THÔNG TIN LIÊN HỆ</h4>
                 <ul class="contact-list">
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/marker.png" alt="Map"></div>
-                        <span>46 Đ. Số 6, Gò Vấp, Hồ Chí Minh, Việt Nam</span>
+                        <span>46 đường số 6, KDC CityLand, P.Gò Vấp, TP.HCM</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/phone.png" alt="Phone"></div>
-                        <span><strong>0938 756 577</strong> (Hỗ trợ 24/7)</span>
+                        <span><strong style="color:#0072bc;">0938 756 577</strong> (Hỗ trợ 24/7)</span>
                     </li>
                     <li>
                         <div class="contact-icon"><img src="https://img.icons8.com/ios-filled/14/0072bc/new-post.png" alt="Email"></div>
-                        <span>info@apeco.vn</span>
+                        <span>support@apeco.vn</span>
                     </li>
                 </ul>
             </div>
-            
-            <div class="footer-col footer-map-block">
+            <div class="footer-col">
                 <h4>BẢN ĐỒ VỊ TRÍ</h4>
                 <div class="map-wrapper">
-                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=46%20Đ.%20Số%206,%20Gò%20Vấp,%20Hồ%20Chí%20Minh,%20Việt%20Nam&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="145" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
             <div class="container copyright-flex">
                 <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
@@ -166,23 +513,37 @@
         </div>
     </footer>
 
+    <div class="floating-contact">
+        <a href="tel:0969186802" class="fc-btn fc-phone">
+            <span class="fc-label">Hotline: 0938 756 577</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone">
+            </div>
+        </a>
+        <a href="https://m.me/" class="fc-btn fc-messenger" target="_blank">
+            <span class="fc-label">Chat Messenger</span>
+            <div class="fc-icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-messenger.png" alt="Messenger">
+            </div>
+        </a>
+        <a href="https://zalo.me/" class="fc-btn fc-zalo" target="_blank">
+            <span class="fc-label">Chat Zalo</span>
+            <div class="fc-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:28px;height:28px;">
+            </div>
+        </a>
+    </div>
+
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
-
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mainNav.classList.toggle('open');
             navOverlay.classList.toggle('show');
-            
-            if (mainNav.classList.contains('open')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
         }
-
         menuToggle.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
     </script>
