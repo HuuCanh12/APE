@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -35,12 +35,12 @@
            THƯƠNG HIỆU PHÂN PHỐI DẠNG NGANG (TRANG CHỦ)
         ========================================= */
         .brands { background: #fff; padding: 35px 0; border-bottom: 1px solid #eee; }
-        .brands-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .brands-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; gap: 20px; width: 100%; overflow-x: auto; padding-bottom: 10px;  }
         .brands-flex a { display: flex; justify-content: center; align-items: center; flex: 1; position: relative; padding: 5px 15px; }
         .brands-flex a:not(:last-child)::after {
             content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 40px; width: 1px; background-color: #e5e7eb; 
         }
-        .brands-flex img { height: 80px; max-width: 155px; object-fit: contain; transition: 0.3s; }
+        .brands-flex img { height: 80px; max-width: 95px; object-fit: contain; transition: 0.3s; }
         .brands-flex img:hover { transform: scale(1.08); }
 
 
@@ -865,12 +865,14 @@
 
     <section class="brands">
         <div class="container brands-flex">
-            <a href="brands/friulair.html"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
-            <a href="brands/quincy.html"><img src="images/Logo/Logo Quincy.png" alt="Quincy"></a>
-            <a href="brands/busch.html"><img src="images/Logo/Logo Kluber.jpg" alt="Kluber"></a>
-            <a href="brands/becker.html"><img src="images/Logo/logo-becker.png" alt="Becker"></a>
-            <a href="brands/elmo.html"><img src="images/Logo/Logo DVP.jpg" alt="DVP"></a>
-            <a href="brands/tapflo.html"><img src="images/Logo/Logo tapflo.png" alt="Tapflo"></a>
+            <a href="san-pham-quincy.html" class="brand-item"><img src="images/Logo/Logo Quincy.png" alt="Quincy"></a>
+            <a href="san-pham-pneumofore.html" class="brand-item"><img src="images/Logo/Logo Pneumofore.jpg" alt="Pneumofore"></a>
+            <a href="san-pham-friulair.html" class="brand-item"><img src="images/Logo/Logo  Friulair.png" alt="Friulair"></a>
+            <a href="san-pham-solberg.html" class="brand-item"><img src="images/Logo/Logo Solberg.png" alt="Solberg"></a>
+            <a href="san-pham-tapflo.html" class="brand-item"><img src="images/Logo/Logo tapflo.png" alt="Tapflo"></a>
+            <a href="san-pham-becker.html" class="brand-item"><img src="images/Logo/logo-becker.png" alt="Becker"></a>
+            <a href="san-pham-dvp.html" class="brand-item"><img src="images/Logo/Logo DVP.jpg" alt="DVP"></a>
+            <a href="san-pham-kluber.html" class="brand-item"><img src="images/Logo/Logo Kluber.jpg" alt="Kluber"></a>
         </div>
     </section>
 
