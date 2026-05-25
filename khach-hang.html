@@ -190,7 +190,8 @@
             .client-grid { grid-template-columns: repeat(2, 1fr); }
             .partner-grid { grid-template-columns: 1fr 1fr; }
             .trust-sep { display: none; }
-            .trust-inner { justify-content: center; gap: 20px; }
+            .trust-inner { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px 10px; justify-items: center; }
+            .trust-item { justify-content: flex-start; width: 220px; padding: 0; }
         }
         @media (max-width: 540px) {
             .client-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -200,12 +201,13 @@
             .footer-flex { flex-direction: column; }
             .copyright-flex { flex-direction: column; text-align: center; }
             .fc-icon { width: 46px; height: 46px; }
+            .trust-inner { display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin: 0 auto; gap: 22px; }
+            .trust-item { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══ HEADER ═══ -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo">
@@ -239,7 +241,6 @@
         </div>
     </header>
 
-    <!-- ═══ HERO ═══ -->
     <section class="page-hero">
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="hero-overlay"></div>
@@ -252,7 +253,6 @@
         </div>
     </section>
 
-    <!-- ═══ TRUST STRIP ═══ -->
     <div class="trust-strip">
         <div class="container">
             <div class="trust-inner">
@@ -291,7 +291,6 @@
         </div>
     </div>
 
-    <!-- ═══ CLIENTS GRID ═══ -->
     <section class="clients-section">
         <div class="container">
             <div class="sec-header">
@@ -300,7 +299,6 @@
                 <p class="sec-desc">Những tên tuổi hàng đầu Việt Nam và quốc tế đã chọn APE làm đối tác cung cấp giải pháp khí nén và bơm công nghiệp.</p>
             </div>
 
-            <!-- PAGE 1 -->
             <div id="page-1" class="client-grid">
                 <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo Masan.jpg" alt="Tập đoàn Masan"></div>
@@ -352,7 +350,6 @@
                 </div>
             </div>
 
-            <!-- PAGE 2 -->
             <div id="page-2" class="client-grid" style="display:none;">
                 <div class="client-card">
                     <div class="client-logo-wrap"><img src="images/Logo/Logo bibica.jpg" alt="Bibica"></div>
@@ -400,7 +397,6 @@
                 </div>
             </div>
 
-            <!-- PAGINATION -->
             <div class="pagination">
                 <button class="page-btn active" id="btn-page-1" onclick="changePage(1)">1</button>
                 <button class="page-btn" id="btn-page-2" onclick="changePage(2)">2</button>
@@ -408,7 +404,6 @@
         </div>
     </section>
 
-    <!-- ═══ PARTNER TYPES ═══ -->
     <section class="partner-section">
         <div class="container">
             <div class="sec-header" style="padding-top: 0;">
@@ -450,7 +445,6 @@
         </div>
     </section>
 
-    <!-- ═══ CTA ═══ -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-inner">
@@ -465,7 +459,6 @@
         </div>
     </section>
 
-    <!-- ═══ FOOTER ═══ -->
     <footer class="main-footer">
         <div class="container footer-flex">
             <div class="footer-col footer-about">
@@ -515,7 +508,7 @@
         </div>
         <div class="copyright">
             <div class="container copyright-flex">
-                <span>© 2024 APE (Air &amp; Pump Solutions). All rights reserved.</span>
+                <span>© 2024 APE (Air & Pump Solutions). All rights reserved.</span>
                 <span>Thiết kế và phát triển bởi APE</span>
             </div>
         </div>
