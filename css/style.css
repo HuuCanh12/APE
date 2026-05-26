@@ -377,7 +377,7 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
 .client-card-premium:hover .client-logo-wrap { background: #fff; }
 .client-name { font-size: 15px; font-weight: 800; color: #003366; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
 .client-card-premium:hover .client-name { color: #0072bc; }
-.pagination { display: flex; justify-content: center; gap: 12px; margin-top: 50px; }
+.pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 50px; }
 .page-btn {
     width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #cbd5e1; color: #003366; font-weight: 800; font-size: 16px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
 }
@@ -582,14 +582,12 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
     .experience-badge-modern { padding: 15px 20px; }
     .experience-badge-modern strong { font-size: 28px; }
     
-    /* Cho phép cuộn thanh lọc dự án ngang trên điện thoại */
-    .portfolio-filters { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-    .filter-btn { flex-shrink: 0; }
+    /* ÉP CÁC NÚT LỌC RỚT DÒNG TRÊN ĐIỆN THOẠI Ở ĐÂY */
+    .portfolio-filters { justify-content: center; flex-wrap: wrap; gap: 8px; padding-bottom: 0; overflow-x: hidden; }
+    .filter-btn { flex: 0 1 auto; margin-bottom: 5px; }
+    
     .portfolio-grid { grid-template-columns: 1fr; } /* Dự án thành 1 cột trên Phone */
 
-    .portfolio-filters { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-    .filter-btn { flex-shrink: 0; } 
-    .portfolio-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; gap: 40px; }
     .step-number { right: 40%; }
     .cta-blue-text h2 { font-size: 24px; }

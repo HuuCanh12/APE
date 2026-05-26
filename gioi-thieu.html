@@ -180,7 +180,8 @@
     .partners-section { background: var(--navy); padding: 80px 0; }
     .partners-section .sec-title { color: #fff; }
     .partners-section .sec-tag { background: rgba(255,214,0,.12); color: var(--gold); }
-    .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    /* CHỈ SỬA Ở ĐÂY: Thay repeat(3, 1fr) thành repeat(4, 1fr) để chia 8 thẻ thành 2 hàng x 4 cột */
+    .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .partner-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 30px 26px; transition: .35s; position: relative; overflow: hidden; }
     .partner-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform .35s ease; transform-origin: left; }
     .partner-card:hover { background: rgba(255,255,255,.09); transform: translateY(-5px); border-color: rgba(255,255,255,.2); }
@@ -303,9 +304,6 @@
 </head>
 <body>
 
-
-
-<!-- ══ HEADER ══ -->
 <header class="site-header" id="siteHeader">
     <div class="container header-inner">
         <a href="index.html" class="logo">
@@ -339,7 +337,6 @@
     </div>
 </header>
 
-<!-- ══ PAGE HERO BANNER ══ -->
 <section class="page-hero">
     <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=80');"></div>
     <div class="hero-overlay"></div>
@@ -357,7 +354,6 @@
     </div>
 </section>
 
-<!-- ═══ STATS STRIP ═══ -->
 <div class="stats-strip">
     <div class="container">
         <div class="stats-inner">
@@ -374,18 +370,16 @@
                 <div class="stat-label">Tỉnh thành phủ sóng</div>
             </div>
             <div class="stat-cell">
-                <div class="stat-num">6</div>
+                <div class="stat-num">8</div>
                 <div class="stat-label">Thương hiệu quốc tế</div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ═══ ABOUT ═══ -->
 <section class="about-section">
     <div class="container">
         <div class="about-layout">
-            <!-- Visual -->
             <div class="about-visual">
                 <div class="about-img-accent"></div>
                 <img src="images/Logo/Gioithieu.jpg" alt="APE - Nhà máy" class="about-img-main">
@@ -398,7 +392,6 @@
                 </div>
             </div>
 
-            <!-- Text -->
             <div class="about-text">
                 <div class="about-tag">Tổng quan doanh nghiệp</div>
                 <h2 class="about-title">CÔNG TY TNHH <br><span>THIẾT BỊ ANH PHƯƠNG</span></h2>
@@ -434,7 +427,6 @@
     </div>
 </section>
 
-<!-- ═══ CORE VALUES ═══ -->
 <section class="values-section">
     <div class="container">
         <div class="sec-header">
@@ -461,7 +453,6 @@
     </div>
 </section>
 
-<!-- ═══ PARTNERS ═══ -->
 <section class="partners-section">
     <div class="container">
         <div class="sec-header">
@@ -474,36 +465,53 @@
                 <h3>Quincy</h3>
                 <p>Nhà sản xuất máy nén khí và thiết bị xử lý khí hàng đầu thế giới, nổi tiếng với độ bền và tiết kiệm năng lượng vượt trội.</p>
             </div>
+
+            <div class="partner-card">
+                <div class="partner-flag">Ý</div>
+                <h3>Pneumofore</h3>
+                <p>Nhà sản xuất hàng đầu về hệ thống bơm chân không và máy nén khí công nghiệp, nổi bật với công nghệ làm mát bằng dầu thiết kế riêng biệt.</p>
+            </div>
+
             <div class="partner-card">
                 <div class="partner-flag">Ý</div>
                 <h3>Friulair</h3>
                 <p>Chuyên gia sản xuất máy sấy khô khí nén và hệ thống làm lạnh nước công nghiệp chuẩn châu Âu.</p>
             </div>
+
+            <div class="partner-card">
+                <div class="partner-flag">Mỹ</div>
+                <h3>Solberg</h3>
+                <p>Chuyên gia toàn cầu về các giải pháp lọc công nghiệp, bộ giảm âm và tách dầu chất lượng cao cho máy nén khí, bơm chân không.</p>
+            </div>
+
             <div class="partner-card">
                 <div class="partner-flag">Thụy Điển</div>
                 <h3>Tapflo</h3>
                 <p>Nhà sản xuất máy bơm màng khí nén và bơm ly tâm công nghiệp ứng dụng đa dạng trong mọi ngành.</p>
             </div>
+
             <div class="partner-card">
                 <div class="partner-flag">Đức</div>
                 <h3>Becker</h3>
                 <p>Nhà sản xuất máy bơm chân không và máy thổi khí công nghệ cao, tiêu chuẩn kỹ thuật Đức.</p>
             </div>
+
             <div class="partner-card">
                 <div class="partner-flag">Ý</div>
                 <h3>DVP</h3>
                 <p>Giải pháp bơm chân không chuyên biệt ứng dụng trong ngành ceramic, in ấn và đóng gói.</p>
             </div>
+
             <div class="partner-card">
                 <div class="partner-flag">Đức</div>
                 <h3>Klüber Summit</h3>
                 <p>Nhà sản xuất dầu nhớt bôi trơn chuyên dụng chất lượng cao cho máy nén khí và thiết bị công nghiệp.</p>
             </div>
+
         </div>
     </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
 <section class="cta-section">
     <div class="container">
         <div class="cta-inner">
@@ -519,7 +527,6 @@
     </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
 <footer class="main-footer">
     <div class="container">
         <div class="footer-grid">
@@ -577,7 +584,6 @@
     </div>
 </footer>
 
-<!-- ══ FLOATING CONTACT ══ -->
 <div class="float-contact">
     <a href="tel:0938756577" class="fc-btn fc-phone">
         <span class="fc-label">Hotline: 0938 756 577</span>
