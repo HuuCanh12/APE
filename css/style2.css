@@ -426,3 +426,5 @@ nav a.active, nav a:hover { color: #0072bc; border-bottom: 2px solid #0072bc; }
             .footer-flex { flex-direction: column; }
             .copyright-flex { flex-direction: column; text-align: center; }
         }
+
+        
