@@ -735,6 +735,11 @@
             .footer-flex { flex-direction: column; }
             .copyright-flex { flex-direction: column; text-align: center; }
         }
+
+        .ape-products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        @media (max-width: 1024px) { .ape-products-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .ape-products-grid { grid-template-columns: 1fr; } }
+        
     </style>
 </head>
 <body>
@@ -980,143 +985,150 @@
                 <p>Thiết bị nhập khẩu chính hãng từ các thương hiệu hàng đầu thế giới, đảm bảo chất lượng và hiệu suất vận hành tối ưu.</p>
             </div>
 
-            <div class="products-grid">
+            <!-- Lưới sản phẩm 4 cột cân đối -->
+            <div class="ape-products-grid">
 
+                <!-- 1. QUINCY -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/nenkhiquin.jpg" alt="Máy nén khí Quincy">
+                        <img src="images/Sản phẩm chủ lực/nenkhiquin.jpg" alt="Máy nén khí Quincy" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-quincy.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Quincy – Mỹ</div>
                     </div>
                     <div class="product-body">
                         <div class="product-brand">Máy nén khí</div>
                         <h3>Máy Nén Khí Quincy</h3>
-                        <p>Giải pháp khí nén toàn diện, hiệu suất cao và tiết kiệm điện năng cho nhà máy.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Giải pháp máy nén khí trục vít công nghiệp hiệu suất cao, tiết kiệm điện năng và bền bỉ hơn 100 năm.</p>
+                        <a href="san-pham-quincy.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 2. PNEUMOFORE -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/" alt="Pneu">
+                        <img src="images/Sản phẩm chủ lực/pneumofore.jpg" alt="Chân không Pneumofore" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-pneumofore.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Pneumofore – Ý</div>
                     </div>
                     <div class="product-body">
-                        <div class="product-brand">Máy nén khí</div>
-                        <h3>Pneu</h3>
-                        <p>Giải pháp khí nén toàn diện, hiệu suất cao và tiết kiệm điện năng cho nhà máy.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="product-brand">Chân không & Máy nén</div>
+                        <h3>Pneumofore</h3>
+                        <p>Công nghệ cánh gạt quay làm mát dầu siêu bền bỉ, chân không sâu công suất lớn cho công nghiệp nặng.</p>
+                        <a href="san-pham-pneumofore.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 3. FRIULAIR -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/frui.jpg" alt="Máy sấy khí Friulair">
+                        <img src="images/Sản phẩm chủ lực/frui.jpg" alt="Máy sấy khí Friulair" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-friulair.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Friulair – Ý</div>
                     </div>
                     <div class="product-body">
-                        <div class="product-brand">Máy sấy khí</div>
+                        <div class="product-brand">Xử lý khí nén</div>
                         <h3>Máy Sấy Khí Friulair</h3>
-                        <p>Tách lọc tạp chất và loại bỏ 99.9% nước, bảo vệ máy móc cốt lõi của doanh nghiệp.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Máy sấy lạnh và sấy hấp thụ chất lượng Châu Âu, loại bỏ 99.9% nước và tạp chất, bảo vệ máy móc cốt lõi.</p>
+                        <a href="san-pham-friulair.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 4. SOLBERG -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/" alt="Máy sấy khí Friulair">
+                        <img src="images/Sản phẩm chủ lực/solberg.jpg" alt="Bộ lọc Solberg" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-solberg.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Solberg – Mỹ</div>
                     </div>
                     <div class="product-body">
-                        <div class="product-brand">Máy sấy khí</div>
-                        <h3>Solberg</h3>
-                        <p>Tách lọc tạp chất và loại bỏ 99.9% nước, bảo vệ máy móc cốt lõi của doanh nghiệp.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="product-brand">Bộ lọc chân không</div>
+                        <h3>Bộ Lọc Solberg</h3>
+                        <p>Thiết bị lọc tách chất lỏng đầu vào và thu hồi sương dầu đầu xả, bảo vệ an toàn tối đa cho máy bơm chân không.</p>
+                        <a href="san-pham-solberg.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 5. TAPFLO -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/May bom tapflo.jpg" alt="Bơm màng Tapflo">
+                        <img src="images/Sản phẩm chủ lực/May bom tapflo.jpg" alt="Bơm công nghiệp Tapflo" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-tapflo.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Tapflo – Thụy Điển</div>
                     </div>
                     <div class="product-body">
-                        <div class="product-brand">Bơm màng khí nén</div>
-                        <h3>Bơm Màng Tapflo</h3>
-                        <p>Hiệu suất cao – Vận hành ổn định – Độ bền vượt trội cho mọi hệ thống truyền chất lỏng.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="product-brand">Bơm màng & Ly tâm</div>
+                        <h3>Bơm Công Nghiệp Tapflo</h3>
+                        <p>Bơm màng khí nén thiết kế tối giản, bơm ly tâm và bơm vi sinh chịu hóa chất với độ bền bỉ vượt trội.</p>
+                        <a href="san-pham-tapflo.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 6. BECKER -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/chankhongbecker.jpg" alt="Bơm chân không Becker">
+                        <img src="images/Sản phẩm chủ lực/chankhongbecker.jpg" alt="Bơm chân không Becker" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-becker.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">Becker – Đức</div>
                     </div>
                     <div class="product-body">
                         <div class="product-brand">Bơm chân không</div>
                         <h3>Bơm Chân Không Becker</h3>
-                        <p>Công nghệ Đức, lực hút chân không ổn định cho mọi dây chuyền sản xuất.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Đỉnh cao cơ khí Đức với các dòng bơm chân không chạy khô không dầu, vòng dầu và máy thổi khí.</p>
+                        <a href="san-pham-becker.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 7. DVP -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/bomchankhongdvp.jpg" alt="Bơm chân không DVP">
+                        <img src="images/Sản phẩm chủ lực/bomchankhongdvp.jpg" alt="Bơm chân không DVP" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-dvp.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
                         <div class="product-tag">DVP – Ý</div>
                     </div>
                     <div class="product-body">
                         <div class="product-brand">Bơm chân không</div>
                         <h3>Bơm Chân Không DVP</h3>
-                        <p>Thiết bị bơm công nghệ Ý tân tiến, áp suất ổn định và bền bỉ cho mọi nhà xưởng.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Đa dạng công nghệ bơm vòng dầu, vòng khô (Claw, Piston, Lobe) phục vụ đóng gói, y tế và tự động hóa.</p>
+                        <a href="san-pham-dvp.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
+                <!-- 8. KLÜBER -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="images/Sản phẩm chủ lực/dauklub.jpg" alt="Dầu mỡ Kluber">
+                        <img src="images/Sản phẩm chủ lực/dauklub.jpg" alt="Dầu mỡ Kluber" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80'">
                         <div class="product-overlay">
-                            <a href="san-pham.html" class="overlay-btn">Xem chi tiết</a>
+                            <a href="san-pham-kluber.html" class="overlay-btn">Xem chi tiết</a>
                         </div>
-                        <div class="product-tag">Kluber – Đức</div>
+                        <div class="product-tag">Klüber – Đức</div>
                     </div>
                     <div class="product-body">
-                        <div class="product-brand">Dầu mỡ bôi trơn</div>
-                        <h3>Dầu Mỡ Nhờn Kluber</h3>
-                        <p>Dầu mỡ bôi trơn chuyên dụng cao cấp, giảm ma sát và tối ưu tuổi thọ thiết bị.</p>
-                        <a href="san-pham.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="product-brand">Dầu nhớt bôi trơn</div>
+                        <h3>Dầu Nhớt Klüber Summit</h3>
+                        <p>Dầu tổng hợp cao cấp chuyên dụng, chịu nhiệt cực tốt, kéo dài tuổi thọ cụm nén và tiết kiệm chi phí bảo trì.</p>
+                        <a href="san-pham-kluber.html" class="product-link">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-
-                
 
             </div>
 
             <div class="products-cta">
                 <a href="san-pham.html" class="btn-navy">
-                    <i class="fa-solid fa-grid-2"></i> Xem toàn bộ sản phẩm
+                    <i class="fa-solid fa-grid-2"></i> Xem toàn bộ danh mục sản phẩm
                 </a>
             </div>
         </div>
